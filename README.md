@@ -16,6 +16,8 @@ O aprendizado se dá através de projetos reais, na construção de sites e apli
 
 O trabalho é home office, com carga horária de 6 horas por dia e comunicação intensa via slack e sala de vídeo no appear. Espere uma equipe engajada e ideológica, mas muito mão na massa e com sólidos princípios de arquitetura de aplicações web.
 
+O valor da bolsa de estágio por 01 ano é de R$ 1.000,00/mês.
+
 ## Como participar
 
 * Crie um novo fork e branch com seu nome-sobrenome e faça um pull request quando estiver pronto. Iremos fazer code review.
