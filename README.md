@@ -16,23 +16,32 @@ O ambiente de aprendizado se dá através de projetos reais, na construção de 
 
 O trabalho é via home office, com carga horária de 6 horas por dia e comunicação intensa via slack e sala de vídeo no appear. Espere uma equipe engajada e ideológica, mas muito mão na massa e com sólidos princípios de arquitetura de aplicações web.
 
+## Como participar
+
+* Crie um novo branch com seu nome-sobrenome e faça um pull request quando estiver pronto. Iremos fazer code review.
+* Envie um email para ola@1sti.com.br para te adicionarmos ao time slack do desafio.
+
+
 ## O desafio
 
 Vamos dar uma olhada na previsão do tempo? A meta é criarmos uma página simples, que consuma a API do Yahoo de previsão do tempo (https://developer.yahoo.com/weather/). O layout final deverá ficar o mais próximo possível da versão abaixo (sim, vamos ter a versão responsiva mobile e a versão desktop):
+
+Web:
 
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png)
 
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png)
 
+Mobile responsivo:
+
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png)
 
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png)
 
-## Como participar
-
-* Crie um novo branch com seu nome-sobrenome e faça um pull request quando estiver pronto. Iremos fazer code review.
-* Entre na sala do slack e converse com a gente. Tire suas dúvidas também.
-
 ## Dicas
 
-
+* Tudo bem, pode usar jquery.
+* HTML o mais semântico possível.
+* Branchs com readme e instruções de implantação serão bem vindos.
+* Pré-processadores CSS como Stylus ou LESS também.
+* Que tal utilizar BEM nos identificadores css? http://getbem.com/naming/ 
