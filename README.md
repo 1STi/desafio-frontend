@@ -18,7 +18,7 @@ O trabalho é via home office, com carga horária de 6 horas por dia e comunica�
 
 ## Como participar
 
-* Crie um novo branch com seu nome-sobrenome e faça um pull request quando estiver pronto. Iremos fazer code review.
+* Crie um novo fork e branch com seu nome-sobrenome e faça um pull request quando estiver pronto. Iremos fazer code review.
 * Envie um email para ola@1sti.com.br para te adicionarmos ao time slack do desafio.
 
 ## O desafio
