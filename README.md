@@ -39,7 +39,7 @@ Mobile responsivo:
 
 ## Dicas
 
-* Tudo bem, pode usar jquery. Se você não quiser user (bônus), uma sugestão: Axios para a comunicação com a API.
+* Tudo bem, até pode usar jquery. Se você não quiser user (bônus), uma sugestão: Axios para a comunicação com a API.
 * HTML o mais semântico possível.
 * Branchs com readme e instruções de implantação serão bem vindos.
 * Pré-processadores CSS como Stylus ou LESS também.
