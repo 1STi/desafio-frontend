@@ -2,7 +2,7 @@
 logs
 *.log
 npm-debug.log*
-
+*.swp
 # Runtime data
 pids
 *.pid
@@ -29,9 +29,12 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
-
+bower_components
 # Optional npm cache directory
 .npm
 
 # Optional REPL history
 .node_repl_history
+
+#Dist directory
+dist
