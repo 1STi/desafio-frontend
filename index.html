@@ -2,9 +2,132 @@
   <head>
     <title>Previsao do Tempo</title>
     <link rel="stylesheet" type="text/css" href="/dist/css/style.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="container">
+      <header class="header">
+        <h1>Previsao do Tempo</h1>
+      </header>
+      <section class="city city--closed">
+        <a href="#" class="city__close"><i class="fa fa-times"></i></a>
+        <header class="city__header">
+          <h1>Niteroi, RJ - Basil</h1>
+          <h2>20ºC Nublado</h2>
+        </header>
+        <section class="city__stats">
+          <div>
+            <i class="fa fa-arrow-down" aria-hidden="true"></i><strong>16º</strong> 
+            <i class="fa fa-arrow-up" aria-hidden="true"></i><strong>25º</strong>
+          </div>
+          <div>Sensaçao: <strong>19ºC</strong></div>
+          <div>Vento: <strong>18km/h</strong></div> 
+          <div>Umidade: <strong>89%</strong></div>
+        </section>
+        <hr class="city__separator" />
+        <section class="city__next">
+          <div>
+            <h1>Terça</h1>
+            <h2>18º 26º</h2>
+          </div>
+          <div>
+            <h1>Quarta</h1>
+            <h2>18º 26º</h2>
+          </div>
+          <div>
+            <h1>Quinta</h1>
+            <h2>18º 26º</h2>
+          </div>
+          <div>
+            <h1>Sexta</h1>
+            <h2>18º 26º</h2>
+          </div>
+          <div>
+            <h1>Sabado</h1>
+            <h2>18º 26º</h2>
+          </div>
+        </section> 
+      </section>
+      <section class="search">
+        <form class="search__form">
+          <input type="text" name="cidade" placeholder="Insira aqui o nome da cidade" />
+          <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </section>
+      <hr class="capital__separator"/>
+      <section class="capital">
+        <h1>Capitais</h1>
+        <section class="capital__list">
+          <div class="capital__container">
+            <div class="capital__container__column">
+              <div class="capital__container__header">
+                <p class="capital__min">Min</p>
+                <p class="capital__max">Max</p>
+                <p class="capital__city">&nbsp;</p>
+              </div>
+              <div>
+                <p class="capital__min">18ºC</p>
+                <p class="capital__max">26ºC</p>
+                <p class="capital__city">Rio de Janeiro</p>
+              </div> 
+              <div>
+                <p class="capital__min">18ºC</p>
+                <p class="capital__max">26ºC</p>
+                <p class="capital__city">Salvador</p>
+              </div> 
+              <div>
+                <p class="capital__min">5ºC</p>
+                <p class="capital__max">8ºC</p>
+                <p class="capital__city">Joao Pessoa</p>
+              </div>
+              <div>
+                <p class="capital__min">18ºC</p>
+                <p class="capital__max">26ºC</p>
+                <p class="capital__city">Rio de Janeiro</p>
+              </div> 
+              <div>
+                <p class="capital__min">18ºC</p>
+                <p class="capital__max">26ºC</p>
+                <p class="capital__city">Salvador</p>
+              </div> 
+            </div>
+            <div class="capital__container__column">
+              <div class="capital__container__header capital__container__header--mobile-hidden">
+                <p class="capital__min">Min</p>
+                <p class="capital__max">Max</p>
+                <p class="capital__city">&nbsp;</p>
+              </div>
+              <div>
+                <p class="capital__min">5ºC</p>
+                <p class="capital__max">8ºC</p>
+                <p class="capital__city">Joao Pessoa</p>
+              </div>             
+              <div>
+                <p class="capital__min">18ºC</p>
+                <p class="capital__max">26ºC</p>
+                <p class="capital__city">Salvador</p>
+              </div> 
+              <div>
+                <p class="capital__min">5ºC</p>
+                <p class="capital__max">8ºC</p>
+                <p class="capital__city">Joao Pessoa</p>
+              </div>
+              <div>
+                <p class="capital__min">18ºC</p>
+                <p class="capital__max">26ºC</p>
+                <p class="capital__city">Rio de Janeiro</p>
+              </div>
+              <div>
+                <p class="capital__min">18ºC</p>
+                <p class="capital__max">26ºC</p>
+                <p class="capital__city">Rio de Janeiro</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+    <script src="https://use.fontawesome.com/cb1b0b0939.js"></script>
     <script type="text/javascript" src="/bower_components/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="/dist/js/main.min.js"></script>
   </body>

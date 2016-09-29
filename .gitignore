@@ -38,3 +38,6 @@ bower_components
 
 #Dist directory
 dist
+
+#macOS Files
+.DS_Store
