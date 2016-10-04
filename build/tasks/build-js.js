@@ -3,7 +3,7 @@ const gulp = require('gulp'),
   uglify = require('gulp-uglify');
 
 gulp.task('build-js', () => {
-  return gulp.src('./src/js/*.js')
+  return gulp.src('./src/js/main.js')
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
