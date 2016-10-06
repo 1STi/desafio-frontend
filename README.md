@@ -1,49 +1,51 @@
-# Desafio-Frontend
+# Desafio front-end para a 1STi
+Bem vindo ao meu repositório para o desafio front-end da 1STi. É um prazer ter você por aqui.
 
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/1sti-transformacao.png)
+Abaixo seguem as instruções para execução da aplicação:
 
-## Bem-vindo
+## Requisitos
+Para fazer o build do projeto usaremos o gulp, entao caso voce nao tenha o mesmo instalado, digite o comando:
 
-A 1STi é uma consultoria em tecnologias digitais emergentes que tem a missão de aproximar a tecnologia das reais necessidades sociais. Nós enxergamos a tecnologia como um presente à humanidade dado pela expressão de nosso próprio intelecto, realizando uma síntese entre arte, humanidade e ciência.
+```
+npm install -g gulp
+```
 
-Nosso modelo de negócios combina projetos de valor compartilhado com consultoria nas tecnologias mais avançadas. Esse desafio é uma oportunidade para fazer parte do nosso time em uma jornada de aprendizado e desenvolvimento de interfaces web!
+## Fazendo o build do projeto
+Foi utilizada a biblioteca axios, instalada através do bower, então caso não tenha o mesmo instalado, execute o comando:
 
-## Aprendizado e desenvolvimento
+```
+npm install -g bower
+```
 
-Você pode esperar um trabalho intenso em projetos HTML5/CSS3 com o framework React, do facebook, e boas práticas em Redux, um mecanismo de gerenciamento de estado de aplicações, além de diversos componentes javascript. 
+### Instalando as dependências
+Após ter o bower instalado, vamos instalar as dependências do projeto, para isso execute os comandos:
 
-O aprendizado se dá através de projetos reais, na construção de sites e aplicações que ajudem causas sociais de impacto. Conforme a evolução, serão feitas transições para projetos de consultoria em ambientes de negócio complexos. Temos o suporte de vídeo aulas em inglês para apoiar os estudos e montamos um plano individual em conjunto.
+```
+npm install
+```
 
-O trabalho é home office, com carga horária de 6 horas por dia e comunicação intensa via slack e sala de vídeo no appear. Espere uma equipe engajada e ideológica, mas muito mão na massa e com sólidos princípios de arquitetura de aplicações web.
+```
+bower install
+```
 
-O valor da bolsa de estágio por 01 ano é de R$ 1.000,00/mês.
-Serão dois selecionados e apos o desafio técnico teremos conversas por skype, mas fique à vontade para já ir nos conhecendo no slack.
+### "Compilando" o projeto
+Para fazer o build do projeto execute o comando:
 
-## Como participar
+```
+gulp build
+```
 
-* Crie um novo fork e branch com seu nome-sobrenome e faça um pull request quando estiver pronto. Iremos fazer code review.
-* Envie um email para ola@1sti.com.br para te adicionarmos ao time slack do desafio.
+## Executando o projeto
+Para executar a aplicação basta abrir o arquivo `index.html` ou caso queira você pode usar o node http-server.
 
-## O desafio
+### Executando com o node http-server
+Instale o node http-server com o comando:
+```
+npm install -g http-server
+```
 
-Vamos dar uma olhada na previsão do tempo? A meta é criarmos uma página simples, que consuma a API do Yahoo de previsão do tempo (https://developer.yahoo.com/weather/). O layout final deverá ficar o mais próximo possível da versão abaixo (sim, vamos ter a versão responsiva mobile e a versão desktop):
+Agora execute o projeto com o comando:
 
-Web:
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png)
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png)
-
-Mobile responsivo:
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png)
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png)
-
-## Dicas
-
-* Tudo bem, até pode usar jquery. Se você não quiser usar (bônus), uma sugestão: Axios para a comunicação com a API.
-* HTML o mais semântico possível.
-* Branches com readme e instruções de implantação serão bem vindos.
-* Pré-processadores CSS como Stylus ou LESS também.
-* Que tal utilizar BEM nos identificadores css? http://getbem.com/naming/ 
+```
+npm start
+```

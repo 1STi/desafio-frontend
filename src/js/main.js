@@ -85,7 +85,7 @@
     $('.city').classList.add('city--closed');
   });
 
-  w.addEventListener('load', function (event) {
+  d.addEventListener('DOMContentLoaded', function (event) {
     var container = $('.capital__container');
     var column1 = d.createElement('div'),
       column2 = d.createElement('div'),
