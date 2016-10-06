@@ -7,6 +7,16 @@
     baseURL: 'https://query.yahooapis.com/v1/public/',
     timeout: 10000
   });
+
+  w.$week = {
+    'Sun': 'Domingo',
+    'Mon': 'Segunda',
+    'Tue': 'Terça',
+    'Wed': 'Quarta',
+    'Thu': 'Quinta',
+    'Fri': 'Sexta',
+    'Sat': 'Sábado'
+  };
   
   var searchForm = $('.search__form'),
     searchQuery = $('.search__city'),
@@ -68,7 +78,7 @@
         var div = d.createElement('div'),
           h1 = d.createElement('h1'),
           h2 = d.createElement('h2');
-        h1.textContent = result.item.forecast[i].day;
+        h1.textContent = $week[result.item.forecast[i].day];
         h2.textContent = result.item.forecast[i].low + 'º ' + result.item.forecast[i].high + 'º';
         div.appendChild(h1);
         div.appendChild(h2);
