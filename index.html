@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+  <link rel="stylesheet" href="./app/css/main.css">
+
+  <title>1STi - Desafio Front-end</title>
+</head>
+<body>
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="icon-close" viewBox="0 0 24 24"><title>close</title><path class="path1" d="M19 4q0.43 0 0.715 0.285t0.285 0.715q0 0.422-0.289 0.711l-6.297 6.289 6.297 6.289q0.289 0.289 0.289 0.711 0 0.43-0.285 0.715t-0.715 0.285q-0.422 0-0.711-0.289l-6.289-6.297-6.289 6.297q-0.289 0.289-0.711 0.289-0.43 0-0.715-0.285t-0.285-0.715q0-0.422 0.289-0.711l6.297-6.289-6.297-6.289q-0.289-0.289-0.289-0.711 0-0.43 0.285-0.715t0.715-0.285q0.422 0 0.711 0.289l6.289 6.297 6.289-6.297q0.289-0.289 0.711-0.289z"></path></symbol><symbol id="icon-arrow-down" viewBox="0 0 24 24"><title>arrow-down</title><path class="path1" d="M12 2q0.414 0 0.707 0.293t0.293 0.707v15.586l5.289-5.297q0.289-0.289 0.711-0.289 0.43 0 0.715 0.285t0.285 0.715q0 0.422-0.289 0.711l-7 7q-0.289 0.289-0.711 0.289t-0.711-0.289l-7-7q-0.289-0.289-0.289-0.711 0-0.43 0.285-0.715t0.715-0.285q0.422 0 0.711 0.289l5.289 5.297v-15.586q0-0.414 0.293-0.707t0.707-0.293z"></path></symbol><symbol id="icon-arrow-up" viewBox="0 0 24 24"><title>arrow-up</title><path class="path1" d="M12 2q0.422 0 0.711 0.289l7 7q0.289 0.289 0.289 0.711 0 0.43-0.285 0.715t-0.715 0.285q-0.422 0-0.711-0.289l-5.289-5.297v15.586q0 0.414-0.293 0.707t-0.707 0.293-0.707-0.293-0.293-0.707v-15.586l-5.289 5.297q-0.289 0.289-0.711 0.289-0.43 0-0.715-0.285t-0.285-0.715q0-0.422 0.289-0.711l7-7q0.289-0.289 0.711-0.289z"></path></symbol><symbol id="icon-search" viewBox="0 0 32 32"><title>search</title><path class="path1" d="M19.427 20.427c-1.39 0.99-3.090 1.573-4.927 1.573-4.694 0-8.5-3.806-8.5-8.5s3.806-8.5 8.5-8.5c4.694 0 8.5 3.806 8.5 8.5 0 2.347-0.951 4.472-2.49 6.010l5.997 5.997c0.275 0.275 0.268 0.716-0.008 0.992-0.278 0.278-0.72 0.28-0.992 0.008l-6.081-6.081zM14.5 21c4.142 0 7.5-3.358 7.5-7.5s-3.358-7.5-7.5-7.5c-4.142 0-7.5 3.358-7.5 7.5s3.358 7.5 7.5 7.5v0z"></path></symbol></defs></svg>
+
+  <div class="container">
+    <main class="main">
+      <header class="header">
+        <h1 class="title title--md js-title">Previsão do tempo</h1>
+      
+        <div class="weather weather--hide js-weather">
+          <header class="weather__header">
+            <p class="js-location"></p>
+
+            <button class="btn js-close">
+              <svg class="icon icon--close">
+                <use xlink:href="#icon-close"></use>
+              </svg>  
+            </button>            
+          </header>
+
+          <ul class="weather__conditions list">
+            <li class="js-now"></li>
+
+            <li>
+              <svg class="icon icon--arrow">
+                <use xlink:href="#icon-arrow-down"></use>
+              </svg>
+              <span class="js-temperature--min"></span>
+
+              <svg class="icon icon--arrow">
+                <use xlink:href="#icon-arrow-up"></use>
+              </svg>
+              <span class="js-temperature--max"></span>
+            </li>
+            
+            <li>
+              Sensação
+              <span class="js-sensation"></span>
+            </li>
+
+            <li>
+              Vento
+              <span class="js-wind"></span>
+            </li>
+
+            <li>
+              Humidade
+              <span class="js-humidity"></span>
+            </li>
+          </ul>
+
+          <ul class="weather__forecast list list--inline js-forecast">
+            <li class="js-forecast--one"></li>
+            <li class="js-forecast--two"></li>
+            <li class="js-forecast--three"></li>
+            <li class="js-forecast--four"></li>
+            <li class="js-forecast--five"></li>
+          </ul>
+        </div>
+
+        <div class="search">
+          <form action="" class="search__form">
+            <input type="text" class="search__control" placeholder="Insira aqui o nome da cidade">
+            
+            <button class="btn">
+              <svg class="icon icon--search">
+                <use xlink:href="#icon-search"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </header>
+
+
+
+      <section class="capitals">
+        <h1 class="title title--md">Capitais</h1>
+
+        <table class="capitals__table">
+          <thead>
+            <tr>
+              <th>Min</th>
+              <th>Máx</th>
+              <th></th>
+            </tr>
+
+            <tr>
+              <th>Min</th>
+              <th>Máx</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody class="js-tbody--first"></tbody>
+          <tbody class="js-tbody--last"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="./node_modules/axios/dist/axios.js"></script>
+  <script src="./app/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.icon {
+  width: 18px;
+  height: 18px;
+}
+.icon--close,
+.icon--arrow {
+  fill: $orange-dark;
+}
+.icon--search {
+  width: 26px;
+  height: 26px;
+}

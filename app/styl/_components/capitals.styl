@@ -1,0 +1,42 @@
+.capitals
+  @media screen and (min-width: 600px)
+    padding 0 $spacing-lg
+    
+  &__table
+    @media screen and (min-width: 600px)
+      display flex
+      flex-wrap wrap
+      min-width 100%
+      
+    margin $spacing-md auto
+    
+    thead
+      @media screen and (min-width: 600px)
+        display flex
+        min-width 100%
+      
+      tr:last-child
+        display none
+        @media screen and (min-width: 600px)
+          display table-row
+    
+    thead tr
+      @media screen and (min-width: 600px)
+        min-width 50%
+        
+    tbody
+      @media screen and (min-width: 600px)
+        min-width 50%
+  
+    th
+      @media screen and (min-width: 600px)
+        padding $spacing $spacing-sm
+    
+      font-weight 300
+      
+    td
+      font-weight 600
+      
+    th
+    td
+      padding $spacing $spacing-sm

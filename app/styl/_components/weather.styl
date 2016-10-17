@@ -1,0 +1,73 @@
+.weather
+  @media screen and (min-width: 600px)
+    padding 0 $spacing-md
+
+  width 98%
+  margin 0 auto
+  background-color lightness(#fff, 98%)
+  box-shadow inset 0 10px 10px lightness(#000, 84%)
+  
+  &--hide
+    height 0
+    opacity 0
+    visibility hidden
+    
+  &--show
+    height auto
+    opacity 1
+    visibility visibility
+    transition all .3s linear
+     
+  &__header
+    padding $spacing-md
+    display flex
+    justify-content space-between
+    
+    p
+      font-weight 600
+      margin 0
+      
+  &__conditions
+    display flex
+    flex-wrap wrap
+    
+    li:first-child
+      width 100%
+      font-size 40px
+      font-weight 700
+      
+    li
+      display flex
+      align-items center
+      font-weight 300
+      width 36%
+      padding $spacing $spacing-md
+      
+      span
+        margin 0 4px
+        font-weight 700
+        
+  &__forecast
+    display flex
+    justify-content space-between
+    margin-top $spacing-md
+    padding $spacing-sm
+    border-top 1px solid $orange-dark
+
+    li
+      text-align center
+    
+      &:last-child
+        @media screen and (min-width: 600px)
+          display block
+        
+        display none
+    
+    p
+    span
+      font-weight 700
+      margin $spacing
+      
+    span
+      color $orange-dark
+      

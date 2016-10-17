@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  color: $black;
+  background: -webkit-linear-gradient($orange-dark, $orange);
+  background: linear-gradient($orange-dark, $orange);
+}

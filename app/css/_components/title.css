@@ -1,0 +1,14 @@
+.title {
+  margin-top: 0;
+  margin-bottom: $spacing;
+  padding: 0 $spacing-md;
+  font-weight: 700;
+  color: $white;
+  text-align: center;
+}
+.title--sm {
+  font-size: 26px;
+}
+.title--md {
+  font-size: 48px;
+}
