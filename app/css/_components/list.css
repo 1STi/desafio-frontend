@@ -1,0 +1,10 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.list--inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

@@ -1,0 +1,19 @@
+.search {
+  margin-top: $spacing;
+  padding: $spacing-md $spacing $spacing-lg $spacing;
+  border-bottom: 1px solid $white;
+}
+.search__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.search__form .btn {
+  margin-top: $spacing;
+  margin-left: -40px;
+}
+.search__control {
+  width: 100%;
+  padding: $spacing-md;
+  border: 1px solid $orange-darker;
+}

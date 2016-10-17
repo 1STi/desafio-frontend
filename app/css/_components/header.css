@@ -1,0 +1,10 @@
+.header {
+  padding-top: $spacing-lg;
+  padding-bottom: $spacing-lg;
+}
+@media screen and (min-width: 600px) {
+  .header {
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+}

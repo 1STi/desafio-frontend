@@ -1,0 +1,9 @@
+.btn {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+.btn:focus {
+  outline: none;
+}
