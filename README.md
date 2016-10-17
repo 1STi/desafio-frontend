@@ -2,7 +2,6 @@
 
 ```
 npm install -g gulp
-
 ```
 
 ##### Install dependencies
