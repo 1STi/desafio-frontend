@@ -1,0 +1,26 @@
+{
+  "name": "desafio-frontend-gkal19",
+  "version": "0.0.1",
+  "description": "Desafio para a 1sti",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 4000 -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gkal19/desafio-frontend.git"
+  },
+  "author": "Gabriel Kalani <gabrielsilva1956@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gkal19/desafio-frontend/issues"
+  },
+  "homepage": "https://github.com/gkal19/desafio-frontend#readme",  
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^2.0.0"
+  }
+}

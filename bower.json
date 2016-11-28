@@ -1,0 +1,21 @@
+{
+  "name": "desafio-frontend-gkal19",
+  "description": "Desafio para a 1sti",
+  "main": "index.js",
+  "authors": [
+    "Gabriel Kalani <gabrielsilv1956@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/gkal19/desafio-frontend",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "axios": "^0.14.0"
+  }
+}
