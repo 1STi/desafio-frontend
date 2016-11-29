@@ -1,0 +1,1 @@
+export const RECEIVE_WEATHERS = 'RECEIVE_WEATHERS';
