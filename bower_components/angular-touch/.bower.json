@@ -1,0 +1,20 @@
+{
+  "name": "angular-touch",
+  "version": "1.5.9",
+  "license": "MIT",
+  "main": "./angular-touch.js",
+  "ignore": [],
+  "dependencies": {
+    "angular": "1.5.9"
+  },
+  "homepage": "https://github.com/angular/bower-angular-touch",
+  "_release": "1.5.9",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.5.9",
+    "commit": "686ab13de4a7f1b00ebbff4dbc9abc9054d65996"
+  },
+  "_source": "https://github.com/angular/bower-angular-touch.git",
+  "_target": "^1.5.0",
+  "_originalSource": "angular-touch"
+}
