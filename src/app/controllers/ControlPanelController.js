@@ -18,8 +18,8 @@
         self.newState = newState;
         var cities = ['Rio de Janeiro', 'São Paulo', 'Belo Horizonte', 'Brasilia', 'Belém', 'Salvador', 'Curitiba', 'Fortaleza', 'Manaus', 'João Pessoa'];
 
-        self.getMapTranslate = function(key){
-           return yahooWeatherService.getMapTranslate(key);
+        self.getMapTranslate = function(key) {
+            return yahooWeatherService.getMapTranslate(key);
         };
 
         self.getCities = function() {
@@ -144,7 +144,6 @@
         function getLocationsDefault() {
             cities.forEach(function(city, index) {
                 requestYahoo(city).then(function successCallback(data) {
-                    console.log(data);
                     if (index % 2 === 0) {
                         self.leftTemps.push(data);
                     } else {

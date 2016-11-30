@@ -62,18 +62,8 @@
   color: orange;
 }
 
-.margin-day {
-  margin-right: 5px;
-}
-
-.lowtemp {
-  margin-top: -20px;
+.temp {
   color: #FF8400;
-}
-
-.hightemp {
-  margin-left: 3px;
-  margin-right: 8px;
 }
 
 .divider1,
