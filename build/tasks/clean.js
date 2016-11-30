@@ -1,8 +1,8 @@
 const gulp = require('gulp'),
-  del = require('del');
+    del = require('del');
 
 gulp.task('clean', () => {
-  return del.sync([
-    './dist/**/*'
-  ]);
+    return del.sync([
+        './dist/**/*'
+    ]);
 });
