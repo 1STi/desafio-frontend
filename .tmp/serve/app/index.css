@@ -1,0 +1,82 @@
+.card-custom {
+  opacity: 0.9;
+  background-color: white;
+  padding: 30px;
+}
+
+.padding40 {
+  padding-top: 40px;
+}
+
+#grad1 {
+  background: #FF8400;
+  /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#FF8400, #FFBB00);
+  /* Standard syntax */
+}
+
+.background-transparent {
+  background-color: transparent;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+.color-primary {
+  color: orange;
+}
+
+/* style icon */
+.inner-addon .iconsearch {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  margin-right: 35px;
+}
+
+.right-addon .iconsearch {
+  right: 0px;
+}
+
+/* add padding  */
+.right-addon input {
+  margin-right: 40px;
+}
+
+.title-dashboard,
+.title-content {
+  color: white;
+}
+
+.title-dashboard {
+  font-size: 60px;
+}
+
+.arrow-custom {
+  margin-top: 10px;
+  color: orange;
+}
+
+.temp {
+  color: #FF8400;
+}
+
+.divider1,
+.divider2 {
+  border-width: 1.5px !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.divider1 {
+  background-color: #FF8400 !important;
+}
+
+.divider2 {
+  background-color: #FFFFFF !important;
+}
