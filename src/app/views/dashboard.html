@@ -1,11 +1,9 @@
 <md-content class="background-transparent">
-    <div layout="row">
-        <div layout="column" layout-align="center center" flex>
-            <h1 class="title-dashboard">Previsão do tempo</h1>
-        </div>
+    <div layout="row" layout-align="center center" layout-align="center center">
+        <h1 class="title-dashboard">Previsão do tempo</h1>
     </div>
     <div ng-show="vm.selectedItem" layout-align="center center" layout="row">
-        <md-card flex="70" flex-xs="100" class="card-custom">
+        <md-card flex="40" flex-xs="100" class="card-custom">
             <div layout="row">
                 <div layout="column">
                     <h3 class="md-padding">{{vm.selectedItem.location.city}}, {{vm.selectedItem.location.region}} - {{vm.selectedItem.location.country}}</h3>
@@ -13,7 +11,7 @@
             </div>
             <div layout="row">
                 <div layout="column" flex="100">
-                    <b><h1>{{vm.selectedItem.item.condition.temp | formatTemperature: 'C'}}°C {{vm.selectedItem.item.condition.text}}</h1></b>
+                    <b><h1>{{vm.selectedItem.item.condition.temp | formatTemperature: 'C'}}°C {{vm.getMapTranslate(vm.selectedItem.item.condition.text)}}</h1></b>
                 </div>
             </div>
             <div layout="row" layout-xs="row">
@@ -32,7 +30,7 @@
                 </p>
             </div>
             <div layout="row" class="md-padding">
-                <p layout-align="center center" layout="column" layout-align="center left">
+                <p layout="column" layout-align="center left">
                     <b>   Vento {{vm.selectedItem.wind.speed | speedFilter: 'mph'}} Km/h</b>
                 </p>
                 <p layout-align="center center" layout="column" flex="40">
@@ -47,10 +45,10 @@
             <md-card-content layout="row" layout-xs="row">
                 <md-content layout-align="center center" flex layout="row">
                     <div layout="row">
-                        <div ng-repeat="forecast in vm.selectedItem.item.forecast">
+                        <div class="margin-day" ng-repeat="forecast in vm.selectedItem.item.forecast">
                             <div layout="row">
-                                <p layout="column" class="margin-day">
-                                    <b> {{forecast.day}}</b>
+                                <p layout="column" >
+                                    <b> {{vm.getMapTranslate(forecast.day)}}</b>
                                 </p>
                             </div>
                             <div class="lowtemp" layout="row" layout-xs="row">
@@ -68,9 +66,9 @@
         </md-card>
     </div>
     <div layout="row" layout-align="center center" flex>
-        <form  name="cityForm" layout-align="center center" layout="column" flex="70" flex-xs="100">
+        <form name="cityForm" flex="40" flex-xs="100">
             <div class="inner-addon right-addon">
-                <i  class="color-primary iconsearch material-icons">search</i>
+                <i class="color-primary iconsearch material-icons">search</i>
                 <md-autocomplete class="input-search" md-no-cache="true" md-search-text="vm.searchText" md-selected-item-change="vm.getCityBySearch(item.value)" md-items="item in vm.querySearch(vm.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Insira aqui o nome da cidade">
                     <md-item-template>
                         <span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.display}}</span>
@@ -84,22 +82,16 @@
         </form>
     </div>
     <div layout="row" layout-align="center center" class="padding40" flex="100">
-        <md-divider layout-align="center center" flex="60" class="divider2"></md-divider>
+        <md-divider layout-align="center center" flex="40" flex-xs="100" class="divider2"></md-divider>
     </div>
 </md-content>
 <md-content ng-init="vm.initData()" class="background-transparent" class="md-padding" layout-xs="column">
-    <div layout="row">
-        <div flex="0" flex-gt-xs="25" layout="column">
-        </div>
-        <div layout-align-xs="left left" layout="column" flex>
-            <h1 class="title-content">Capitais</h1>
-        </div>
+    <div layout="row" layout-align="center center" flex="100">
+        <h2 layout-align="center center" flex="40" flex-xs="100" class="title-content">Capitais</h2>
     </div>
-    <div layout="row" layout-xs="column">
-        <div flex-xs flex-gt-xs="25" layout="column">
-        </div>
-        <div flex-xs flex-gt-xs="25" layout="column">
-            <table>
+    <div layout="row" layout-align="center center" flex="100">
+        <div layout-align="center center" flex="30" flex-xs="100">
+            <table layout="column">
                 <thead>
                     <tr>
                         <th>Min</th>
@@ -116,8 +108,8 @@
                 </tbody>
             </table>
         </div>
-        <div flex-xs flex-gt-xs="25" layout="column">
-            <table>
+        <div layout-align="center center" flex="10" flex-xs="100">
+            <table layout="column">
                 <thead>
                     <tr>
                         <th>Min</th>
@@ -133,8 +125,6 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div flex-xs flex-gt-xs="25" layout="column">
         </div>
     </div>
 </md-content>

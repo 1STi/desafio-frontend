@@ -10,48 +10,43 @@
 
         var self = this;
 
-        // var GEOCODE_ENDPOINT = "http://where.yahooapis.com/geocode";
+        var mapTranslate = {
+            'Sun': 'Domingo',
+            'Mon': 'Segunda',
+            'Tue': 'Terça',
+            'Wed': 'Quarta',
+            'Thu': 'Quinta',
+            'Fri': 'Sexta',
+            'Sat': 'Sábado',
+            'Partly Cloud': 'Parcialmente Nublado',
+            'Partly Cloudy': 'Nublado',
+            'Showers': 'Chuvoso',
+            'AM Showers': 'Chuvoso à manhã',
+            'PM Showers': 'Chuvoso à noite',
+            'PM Thunderstorms': 'Trovoadas à noite',
+            'Scattered Thunderstorms': 'Trovoadas dispersas',
+            'Light Rain with Thunder': 'Chuva leve, com trovões',
+            'Thunderstorms': 'Trovoadas',
+            'Heavy Rain': 'Chuva forte',
+            'Mostly Sunny': 'Parcialmente ensolarado',
+            'Light Rain': 'Chuva leve',
+            'Fog': 'Névoa',
+            'Fair': 'Sereno',
+            'Sunny': 'Ensolarado',
+            'AM Rain': 'Chuva à manhã',
+            'PM Rain': 'Chuva à noite',
+            'Mostly Cloudy': 'Parcialmente Nublado',
+            'Isolated Thunderstorms': 'Trovoadas isoladas',
+            'Thundershowers': 'Trovoadas',
+            'Heavy Thunderstorms': 'Trovoadas fortes',
+            'Clear': 'Limpo',
+            'Rain': 'Chuva',
+            'Cloudy': 'Nublado'
+        }
 
-        // var YAHOO_GEO_APP_ID = "zHgnBS4m";
-        // var APP_ID = "&appid=" + YAHOO_GEO_APP_ID;
-        // var LOCATION = "?location=";
-        // var FLAGS = "&flags=J&gflags=R";
-
-        // //http://query.yahooapis.com/v1/public/yql?q=select item from weather.forecast where location="48907"&format=json
-
-        // // Yahoo Weather API vars
-        // var FORECAST_ENDPOINT = "http://query.yahooapis.com/v1/public/yql?q=";
-
-        // var FORECAST_YQL_OPEN = "select * from weather.forecast where woeid='";
-        // var FORECAST_YQL_CLOSE = "'&format=json";
-
-        // self.getWOEID = function(position, successCallback, failureCallback) {
-        //     // This would be so much nicer in coffeescript!
-        //     var endPoint = GEOCODE_ENDPOINT + LOCATION + position.latitude + "," + position.longitude + FLAGS + APP_ID;
-        //     $log.info("End point = " + endPoint);
-
-        //     $http.get(endPoint)
-        //         .success(function(data, status, headers, config) {
-        //             successCallback(data);
-        //         })
-        //         .error(function(data, status, headers, config) {
-        //             failureCallback(status);
-        //         });
-        // }
-
-
-
-        // self.getWeatherForWOEID = function(woeid, successCallback, failureCallback) {
-        //     var endPoint = FORECAST_ENDPOINT + FORECAST_YQL_OPEN + woeid + FORECAST_YQL_CLOSE;
-        //     $log.info("End point = " + endPoint);
-        //     $http.get(endPoint)
-        //         .success(function(data, status, headers, config) {
-        //             successCallback(data);
-        //         })
-        //         .error(function(data, status, headers, config) {
-        //             failureCallback(status);
-        //         });
-        // }
+        self.getMapTranslate = function(key){
+            return mapTranslate[key];
+        };
 
         self.getWeatherByCityName = function(city, successCallback, failureCallback) {
             var deferred = $q.defer();
@@ -70,6 +65,6 @@
             });
 
             return deferred.promise;
-        }
+        };
     }
 })();

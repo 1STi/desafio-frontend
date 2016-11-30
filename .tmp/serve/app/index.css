@@ -34,7 +34,7 @@
 /* style icon */
 .inner-addon .iconsearch {
   position: absolute;
-  padding: 3%;
+  padding: 10px;
   pointer-events: none;
   margin-right: 35px;
 }
@@ -57,19 +57,13 @@
   font-size: 60px;
 }
 
-.input-search {
-  width: 270px;
-  position: initial;
-  font-size: 15px;
-}
-
 .arrow-custom {
   margin-top: 10px;
   color: orange;
 }
 
 .margin-day {
-  margin-left: 10px;
+  margin-right: 5px;
 }
 
 .lowtemp {

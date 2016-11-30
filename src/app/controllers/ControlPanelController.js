@@ -18,6 +18,9 @@
         self.newState = newState;
         var cities = ['Rio de Janeiro', 'São Paulo', 'Belo Horizonte', 'Brasilia', 'Belém', 'Salvador', 'Curitiba', 'Fortaleza', 'Manaus', 'João Pessoa'];
 
+        self.getMapTranslate = function(key){
+           return yahooWeatherService.getMapTranslate(key);
+        };
 
         self.getCities = function() {
             return citiesService.getCities();
