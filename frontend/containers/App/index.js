@@ -9,6 +9,16 @@ class App extends SuperComponent {
     this.onSearch = this.onSearch.bind(this);
   }
 
+  componentDidMount() {
+    this.Api.Weather.query('tehran')
+      .then(success => {
+        console.log(success)
+      })
+      .catch(error => {
+        console.log(error)
+      });
+  }
+
   onSearch(event) {
     event.preventDefault();
     console.log(this.props.form);
