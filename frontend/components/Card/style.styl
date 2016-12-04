@@ -1,0 +1,97 @@
+.card
+  margin: 0 auto
+  padding-top: 25px
+  width: 64.66%
+
+  + element(content)
+      background: card-background
+      opacity: 0.9
+
+  + element(close)
+      float: right
+      padding: 10px
+      color: orange
+      font-size: 1em
+      font-family: Arial
+      font-weight: bold
+
+.card-weather
+  margin: 0 auto
+  padding: 5%
+
+  + element(capital)
+      font-size: .8em
+      font-family: Arial, sans-serif
+      font-weight: bold
+      color: card-color-primary
+
+  + element(temperature)
+      margin-top: 5%
+      font-family: 'Lato', sans-serif
+      font-size: 2.5em
+      color: card-color-primary
+
+  + element(division)
+      width: 100%
+      margin-top: 60px
+      border-bottom: solid 1px orange
+      clear: both
+
+.weather-description
+  margin-top: 2.5%
+  margin-bottom: 2.5%
+  width: 75%
+  font-size: .8em
+  font-family: Arial
+  font-weight: bold
+  color: card-color-primary
+
+.weather-details__col-1
+  float: left
+
+.weather-details__col-1 li
+  width: 120px
+  padding: 5px
+
+.weather-details__col-2
+  float: left
+
+.weather-details__col-2 li
+  width: 100px
+  padding: 5px
+
+.weather-details__sensation,
+.weather-details__wind,
+.weather-details__humidity
+  color: grey
+  font-weight: 100
+
+.weather-details__icon
+  color: card-color-secondary
+
+.weather-number-second
+  margin-left: 24%
+
+.temperature-days, .temperature-numbers
+  clear: both
+  text-align: center
+
+.temperature-days li
+  padding-top: 10px
+  padding-bottom: 10px
+  width: 70px
+  display: inline-block
+  font-size: .8em
+  font-family: Arial
+  font-weight: bold
+  color: card-color-primary
+
+.temperature-numbers li
+  display: inline-block
+  padding-bottom: 10px
+  width: 70px
+  font-size: .8em
+  font-family: Arial
+  font-weight: bold
+  color: card-color-secondary
+  clear: both

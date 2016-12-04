@@ -1,0 +1,31 @@
+.search
+  margin: 0 auto
+  padding-top: 4.16%
+  width: 60.33%
+
+  + element(form)
+      position: relative
+
+  + element(input)
+      position: relative
+      display: block
+      padding: 12px
+      width: 100%
+      background: search-input-background
+      border: 0
+      font-family: Arial
+      color: #000
+
+      &:focus
+        outline: none
+
+  + element(btn)
+      position: absolute
+      top: 12px
+      right: 10px
+      border: none
+      background: none
+      cursor: pointer
+
+  + element(icon)
+    color: search-btn-color

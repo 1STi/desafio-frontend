@@ -37,12 +37,20 @@ class App extends SuperComponent {
 
   render() {
     return (
-      <div className="app">
-        <Header onSearch={this.onSearch} />
-          <main className="main">
-            <List />
-          </main>
-        <Footer />
+      <div className="app clearfix">
+          <div className="container clearfix">
+            <div className="center">
+              <Header onSearch={this.onSearch} />
+                <main className="main">
+                  <div className="main__content">
+                    <div className="main__division-line"></div>
+                    <div className="main__capitals-list">
+                      <List />
+                    </div>
+                  </div>
+                </main>
+            </div>
+        </div>
       </div>
     );
   }
