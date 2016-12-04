@@ -7,14 +7,14 @@ const inputSearch = field => (
   <input
     className="search__input"
     type="text"
-    placeholder="Pesquise por uma Cidade"
+    placeholder="Insira aqui o nome da cidade"
     {...field.input} />
 );
 
 const Search = props => {
   return (
-    <div>
-      <form className="weather" onSubmit={props.onSearch}>
+    <div className="search">
+      <form className="search__form" onSubmit={props.onSearch}>
         <Field
           type="text"
           component={inputSearch}
