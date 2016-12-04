@@ -13,7 +13,6 @@ class Home extends SuperComponent {
     return (
       <div>
         <div className="container">
-          {'Weather'}
         </div>
       </div>
     );
