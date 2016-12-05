@@ -1,60 +1,65 @@
 import React from 'react';
 
-const List = () => (
-  <div className="capitals">
-    <h3 className="capitals__title">{'Capitais'}</h3>
+// @TODO: Rethink this structure to avoid maps
+const List = props => {
+  const { cities } = props;
+  const hasCity = cities.length || null;
+  const firstCitiesList = hasCity ? cities.slice(1, 6) : null;
+  const secondCitiesList = hasCity ? cities.slice(7, 12) : null;
 
-    <div className="weather-col-1">
-      <ul className="list-weather-1">
-        <li className="list-weather-1__title">{'Min'}</li>
-        <li>{'12°'}</li>
-        <li>{'14°'}</li>
-        <li>{'21°'}</li>
-        <li>{'24°'}</li>
-        <li>{'34°'}</li>
-      </ul>
-      <ul className="list-weather-2">
-        <li className="list-weather-1__title">{'Max'}</li>
-        <li>{'4°'}</li>
-        <li>{'14°'}</li>
-        <li>{'21°'}</li>
-        <li>{'24°'}</li>
-        <li>{'23°'}</li>
-      </ul>
-      <ul className="list-weather-3">
-        <li>{'Rio de Janeiro'}</li>
-        <li>{'Santa Catarina'}</li>
-        <li>{'Goaias'}</li>
-        <li>{'Campina Grande'}</li>
-        <li>{'Curitiba'}</li>
-      </ul>
+  let firstCol = [];
+  let secondCol = [];
+  let thirdCol = [];
+  let fourthCol = [];
+  let fifthCol = [];
+  let sixthCol = [];
+  if (firstCitiesList && secondCitiesList) {
+    firstCitiesList.map((c, idx) => {
+      firstCol.push((<div key={idx}>{`${c.forecasts[0].forecast.low}`}</div>));
+      secondCol.push((<div key={idx}>{`${c.forecasts[0].forecast.high}`}</div>));
+      thirdCol.push((<div key={idx}>{`${c.city.city}`}</div>));
+    });
+    secondCitiesList.map((c, idx) => {
+      fourthCol.push((<div key={idx}>{`${c.forecasts[0].forecast.low}`}</div>));
+      fifthCol.push((<div key={idx}>{`${c.forecasts[0].forecast.high}`}</div>));
+      sixthCol.push((<div key={idx}>{`${c.city.city}`}</div>));
+    });
+  }
+  return (
+    <div className="capitals">
+      <h3 className="capitals__title">{'Capitais'}</h3>
+      { hasCity ?
+        <div>
+          <div className="weather-col-1">
+            <div className="list-weather-1">
+              <div className="list-weather-1__title">{'Min'}</div>
+              {firstCol}
+            </div>
+            <div className="list-weather-2">
+              <div className="list-weather-1__title">{'Max'}</div>
+              {secondCol}
+            </div>
+            <div className="list-weather-3">
+              {thirdCol}
+            </div>
+          </div>
+          <div className="weather-col-2">
+            <div className="list-weather-1 list-weather-1--remove-top">
+              <div className="list-weather-2__title">{'Min'}</div>
+              {fourthCol}
+            </div>
+            <div className="list-weather-2 list-weather-1--remove-top">
+              <div className="list-weather-2__title">{'Max'}</div>
+              {fifthCol}
+            </div>
+            <div className="list-weather-4">
+              {sixthCol}
+            </div>
+          </div>
+        </div>
+      : <span>{'Carregando...'}</span>}
     </div>
-    <div className="weather-col-2">
-      <ul className="list-weather-1 list-weather-1--remove-top">
-        <li className="list-weather-2__title">{'Min'}</li>
-        <li>{'12°'}</li>
-        <li>{'14°'}</li>
-        <li>{'21°'}</li>
-        <li>{'24°'}</li>
-        <li>{'34°'}</li>
-      </ul>
-      <ul className="list-weather-2 list-weather-1--remove-top">
-        <li className="list-weather-2__title">{'Max'}</li>
-        <li>{'4°'}</li>
-        <li>{'14°'}</li>
-        <li>{'21°'}</li>
-        <li>{'24°'}</li>
-        <li>{'23°'}</li>
-      </ul>
-      <ul className="list-weather-4">
-        <li>{'Rio de Janeiro'}</li>
-        <li>{'Santa Catarina'}</li>
-        <li>{'Goaias'}</li>
-        <li>{'Campina Grande'}</li>
-        <li>{'Curitiba'}</li>
-      </ul>
-    </div>
-  </div>
-);
+  );
+};
 
 export default List;
