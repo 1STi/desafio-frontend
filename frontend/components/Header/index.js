@@ -9,8 +9,10 @@ const Header = props => {
           <div className="header-small--title">
             <h1 className="header__title">{'Previsão do Tempo'}</h1>
           </div>
-          <Card />
-          <Search onSearch={props.onSearch}/>
+          <Card city={props.city}
+                onCloseCard={props.onCloseCard}
+                toggleCard={props.toggleCard} />
+          <Search onSearch={props.onSearch} />
         </div>
       </header>
     </div>

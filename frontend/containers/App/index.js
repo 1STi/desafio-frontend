@@ -11,6 +11,10 @@ class App extends SuperComponent {
     super(props, context);
     this.onSearch = this.onSearch.bind(this);
     this.fetchCity = this.fetchCity.bind(this);
+    this.onCloseCard = this.onCloseCard.bind(this);
+    this.state = {
+      toggleCard: 'hidden'
+    };
   }
 
   componentDidMount() {
@@ -28,6 +32,7 @@ class App extends SuperComponent {
     // @TODO Add Debounce and move this request for actions
     event.preventDefault();
     const keyword = this.props.form.weather.values.city;
+    this.setState({ toggleCard: 'show' });
     this.fetchCity(keyword)
       .then(response => {
         const { query: { results } } = response;
@@ -35,17 +40,24 @@ class App extends SuperComponent {
       }).catch(error => error);
   }
 
+  onCloseCard() {
+    this.setState({ toggleCard: 'hidden' });
+  }
+
   render() {
     return (
       <div className="app clearfix">
           <div className="container clearfix">
             <div className="center">
-              <Header onSearch={this.onSearch} />
+              <Header onSearch={this.onSearch}
+                      onCloseCard={this.onCloseCard}
+                      toggleCard={this.state.toggleCard}
+                      city={this.props.weather.currentCity}/>
                 <main className="main">
                   <div className="main__content">
                     <div className="main__division-line"></div>
                     <div className="main__capitals-list">
-                      <List />
+                      <List cities={this.props.weather.cities}/>
                     </div>
                   </div>
                 </main>
