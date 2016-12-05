@@ -1,0 +1,31 @@
+export const REQUEST_ALL_CITIES = 'REQUEST_ALL_CITIES';
+export const REQUEST_SINGLE_CITY = 'REQUEST_SINGLE_CITY';
+export const CITIES = [
+	"Rio Branco",
+	"Maceio",
+	"Macapa",
+	"Manaus",
+	"Salvador",
+	"Fortaleza",
+	"Brasilia",
+	"Vitoria",
+	"Goiania",
+	"Sao Luís",
+	"Cuiaba",
+	"Campo Grande",
+	"Belo Horizonte",
+	"Belem",
+	"Joao Pessoa",
+	"Curitiba",
+	"Recife",
+	"Teresina",
+	"Rio de Janeiro",
+	"Natal",
+	"Porto Alegre",
+	"Porto Velho",
+	"Boa Vista",
+	"Florianopolis",
+	"Sao Paulo",
+	"Aracaju",
+	"Palmas"
+];

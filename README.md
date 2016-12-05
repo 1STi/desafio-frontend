@@ -1,49 +1,78 @@
-# Desafio-Frontend
+# Weather
 
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/1sti-transformacao.png)
+![Weather]("https://github.com/Jessica7/desafio-frontend/assets/images/wheater-icon.png")
 
-## Bem-vindo
+Description
 
-A 1STi é uma consultoria em tecnologias digitais emergentes que tem a missão de aproximar a tecnologia das reais necessidades sociais. Nós enxergamos a tecnologia como um presente à humanidade dado pela expressão de nosso próprio intelecto, realizando uma síntese entre arte, humanidade e ciência.
+> NOTE: I choose include the sass on project, because some third libs can has files writed
+using sass.
+When you to install the node-sass module frequently happen some errors
+and the mostly comuns are fixed:
+- [The libsass binding was not found](https://github.com/sass/node-sass/issues/1162)
+- [Error: Missing binding](https://github.com/sass/node-sass/issues/1527)
 
-Nosso modelo de negócios combina projetos de valor compartilhado com consultoria nas tecnologias mais avançadas. Esse desafio é uma oportunidade para fazer parte do nosso time em uma jornada de aprendizado e desenvolvimento de interfaces web!
+## Stack:
 
-## Aprendizado e desenvolvimento
+**Front-End:**
+* ReactJS
+* Redux
+* Stylus
+* Webpack
 
-Você pode esperar um trabalho intenso em projetos HTML5/CSS3 com o framework React, do facebook, e boas práticas em Redux, um mecanismo de gerenciamento de estado de aplicações, além de diversos componentes javascript. 
+**Back-End**
+* Node
+* Express
 
-O aprendizado se dá através de projetos reais, na construção de sites e aplicações que ajudem causas sociais de impacto. Conforme a evolução, serão feitas transições para projetos de consultoria em ambientes de negócio complexos. Temos o suporte de vídeo aulas em inglês para apoiar os estudos e montamos um plano individual em conjunto.
+### Run the project locally
 
-O trabalho é home office, com carga horária de 6 horas por dia e comunicação intensa via slack e sala de vídeo no appear. Espere uma equipe engajada e ideológica, mas muito mão na massa e com sólidos princípios de arquitetura de aplicações web.
+### Prepare the environment:
 
-O valor da bolsa de estágio por 01 ano é de R$ 1.000,00/mês.
-Serão dois selecionados e apos o desafio técnico teremos conversas por skype, mas fique à vontade para já ir nos conhecendo no slack.
+You must install:
+* Node 6
+* Webpack
+* BrowserSync is a global module
+* Babel
+* node-sass global
 
-## Como participar
+### Install the dependencies:
 
-* Crie um novo fork e branch com seu nome-sobrenome e faça um pull request quando estiver pronto. Iremos fazer code review.
-* Envie um email para ola@1sti.com.br para te adicionarmos ao time slack do desafio.
+Local dependences
+```
+npm install
+// or
+sudo npm install
+```
 
-## O desafio
+Global dependences
+```
+npm install -g browser-sync
+npm install -g node-sass
+```
 
-Vamos dar uma olhada na previsão do tempo? A meta é criarmos uma página simples, que consuma a API do Yahoo de previsão do tempo (https://developer.yahoo.com/weather/). O layout final deverá ficar o mais próximo possível da versão abaixo (sim, vamos ter a versão responsiva mobile e a versão desktop):
+### Start project
 
-Web:
+```JS
+npm run dev
+```
 
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png)
+You can view the app on the url `http://localhost:4000`.
 
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png)
+### Improves:
 
-Mobile responsivo:
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png)
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png)
-
-## Dicas
-
-* Tudo bem, até pode usar jquery. Se você não quiser usar (bônus), uma sugestão: Axios para a comunicação com a API.
-* HTML o mais semântico possível.
-* Branches com readme e instruções de implantação serão bem vindos.
-* Pré-processadores CSS como Stylus ou LESS também.
-* Que tal utilizar BEM nos identificadores css? http://getbem.com/naming/ 
+. Add transition on card
+. Remove especial characters, spaces on search and transform in lowercase.
+. Using debouce on search
+. Using geolocation when the browser has support
+. TDD
+. Media querys of iphone
+. Create message on search not found
+. Make a loader
+. Calculate thermal sensation
+. Create autocomplete
+. Create sort list
+. acentuação
+. translation
+. Show all citie's capitals
+. When to click in a capital to loading information on the card
+. Create loading action when to make the second search to active loader again
+>>>>>>> jessicanascimento
