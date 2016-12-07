@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+body {
+    background: linear-gradient(rgb(255, 128, 0), rgb(255, 203, 64));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 700;
+}
+
+div#wrapper {
+    margin: 15px auto;
+    padding: 15px;
+}
+
+header#head {
+    text-align: center;
+}
