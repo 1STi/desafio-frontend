@@ -16,6 +16,35 @@
         <header id="head">
             <h1>Previsão do Tempo</h1>
         </header>
+        <div id="modal-result">
+            <header>
+                <span id="close-result">&times;</span>
+                <h2 id="location"></h2>
+            </header>
+            <div id="modal-content-result">
+                <h3 id="condition"></h3>
+            </div>
+            <footer></footer>
+        </div>
+        <section id="search">
+            <input id="input-city" type="text" placeholder="Insira aqui o nome da cidade..." maxlength="45">
+        </section>
+        <hr id="separator"></hr>
+        <section id="capitals">
+            <header>
+                <h2>Capitais</h2>
+            </header>
+            <table id="table-capitals">
+                <thead>
+                    <tr>
+                        <th>Min</th>
+                        <th>Max</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="table-body-capitals"></tbody>
+            </table>
+        </section>
     </div>
     <script src="resources/js/script.js"></script>
 </body>
