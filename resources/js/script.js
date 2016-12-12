@@ -1,27 +1,32 @@
 var query = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22:city%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
 
-var namesCapitals = ["Rio de Janeiro", "São Paulo"
-    , "Belo Horizonte", "Brasília"
-    , "Belém", "Salvador"
+var namesCapitals = ["Rio de Janeiro", "Sao Paulo"
+    , "Belo Horizonte", "Brasilia"
+    , "Belem", "Salvador"
     , "Curitiba", "Fortaleza"
-    , "Manaus", "João Pessoa"];
+    , "Manaus", "Joao Pessoa"];
 
+/** Get node element */
 function $(element) {
     return document.querySelector(element);
 }
 
+/** Converts fahrenheit to celsius. */
 function toCelsius(f) {
     return ((f - 32) / 1.8).toFixed(0);
 }
 
+/** Converts Mph to Mps. */
 function toMps(s) {
     return (s * 0.44 / 1).toFixed(2);
 }
 
+/** Converts Mph to Km/h. */
 function toKmh(s) {
     return (s * 1.60934 / 1).toFixed(2);
 }
 
+/** Get value of thermal sensation by means of wind speed and temperature. */
 function getThermalSensation(v, t) {
     return (33 + (10 * (v / v) + 10.45 - v) * (t - 33) / 22).toFixed(2);
 }
@@ -32,7 +37,15 @@ function loadJson(city, callback) {
     var url = query.replace(":city", encodeURI(city));
 
     req.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 0) { // Request not initialized.
+            console.log("Request not initialized...");
+        } else if (this.readyState == 1) { // Server connection established.
+            console.log("Server connection established...");
+        } else if (this.readyState == 2) { // Request received.
+            console.log("Request received...");
+        } else if (this.readyState == 3) { // Processing request.
+            console.log("Processing request...");
+        } else if (this.readyState == 4 && this.status == 200) { // Request finished and response is ready.
             callback(city, JSON.parse(this.responseText));
         }
     };
@@ -86,19 +99,22 @@ function renderCity(city, json) {
         var condition = channel.item.condition;
         $("#condition").innerHTML = toCelsius(condition.temp) + "°C " + condition.text;
 
-        var temp = channel.item.forecast[0];
-        $("span#temp-low").innerHTML = toCelsius(temp.low);
-        $("span#temp-high").innerHTML = toCelsius(temp.high);
+        var today = channel.item.forecast[0];
+        $("span#low").innerHTML = toCelsius(today.low);
+        $("span#high").innerHTML = toCelsius(today.high);
 
         var wind = channel.wind;
-        $("span#temp-sensation").innerHTML = getThermalSensation(toMps(wind.speed), toCelsius(condition.temp));
-        $("span#speed-wind").innerHTML = toKmh(wind.speed);
+        $("span#sensation").innerHTML = getThermalSensation(toMps(wind.speed), toCelsius(condition.temp));
+        $("span#wind").innerHTML = toKmh(wind.speed);
 
         var atmosphere = channel.atmosphere;
         $("span#humidity").innerHTML = atmosphere.humidity;
 
         // Forecast search result.
         var ul = $("ul#forecast");
+
+        // Remove all child elements
+        while (ul.hasChildNodes()) ul.removeChild(ul.firstChild);
 
         for (var index = 1; index <= 5; index++) {
             var li = document.createElement("LI");

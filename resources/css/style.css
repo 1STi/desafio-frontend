@@ -73,7 +73,7 @@ section#search input#input-city {
     }
 }
 
-hr {
+hr#capitals-separator {
     border: 1px solid #fff;
 }
 
@@ -109,21 +109,7 @@ td.city {
     margin-left: 12px;
 }
 
-.celsius::after {
-    content: "°";
-}
-
-.celsius-ext::after {
-    content: "°C";
-}
-
-.kmh::after {
-    content: "km/h";
-}
-
-.percent::after {
-    content: "%";
-}
+/* Begin modal result */
 
 div#modal-result {
     display: none;
@@ -222,11 +208,13 @@ div.item-detail span {
     color: #484848;
 }
 
-div#modal-result hr {
+hr#forecast-separator {
     width: 90%;
     margin: 10px auto;
     border: 1px solid rgb(255, 128, 0);
 }
+
+/* Begin forecast */
 
 ul#forecast {
     width: 80%;
@@ -243,7 +231,7 @@ ul#forecast li {
 
 ul#forecast li header {
     padding: 0;
-	margin: 0;
+    margin: 0;
 }
 
 ul#forecast li header h4 {
@@ -251,6 +239,12 @@ ul#forecast li header h4 {
     font-weight: 700;
     color: #484848;
     font-size: 16px;
+}
+
+@media screen and (max-width: 320px) {
+    ul#forecast li header h4 {
+        font-size: 14px;
+    }
 }
 
 ul#forecast li p {
@@ -263,4 +257,28 @@ ul#forecast li p span {
     font-weight: 600;
     color: rgb(255, 128, 0);
     font-size: 12px;
+}
+
+@media screen and (max-width: 320px) {
+    ul#forecast li p span {
+        font-size: 10px;
+    }
+}
+
+/* End forecast and end modal result */
+
+.celsius::after {
+    content: "°";
+}
+
+.celsius-ext::after {
+    content: "°C";
+}
+
+.kmh::after {
+    content: "km/h";
+}
+
+.percent::after {
+    content: "%";
 }

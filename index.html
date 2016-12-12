@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Previsão do Tempo</title>
+    <title>Weather forecast</title>
 
     <link href="resources/css/style.css" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
 <body>
     <div id="wrapper">
         <header id="head">
-            <h1>Previsão do Tempo</h1>
+            <h1>Weather forecast</h1>
         </header>
         <div id="modal-result">
             <header>
@@ -25,17 +25,17 @@
                 <h3 id="condition"></h3>
                 <div id="condition-detail">
                     <div class="item-detail">
-                        <i class="fa fa-arrow-down"></i><span id="temp-low" class="celsius"></span>
-                        <i class="fa fa-arrow-up"></i><span id="temp-high" class="celsius"></span>
+                        <i class="fa fa-arrow-down"></i><span id="low" class="celsius"></span>
+                        <i class="fa fa-arrow-up"></i><span id="high" class="celsius"></span>
                     </div>
                     <div class="item-detail">
-                        <p>Sensação:<span id="temp-sensation" class="celsius-ext"></span></p>
+                        <p>Sensation:<span id="sensation" class="celsius-ext"></span></p>
                     </div>
                     <div class="item-detail">
-                        <p>Vento:<span id="speed-wind" class="kmh"></span></p>
+                        <p>Wind:<span id="wind" class="kmh"></span></p>
                     </div>
                     <div class="item-detail">
-                        <p>Humidade:<span id="humidity" class="percent"></span></p>
+                        <p>Humidity:<span id="humidity" class="percent"></span></p>
                     </div>
                 </div>
             </div>
@@ -45,12 +45,12 @@
             </footer>
         </div>
         <section id="search">
-            <input id="input-city" type="text" placeholder="Insira aqui o nome da cidade..." maxlength="45">
+            <input id="input-city" type="text" placeholder="Enter here the city..." maxlength="45">
         </section>
         <hr id="capitals-separator"></hr>
         <section id="capitals">
             <header>
-                <h2>Capitais</h2>
+                <h2>Capitals</h2>
             </header>
             <table id="table-capitals">
                 <thead>
