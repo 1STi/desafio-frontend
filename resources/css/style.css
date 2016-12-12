@@ -1,5 +1,7 @@
 @charset 'utf-8';
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
 body {
     margin: 0;
     padding: 0;
@@ -71,12 +73,12 @@ section#search input#input-city {
     }
 }
 
-hr#separator {
+hr {
     border: 1px solid #fff;
 }
 
 @media screen and (max-width: 320px) {
-    hr#separator {
+    hr {
         margin: 0 -100%;
     }
 }
@@ -111,6 +113,18 @@ td.city {
     content: "°";
 }
 
+.celsius-ext::after {
+    content: "°C";
+}
+
+.kmh::after {
+    content: "km/h";
+}
+
+.percent::after {
+    content: "%";
+}
+
 div#modal-result {
     display: none;
     margin: 20px auto;
@@ -126,7 +140,7 @@ div#modal-result {
 
 @media screen and (min-width: 768px) {
     div#modal-result {
-        width: 80%;
+        width: 75%;
     }
 }
 
@@ -166,4 +180,87 @@ h3#condition {
     font-size: 1.7em;
     font-weight: 700;
     color: #696969;
+}
+
+@media screen and (max-width: 320px) {
+    h3#condition {
+        font-size: 1.4em;
+    }
+}
+
+div#condition-detail {
+    width: 260px;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+div.item-detail {
+    display: inline-block;
+    width: 45%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 320px) {
+    div.item-detail {
+        width: 100%;
+    }
+}
+
+div.item-detail i.fa {
+    color: rgb(255, 128, 0);
+}
+
+div.item-detail p {
+    margin: 0;
+    color: #797979;
+}
+
+div.item-detail span {
+    margin-left: 5px;
+    font-weight: 700;
+    color: #484848;
+}
+
+div#modal-result hr {
+    width: 90%;
+    margin: 10px auto;
+    border: 1px solid rgb(255, 128, 0);
+}
+
+ul#forecast {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+ul#forecast li {
+    display: inline-block;
+    width: 19%;
+    text-align: center;
+}
+
+ul#forecast li header {
+    padding: 0;
+	margin: 0;
+}
+
+ul#forecast li header h4 {
+    margin: 4px 0;
+    font-weight: 700;
+    color: #484848;
+    font-size: 16px;
+}
+
+ul#forecast li p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+ul#forecast li p span {
+    margin: 0 2px;
+    font-weight: 600;
+    color: rgb(255, 128, 0);
+    font-size: 12px;
 }

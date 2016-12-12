@@ -23,13 +23,31 @@
             </header>
             <div id="modal-content-result">
                 <h3 id="condition"></h3>
+                <div id="condition-detail">
+                    <div class="item-detail">
+                        <i class="fa fa-arrow-down"></i><span id="temp-low" class="celsius"></span>
+                        <i class="fa fa-arrow-up"></i><span id="temp-high" class="celsius"></span>
+                    </div>
+                    <div class="item-detail">
+                        <p>Sensação:<span id="temp-sensation" class="celsius-ext"></span></p>
+                    </div>
+                    <div class="item-detail">
+                        <p>Vento:<span id="speed-wind" class="kmh"></span></p>
+                    </div>
+                    <div class="item-detail">
+                        <p>Humidade:<span id="humidity" class="percent"></span></p>
+                    </div>
+                </div>
             </div>
-            <footer></footer>
+            <hr id="forecast-separator"></hr>
+            <footer>
+                <ul id="forecast"></ul>
+            </footer>
         </div>
         <section id="search">
             <input id="input-city" type="text" placeholder="Insira aqui o nome da cidade..." maxlength="45">
         </section>
-        <hr id="separator"></hr>
+        <hr id="capitals-separator"></hr>
         <section id="capitals">
             <header>
                 <h2>Capitais</h2>

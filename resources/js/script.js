@@ -2,7 +2,9 @@ var query = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20wea
 
 var namesCapitals = ["Rio de Janeiro", "São Paulo"
     , "Belo Horizonte", "Brasília"
-    , "Belém", "Salvador"];
+    , "Belém", "Salvador"
+    , "Curitiba", "Fortaleza"
+    , "Manaus", "João Pessoa"];
 
 function $(element) {
     return document.querySelector(element);
@@ -10,6 +12,18 @@ function $(element) {
 
 function toCelsius(f) {
     return ((f - 32) / 1.8).toFixed(0);
+}
+
+function toMps(s) {
+    return (s * 0.44 / 1).toFixed(2);
+}
+
+function toKmh(s) {
+    return (s * 1.60934 / 1).toFixed(2);
+}
+
+function getThermalSensation(v, t) {
+    return (33 + (10 * (v / v) + 10.45 - v) * (t - 33) / 22).toFixed(2);
 }
 
 function loadJson(city, callback) {
@@ -63,12 +77,51 @@ function renderCapital(city, json) {
 function renderCity(city, json) {
     if (json.query.results) {
         $("#modal-result").style.display = "block";
-        
-        var location = json.query.results.channel.location;
+
+        var channel = json.query.results.channel;
+
+        var location = channel.location;
         $("#location").innerHTML = location.city + ", " + location.region + " - " + location.country;
 
-        var condition = json.query.results.channel.item.condition;
+        var condition = channel.item.condition;
         $("#condition").innerHTML = toCelsius(condition.temp) + "°C " + condition.text;
+
+        var temp = channel.item.forecast[0];
+        $("span#temp-low").innerHTML = toCelsius(temp.low);
+        $("span#temp-high").innerHTML = toCelsius(temp.high);
+
+        var wind = channel.wind;
+        $("span#temp-sensation").innerHTML = getThermalSensation(toMps(wind.speed), toCelsius(condition.temp));
+        $("span#speed-wind").innerHTML = toKmh(wind.speed);
+
+        var atmosphere = channel.atmosphere;
+        $("span#humidity").innerHTML = atmosphere.humidity;
+
+        // Forecast search result.
+        var ul = $("ul#forecast");
+
+        for (var index = 1; index <= 5; index++) {
+            var li = document.createElement("LI");
+            var header = document.createElement("HEADER");
+            var h4 = document.createElement("H4");
+            var p = document.createElement("P");
+            var spanLow = document.createElement("SPAN");
+            var spanHigh = document.createElement("SPAN");
+
+            spanLow.setAttribute("class", "celsius");
+            spanHigh.setAttribute("class", "celsius");
+
+            h4.appendChild(document.createTextNode(channel.item.forecast[index].day));
+            spanLow.appendChild(document.createTextNode(toCelsius(channel.item.forecast[index].low)));
+            spanHigh.appendChild(document.createTextNode(toCelsius(channel.item.forecast[index].high)));
+
+            header.appendChild(h4);
+            p.appendChild(spanLow);
+            p.appendChild(spanHigh);
+            li.appendChild(header);
+            li.appendChild(p);
+            ul.appendChild(li);
+        }
     }
 }
 
