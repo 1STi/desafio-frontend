@@ -40,12 +40,14 @@ function loadJson(city, callback) {
         if (this.readyState == 0) { // Request not initialized.
             console.log("Request not initialized...");
         } else if (this.readyState == 1) { // Server connection established.
+            $("div#status").style.display = "block";
             console.log("Server connection established...");
         } else if (this.readyState == 2) { // Request received.
             console.log("Request received...");
         } else if (this.readyState == 3) { // Processing request.
             console.log("Processing request...");
         } else if (this.readyState == 4 && this.status == 200) { // Request finished and response is ready.
+            $("div#status").style.display = "none";
             callback(city, JSON.parse(this.responseText));
         }
     };

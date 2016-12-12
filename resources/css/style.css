@@ -48,6 +48,17 @@ div#wrapper {
     }
 }
 
+div#status {
+    display: none;
+    width: 64px;
+    height: 64px;
+    margin: 10px auto;
+    background-image: url("../images/status.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 header#head, section#search {
     text-align: center;
 }
