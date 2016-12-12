@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Weather forecast</title>
+
+    <link href="resources/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header id="head">
+            <h1>Weather forecast</h1>
+        </header>
+        <div id="modal-result">
+            <header>
+                <span id="close-result">&times;</span>
+                <h2 id="location"></h2>
+            </header>
+            <div id="modal-content-result">
+                <h3 id="condition"></h3>
+                <div id="condition-detail">
+                    <div class="item-detail">
+                        <i class="fa fa-arrow-down"></i><span id="low" class="celsius"></span>
+                        <i class="fa fa-arrow-up"></i><span id="high" class="celsius"></span>
+                    </div>
+                    <div class="item-detail">
+                        <p>Sensation:<span id="sensation" class="celsius-ext"></span></p>
+                    </div>
+                    <div class="item-detail">
+                        <p>Wind:<span id="wind" class="kmh"></span></p>
+                    </div>
+                    <div class="item-detail">
+                        <p>Humidity:<span id="humidity" class="percent"></span></p>
+                    </div>
+                </div>
+            </div>
+            <hr id="forecast-separator"></hr>
+            <footer>
+                <ul id="forecast"></ul>
+            </footer>
+        </div>
+        <div id="status"></div>
+        <section id="search">
+            <input id="input-city" type="text" placeholder="Enter here the city..." maxlength="45">
+        </section>
+        <hr id="capitals-separator"></hr>
+        <section id="capitals">
+            <header>
+                <h2>Capitals</h2>
+            </header>
+            <table id="table-capitals">
+                <thead>
+                    <tr>
+                        <th>Min</th>
+                        <th>Max</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="table-body-capitals"></tbody>
+            </table>
+        </section>
+    </div>
+    <script src="resources/js/script.js"></script>
+</body>
+
+</html>
