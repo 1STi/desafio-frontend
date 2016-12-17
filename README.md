@@ -16,7 +16,7 @@ $ npm start
 - Sass
 - Grunt
 - Babel
-- Esmascript6
+- ECMAScript6
 
 ## Applied methods
 
