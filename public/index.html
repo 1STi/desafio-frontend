@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Previsão do Tempo</title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css">
+</head>
+<body>
+
+	<header class="container">
+		<div class="header__title header__title--lg">
+			<h1>Previsão do tempo</h1>
+		</div>
+	</header>
+
+	<main class="container">
+
+		<div id="card__view"></div>
+
+		<div class="loader__group">
+			<div class="loader--traces">
+				<div class="loader--traces-bar"></div>
+				<div class="loader--traces-bar"></div>
+				<div class="loader--traces-bar"></div>
+				<div class="loader--traces-bar"></div>
+			</div>
+		</div>
+
+		<form class="form" onsubmit="weatherController.loadCard(event)">
+			<div class="form__group">
+				<input class="form__input" type="text" placeholder="Insira aqui o nome da cidade" required>
+			
+				<button class="btn form__btn--into-right" type="submit">
+					<div class="icon icon--search">search</div>
+				</button>
+			</div>
+		</form>
+
+		<div class="capitals">
+			<div class="loader__group">
+				<div class="loader--circle"></div>
+			</div>
+
+			<div class="capitals__title">
+				<h3>Capitais</h3>
+			</div>
+
+			<div id="capitals__view"></div>
+		</div>
+	</main>
+
+	<script type="text/javascript" src="js/lib/axios.min.js"></script>
+	<script type="text/javascript" src="js/app.min.js"></script>
+</body>
+</html>
