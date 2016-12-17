@@ -1,0 +1,37 @@
+@mixin linear-gradient($deg, $color-first, $color-secound) {
+    background: $color-secound;
+    background: -webkit-linear-gradient($deg, $color-first, $color-secound);
+    background: -o-linear-gradient($deg, $color-first, $color-secound);
+    background: -moz-linear-gradient($deg, $color-first, $color-secound);
+    background: linear-gradient($deg, $color-first, $color-secound);
+}
+
+@mixin icon($url, $width, $height) {
+	vertical-align: middle;
+	width: $width;
+	height: $height;
+	background: url($url);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+
+@mixin spin-complete() {
+	@-webkit-keyframes spin {
+	    0% {
+	        -webkit-transform: rotate(0deg);
+	    }
+	    100% {
+	        -webkit-transform: rotate(360deg);
+	    }
+	}
+
+	@keyframes spin {
+	    0% {
+	        transform: rotate(0deg);
+	    }
+	    100% {
+	        transform: rotate(360deg);
+	    }
+	}
+}

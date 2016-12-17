@@ -1,0 +1,43 @@
+* {
+	outline: none;
+}
+
+body {
+	height: 100vh;
+	font-family: "Open Sans", sans-serif;
+	font-size: 100%;
+	@include linear-gradient($bg-linear-angle, $bg-color-first, $bg-color-secound);
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+.col--25 {
+	float: left;
+	width: 25%;
+}
+
+.col--40 {
+	float: left;
+	width: 40%;
+}
+
+.col--60 {
+	float: left;
+	width: 60%;
+}
+
+.btn {
+	border: 0;
+	margin: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.list--inline {
+	li {
+		display: inline-block;
+	}
+}

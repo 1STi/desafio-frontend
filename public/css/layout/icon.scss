@@ -1,0 +1,19 @@
+.icon {
+	text-indent: -9999px;
+
+    &.icon--arrow-up {
+        @include icon("../img/arrow-up.svg", 15px, 15px);
+    }
+
+    &.icon--arrow-down {
+        @include icon("../img/arrow-down.svg", 15px, 15px);
+    }
+
+	&.icon--search {
+		@include icon("../img/search.svg", 25px, 25px);
+	}
+
+	&.icon--close {
+		@include icon("../img/close.svg", 16px, 16px);
+	}
+}

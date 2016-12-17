@@ -1,0 +1,55 @@
+.card {
+	display: block;
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	font-size: .8em;
+	font-weight: bold;
+	color: lighten($color-dark, 30);
+	margin: 0 auto;
+	margin-bottom: 20px;
+	background-color: $bg-color-card;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+	transition: all .3s;
+
+	@media(min-width: $media-min-width) {
+		width: 80%;
+		padding: 0 20px;
+		font-size: 1em;
+	}
+
+	.card__btn--into-right {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+
+	.card__details {
+		overflow: hidden;
+		line-height: 3em;
+		padding: .8em 2em;
+
+		.card__details--now {
+			font-size: 2.4em;
+			margin: 10px 0;
+		}
+
+		span {
+			font-weight: normal;
+		}
+	}
+
+	.card__days {
+		text-align: center;
+		overflow: hidden;
+		box-sizing: border-box;
+		line-height: 2em;
+		width: 100%;
+		padding: 10px;
+		border-top: 1px solid $bg-color-secound;
+
+		.card__days--forecast {
+			color: $bg-color-secound;
+		}
+	}
+}

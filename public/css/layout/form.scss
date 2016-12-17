@@ -1,0 +1,30 @@
+.form {
+	margin-bottom: 50px;
+}
+
+.form__group {
+	margin: 0 auto;
+	position: relative;
+	width: 90%;
+	transition: width .3s;
+
+	@media(min-width: $media-min-width) {
+		width: 80%;
+	}
+
+	.form__btn--into-right {
+		position: absolute;
+		top: 10px;
+		right: 8px;
+		color: lighten($color-dark, 20);
+	}
+}
+
+.form__input {  
+	box-sizing: border-box;
+	width: 100%;
+	font-family: inherit;
+	font-size: 1em;
+	padding: 12px;
+	border: 1px solid $bg-color-secound;
+}

@@ -1,0 +1,67 @@
+@include spin-complete();
+
+.loader__group {
+    position: relative;
+}
+
+.loader--circle {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    border: 5px solid $bg-color-secound;
+    border-radius: 50%;
+    border-top: 5px solid $color-light;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1, 2.2);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+.loader--traces {
+    display: none;
+
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    margin-left: -8px;
+
+    .loader--traces-bar {
+        display: inline-block;
+        width: 4px;
+        height: 18px;
+        border-radius: 4px;
+        animation: scale 1s ease-in-out infinite;
+
+        &:nth-child(1) {
+            animation-delay: 0;
+            background-color: $bg-color-first;
+        }
+
+        &:nth-child(2) {
+            animation-delay: .09s;
+            background-color: $color-light;
+        }
+
+        &:nth-child(3) {
+            animation-delay: .18s;
+            background-color: $bg-color-secound;
+        }
+
+        &:nth-child(4) {
+            animation-delay: .27s;
+            background-color: $color-dark;
+        }
+    }
+}
