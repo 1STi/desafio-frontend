@@ -1,0 +1,94 @@
+.search__box--hidden
+	opacity: 0
+	height: 0
+	visibility: hidden
+.search
+	padding: 0 50px
+	@media screen and (max-width: $mobile)
+		padding: 0
+	.search__box
+		background: #fff3e4
+		padding: 0 25px 0 25px
+		color: $black
+		box-shadow: 0px 0px 5px #888888
+		position: relative
+		max-width: 100%
+		@media screen and (max-width: $mobile)
+			padding: 0
+			box-shadow: inset 0px 2px 10px 0px #888888
+		.search__close
+			fill: $orangeDark
+			margin: 20px 20px 0 0
+			display: inline-block
+			top: 0
+			right: 0
+			position: absolute
+			cursor: pointer
+		.search__temp
+			font-weight: bold
+			font-size: 45px
+			padding: 0 25px 0 25px
+		.search__info
+			display: table
+			padding: 0 30px 20px 30px
+			.search__info__column
+				display: table-row
+				div
+					display: table-cell
+					padding: 20px 25px 0 0
+				.search__temp__low, .search__temp__high, .search__sensation__celsius, .search__wind__km, .search__humidity__pct
+					font-weight: bold
+				.search__sensation, .search__wind, .search__humidity
+					font-weight: 300	
+				.icon 
+					fill: $orangeDark
+		.search__local
+			padding: 25px 30px 25px 30px
+			font-weight: bold
+		.search__future
+			padding: 16px 30px 16px 30px
+			border-style: solid
+			border-width: 1px 0 0 0
+			border-color: $orangeDark
+			display: flex
+			.search__future__column
+				flex: 1
+				.search__future__day
+					font-weight: bold
+					color: $black
+					//text-align: center
+				.search__future__temp
+					color: $orangeDark
+					font-weight: bold	
+					//text-align: center
+				&:last-child
+					@media screen and (max-width: $mobile)
+						display: none				
+	.search__form
+		background: $white
+		padding: 12px 20px 12px 20px
+		border-style: solid
+		border-color: #d86c00
+		border-width: 1px
+		margin: 20px 0 40px 0
+		max-width: 100%
+		@media screen and (max-width: $mobile)
+			margin: 20px
+		.search__form__input 
+			border-style: none
+			width: 90%
+			font-size: 25px
+			outline: none
+			@media screen and (max-width: 600px)
+				font-size: 16px
+				width: 85%
+		.search__form__btn
+			color: $black
+			border-style: none
+			background: transparent
+			cursor: pointer	
+			outline: none
+			padding: 0
+			//border-style: solid
+			.icon 
+				fill: $black	

@@ -1,0 +1,42 @@
+.capitals
+	padding: 0 0 0 75px
+	border-style: solid
+	border-width: 1px 0 0 0
+	border-color: $white
+	font-family: "Open Sans", Helvetica, Arial
+	color: #222222
+	@media screen and (max-width: $mobile)
+		padding: 0 0 0 40px
+	.capitals__title
+		font-weight: bold
+		font-size: 35px
+		padding: 16px 0 16px 0
+		color: $white
+	.capitals__table
+		display: table
+		//margin: 0 auto
+		@media screen and (max-width: $mobile)
+			display: flex
+			flex-flow: column
+		.capitals__table--first, .capitals__table--second
+			display: table-cell
+			padding-right: 60px
+			.capitals__table__head
+				font-size: 14px
+				font-weight: 300
+				word-spacing: 7px
+				&:first-child
+					@media screen and (max-width: $mobile)
+						display: none
+			.capitals__table__data--first, .capitals__table__data--second
+				display: flex
+				flex-flow: column
+				margin-top: 16px
+				@media screen and (max-width: $mobile)
+					margin-top: 0
+				div 
+					font-weight: bold
+					padding: 0 0 25px 0
+					.capitals__temp
+						word-spacing: 5px
+						padding-right: 16px

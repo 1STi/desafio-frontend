@@ -1,0 +1,20 @@
+{
+  "name": "desafio-frontend",
+  "version": "1.0.0",
+  "description": "Projeto para o Desafio FrontEnd da 1STi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/marcosabb/desafio-frontend.git\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[1;2D\u001b[1;2D\u001b[1;2D\u001b[1;2D\u001b[1;2D\u001b[1;2D\u001b[1;2D\u001b[1;2D\u001b[1;2D\u001b[1;2D\u001b[1;2C\u001b[1;2C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[CJuscelinoJunior/desafio-frontend.git"
+  },
+  "author": "Juscelino Junior",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-watch": "^4.3.11"
+  }
+}
