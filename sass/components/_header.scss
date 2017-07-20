@@ -1,11 +1,11 @@
 
 header {
-  margin-top: 4rem;
   margin-bottom: .6rem;
   text-align: center;
 
 
   .header__title {
+    padding-top: 3rem;
     font-size: 3.3rem;
     color: white;
     @include fw-800;

@@ -1,7 +1,7 @@
 @media screen and (min-width: 480px) {
 
   // general responsive code 
-  html { height: 100%; }
+  html { height: 120%; }
 
   .container {
     max-width: 500px;
@@ -9,6 +9,16 @@
 
   .show-in-desktop {
     display: block;
+  }
+
+  // search section responsive code
+  #search {
+    margin: 0 5.2rem;
+
+    .search__form input.form__input {
+      width: calc(100% - 1rem);
+    }
+
   }
 
   // capitals section responsive code

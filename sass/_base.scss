@@ -2,6 +2,7 @@
 
 
 body {
+  color: $primary-color;
   box-sizing: border-box;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -16,6 +17,10 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 0;
 }
 
+ul, li {
+  margin: 0;
+  padding: 0;
+}
 
 a, button, input {
   outline: none;

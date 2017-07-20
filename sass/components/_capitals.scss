@@ -1,6 +1,8 @@
 #capitals {
-  margin: 1rem auto;
+  margin: 1rem auto; 
+  margin-bottom: 0;
 
+  padding-bottom: 1rem;
   .capitals__header {
     color: white;
     margin-bottom: 1rem;
@@ -9,9 +11,7 @@
 
 
   table {
-    color: #272727;
-    
-
+  
     th, td { 
       text-align: left;
       display: inline-block;

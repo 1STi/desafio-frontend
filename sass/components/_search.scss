@@ -1,11 +1,43 @@
 #search {
+  padding: 0;
   text-align: center;
 
-  margin: 3rem 0 2rem 0;
 
-  .form__input {
+  .search__output {    
+    background-color: $output-bgc;
+    color: #555;
+    text-align: left;
+    margin: 2rem 0;
+    padding: 1rem 1rem;
+
+    .search__output__main, .search__output__footer {
+      padding: 0 1rem;
+    }
+
+    .output__city {
+      margin-bottom: .5rem;
+    }
+
+    .output__temperature {
+      margin: 1rem 0;
+    }
+
+    .output__temperature-sub {
+      @include fw-800;
+      font-size: .6rem;
+      margin: 1rem 0;
+    }
+
+    .output__wind-humidity {
+      margin: .8rem 0;
+      font-size: .6rem;
+    }
+  }
+
+  .search__form .form__input {
     font-family: 'Open Sans', sans-serif;
-    width: 20rem;
+    margin-bottom: 3rem;
+    width: 80%;
     height: 2.3rem;
     border: 1px solid darken($orange, 10%);
     border-top: 0;
@@ -17,5 +49,32 @@
     
     padding-left: 1rem;
     padding-bottom: .1rem;
+  }
+
+  .search__output__footer {
+    ul {
+      margin: auto;
+      list-style: none;
+
+      li {
+        float: left;
+        display: inline;
+        padding-right: 1rem;
+        @include fw-800;
+        font-size: .7rem;
+
+        span.day {
+          margin-bottom: 0.3rem;
+          display: block;
+        }
+
+        span.temperature {
+          color: $orange;
+          font-size: 0.6rem;
+          text-align: center;
+        }
+
+      }
+    }
   }
 }
