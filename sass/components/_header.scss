@@ -2,6 +2,7 @@
 header {
   margin-top: 4rem;
   margin-bottom: .6rem;
+  text-align: center;
 
 
   .header__title {
@@ -10,5 +11,5 @@ header {
     @include fw-800;
   }
 
-  
+
 }

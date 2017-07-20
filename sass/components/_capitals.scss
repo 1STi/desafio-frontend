@@ -1,7 +1,8 @@
 #capitals {
 
+  margin: auto;
+
   table {
-    margin: auto;
 
     th {
       @include fw-300;
@@ -11,5 +12,14 @@
       @include fw-800;
     }
   }
-  
+
+  .capitals__header {
+    color: white;
+  }
+
+  .capitals__container {
+    // margin: auto;
+    width: 400px;
+    column-count: 2;
+  }
 }

@@ -2,9 +2,11 @@
 
 @import 'utils/variables';
 @import 'utils/mixins';
+@import 'utils/container';
 @import 'utils/classes';
 
 @import 'base';
 
 @import 'components/header';
 @import 'components/capitals';
+@import 'components/search';

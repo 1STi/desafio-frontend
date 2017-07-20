@@ -1,0 +1,19 @@
+#search {
+  text-align: center;
+
+  .form__input {
+    font-family: 'Open Sans', sans-serif;
+    width: 20rem;
+    height: 2.3rem;
+    border: 1px solid darken($orange, 10%);
+    border-top: 0;
+
+    background-image: url('../../images/search.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    
+    padding-left: 1rem;
+    padding-bottom: .1rem;
+  }
+}
