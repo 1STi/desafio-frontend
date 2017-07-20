@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700');
+
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0deg, $yellow, $orange); 
+  text-align: center;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+a, button {
+  outline: none;
+}
+
+
+a[href^=tel] {
+  color: inherit;
+  text-decoration: none;
+}

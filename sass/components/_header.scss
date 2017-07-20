@@ -1,0 +1,14 @@
+
+header {
+  margin-top: 4rem;
+  margin-bottom: .6rem;
+
+
+  .header__title {
+    font-size: 3rem;
+    color: white;
+    @include fw-800;
+  }
+
+  
+}

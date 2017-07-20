@@ -1,3 +1,10 @@
-h1 {
-  background-color: red;
-}
+
+
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/classes';
+
+@import 'base';
+
+@import 'components/header';
+@import 'components/capitals';

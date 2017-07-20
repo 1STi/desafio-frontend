@@ -1,2 +1,46 @@
-h1 {
-  background-color: red; }
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,700");
+fw-300 {
+  font-weight: 300; }
+
+fw-800 {
+  font-weight: 800; }
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  height: 100vh;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FCC900), to(#FF8000));
+  background: -webkit-linear-gradient(bottom, #FCC900, #FF8000);
+  background: -moz-linear-gradient(bottom, #FCC900, #FF8000);
+  background: -o-linear-gradient(bottom, #FCC900, #FF8000);
+  background: linear-gradient(0deg, #FCC900, #FF8000);
+  text-align: center; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+a, button {
+  outline: none; }
+
+a[href^=tel] {
+  color: inherit;
+  text-decoration: none; }
+
+header {
+  margin-top: 4rem;
+  margin-bottom: .6rem; }
+  header .header__title {
+    font-size: 3rem;
+    color: white;
+    font-weight: 800; }
+
+#capitals table {
+  margin: auto; }
+  #capitals table th {
+    font-weight: 300; }
+  #capitals table td {
+    font-weight: 800; }

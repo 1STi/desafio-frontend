@@ -1,0 +1,15 @@
+#capitals {
+
+  table {
+    margin: auto;
+
+    th {
+      @include fw-300;
+    }
+
+    td {
+      @include fw-800;
+    }
+  }
+  
+}
