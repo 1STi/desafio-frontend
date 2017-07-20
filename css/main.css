@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,700");
 .container {
   margin: auto;
-  width: 500px; }
+  width: 100%; }
   .container section {
     padding: 0 3rem; }
 
@@ -14,6 +14,25 @@ fw-800 {
 .hr__custom {
   border: 1px solid rgba(255, 255, 255, 0.5); }
 
+.show-in-desktop {
+  display: none; }
+
+@media screen and (min-width: 480px) {
+  html {
+    height: 100%; }
+  .container {
+    max-width: 500px; }
+  .show-in-desktop {
+    display: block; }
+  #capitals .capitals__container {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2; }
+  #capitals .table__header th {
+    font-size: 0.6rem; }
+  #capitals .table__content td {
+    font-size: .7rem; } }
+
 body {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -22,7 +41,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
   font-family: 'Open Sans', sans-serif;
-  height: 100vh;
   background: -webkit-gradient(linear, left bottom, left top, from(#FCC900), to(#FF8000));
   background: -webkit-linear-gradient(bottom, #FCC900, #FF8000);
   background: -moz-linear-gradient(bottom, #FCC900, #FF8000);
@@ -45,26 +63,34 @@ header {
   margin-bottom: .6rem;
   text-align: center; }
   header .header__title {
-    font-size: 3rem;
+    font-size: 3.3rem;
     color: white;
     font-weight: 800; }
 
 #capitals {
-  margin: auto; }
-  #capitals table th {
-    font-weight: 300; }
-  #capitals table td {
-    font-weight: 800; }
+  margin: 1rem auto; }
   #capitals .capitals__header {
-    color: white; }
-  #capitals .capitals__container {
-    width: 400px;
-    -webkit-column-count: 2;
-       -moz-column-count: 2;
-            column-count: 2; }
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem; }
+  #capitals table {
+    color: #272727; }
+    #capitals table th, #capitals table td {
+      text-align: left;
+      display: inline-block;
+      padding: 0.3rem 0.4rem; }
+      #capitals table th:nth-child(3), #capitals table td:nth-child(3) {
+        padding-left: .7rem; }
+    #capitals table th {
+      font-size: .9rem;
+      font-weight: 300; }
+    #capitals table td {
+      font-size: 1rem;
+      font-weight: 800; }
 
 #search {
-  text-align: center; }
+  text-align: center;
+  margin: 3rem 0 2rem 0; }
   #search .form__input {
     font-family: 'Open Sans', sans-serif;
     width: 20rem;
