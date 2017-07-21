@@ -1,0 +1,32 @@
+.fw-300 {
+  @include fw-300;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.hr__custom {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.hr__custom--small-orange {
+  border-top: 0;
+  border-color: $orange;
+}
+
+.show-in-desktop {
+  display: none;
+}
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.shrink {
+  
+}

@@ -1,0 +1,27 @@
+
+header {
+  padding-bottom: 4rem;
+  padding-left: 1.3rem;
+  // text-align: center;
+
+
+  .header__title {
+    text-align: left;
+    padding-top: 3rem;
+    font-size: 3rem;
+    color: white;
+    @include fw-800;
+  }
+
+
+}
+
+header.shrink {
+  padding-bottom: 1rem;
+
+  .header__title {
+    padding-top: 1rem;
+    font-size: 1.55rem;
+  }
+}
+

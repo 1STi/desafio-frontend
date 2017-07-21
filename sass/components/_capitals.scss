@@ -1,0 +1,34 @@
+#capitals {
+  margin: 1rem auto; 
+  margin-bottom: 0;
+
+  padding-bottom: 1rem;
+  .capitals__header {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+
+  table {
+  
+    th, td { 
+      display: inline-block;
+      padding: 0.3rem 0.4rem;
+      &:nth-child(3) { padding-left: .7rem; }
+    }
+
+    th {
+      font-size: .9rem;
+      @include fw-300;
+    }
+
+
+    td {
+      min-width: 1.5rem;
+      font-size: 1rem;
+      @include fw-800;
+    }
+
+  }
+}

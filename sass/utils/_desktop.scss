@@ -1,0 +1,56 @@
+@media screen and (min-width: 480px) {
+
+  // general responsive code 
+
+  .container {
+    max-width: 500px;
+
+    section {
+      padding: 0 3rem;
+    }
+  }
+
+  .show-in-desktop {
+    display: block;
+  }
+
+  // header responsive code
+  header {
+    .header__title {
+      text-align: center !important;
+    }
+
+    .shrink {
+      .header__title { font-size: 2rem !important; }
+    }
+  }
+
+  // search section responsive code
+  #search {
+    margin: 0 5rem;
+
+    .search__form input.form__input {
+      width: calc(100% - 1rem);
+    }
+
+  }
+
+  // capitals section responsive code
+  #capitals {
+    .capitals__container {
+      column-count: 2;
+    }
+
+    .table__header th {
+      font-size: 0.6rem;
+    }
+
+    .table__content {
+      td { 
+        font-size: .7rem; 
+        min-width: 1.2rem;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,23 @@
+{
+  "name": "yahoo-weather-app",
+  "version": "1.0.0",
+  "description": "An app to display the Weather based on the Yahoo API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Ferreira",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.0",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-postcss": "^6.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2"
+  },
+  "dependencies": {
+    "gulp-uglifycss": "^1.0.8"
+  }
+}

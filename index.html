@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/min/main.min.css">
+  <title>Yahoo Weather App</title>
+</head>
+<body>
+  <div id="loader"></div>
+
+  <div id="application" style="display:none;">
+  <header>
+    <h1 class="header__title">Previsão do tempo</h1>
+  </header>
+
+
+
+
+
+  <main class="container">
+
+    <section id="search">
+
+      <!-- <div class="search__output">
+
+        <div class="search__output__main">
+          <h6 class="output__city">Niterói, RJ, Brasil</h6>
+          <h1 class="output__temperature">20°C Nublado</h1>
+
+          <div class="output__temperature-sub">
+            <span><img src="./images/down-arrow.png" width="16" alt="Down Arrow">16°</span>
+            <span><img src="./images/up-arrow.png" width="16" alt="Down Arrow">25°</span>
+            <span style="padding-left: .9rem;"><span class="fw-300">Sensação</span> 19°C</span>
+          </div>
+
+          <div class="output__wind-humidity">
+            <span>Vento <span class="fw-800">18km/h</span></span>
+            <span style="padding-left: .9rem;">Humidade <span class="fw-800">89%</span></span>
+          </div>
+
+        </div> 
+
+        <hr class="hr__custom--small-orange">
+
+        <div class="search__output__footer">
+          <ul class="clearfix">
+            <li>
+              <span class="day">Terça</span> <span class="temperature">18° 26°</span>
+            </li>
+
+            <li>
+              <span class="day">Quarta</span> <span class="temperature">18° 26°</span>
+            </li>
+
+            <li>
+              <span class="day">Quinta</span> <span class="temperature">18° 26°</span>
+            </li>
+
+            <li>
+              <span class="day">Sexta</span> <span class="temperature">18° 26°</span>
+            </li>
+
+            <li>
+              <span class="day">Sábado</span> <span class="temperature">18° 26°</span>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>  -->
+
+      <form id="form" class="search__form" onsubmit="submitFormHandler(event)">
+        <input autocomplete="off" id="form-input" class="form__input" type="text" placeholder="Insira aqui o nome da cidade">
+      </form>
+    </section>
+
+
+    <hr class="hr__custom">
+
+
+    <section id="capitals">
+      
+      <h2 class="capitals__header">Capitais</h2>
+
+      <div class="capitals__container" id="capitals-container">
+        <table id="capitals-table">  
+
+          <tr class="table__header">
+            <th>Min</th>
+            <th>Máx</th>
+            <th></th>
+          </tr> 
+
+          <!--   <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Belo Horizonte</td>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+
+          
+          <tr class="table__header show-in-desktop">
+            <th>Min</th>
+            <th>Máx</th>
+            <th></th>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+
+          <tr class="table__content">
+            <td>18°</td>
+            <td>18°</td>
+            <td>Rio de Janeiro</td>
+          </tr>     -->
+
+         </table>
+      </div>
+    </section>
+  </main>
+  </div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./js/main.js"></script>
+</html>
