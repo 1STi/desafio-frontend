@@ -1,27 +1,41 @@
+const qs = (selector) => document.querySelector(selector);
+const qsAll = (selector) => document.querySelectorAll(selector);
+
 // ------------------ SPINNER ------------------ //
 let myVar;
+
+
 
 function showLoader() {
   myVar = setTimeout(showPage, 2000);
 }
+
+
 
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("application").style.display = "block";
 }
 
-// ------------------ SEARCH SECTION ------------------ //
-function submitHandler(e) {
-  e.preventDefault();
-  let city = document.querySelector('#form-input').value;
-  
-  displaySearchedData(city);
-  city = '';
-}
 
+
+// ------------------ SEARCH SECTION ------------------ //
 function getQueryURL(city) {
   return `http://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="${city}") and u=%22c%22&format=json`;
 }
+
+
+
+function submitHandler(e) {
+  e.preventDefault();
+  qs('header h1').classList.toggle('shrink');
+  let cityInput = qs('#form-input');
+  
+  displaySearchedData(cityInput.value);
+  cityInput.value = '';
+}
+
+
 
 function displaySearchedData(city) {
   const URL = getQueryURL(city);
@@ -32,8 +46,10 @@ function displaySearchedData(city) {
         console.log(cityData);
         displayWeatherData(cityData);
       })
-    .catch(error => alert('Cidade não encontrada, tente novamente'))
+    .catch(error => alert(error))
 }
+
+
 
 function convertDayTextToPortguese(day) {
   switch (day) {
@@ -79,59 +95,77 @@ function convertDayTextToPortguese(day) {
   }
 }
 
+
+
 function displayWeatherData({location, item, units, wind, atmosphere}) {
-  const div = document.createElement('div');
-  div.setAttribute('class', 'search__output');
+  const outputDoesNotExist = qsAll('.search__output').length === 0;
 
-  div.innerHTML = `
-    <div class="search__output__main">
-      <h6 class="output__location">${location.city}, ${location.region}, ${location.country}</h6>
-      <img class="output__close" src="./images/close.png" alt="Close button" width="20" id="close-btn"/>
-      
-      <h1 class="output__temperature">${item.condition.temp}°${units.temperature} ${item.condition.text}</h1>
+  if (outputDoesNotExist) {
+    const div = document.createElement('div');
+    div.setAttribute('class', 'search__output');
 
-      <div class="output__temperature-sub">
-        <span><img src="./images/down-arrow.png" width="16" alt="Down Arrow">${item.forecast[0].low}°</span>
-        <span><img src="./images/up-arrow.png" width="16" alt="Down Arrow">${item.forecast[0].high}°</span>
-        <span style="padding-left: .9rem;"><span class="fw-300">Sensação</span> 19°C</span>
+    div.innerHTML = `
+      <div class="search__output__main">
+        <h6 class="output__location" id="output-location">${location.city}, ${location.region}, ${location.country}</h6>
+        <img class="output__close" src="./images/close.png" alt="Close button" width="20" id="close-btn"/>
+        
+        <h1 class="output__temperature" id="output-temperature">${item.condition.temp}°${units.temperature} ${item.condition.text}</h1>
+
+        <div class="output__temperature-sub">
+          <img src="./images/down-arrow.png" width="16" alt="Down Arrow"><span id="output-min">${item.forecast[0].low}°</span>
+          <img src="./images/up-arrow.png" width="16" alt="Up Arrow"><span id="output-max">${item.forecast[0].high}°</span>
+          <span style="padding-left: .9rem;"><span class="fw-300">Sensação</span> 19°C</span>
+        </div>
+
+        <div class="output__wind-humidity">
+          <span>Vento <span class="fw-800" id="output-wind">${wind.speed}${units.speed}</span></span>
+          <span style="padding-left: .9rem;">Humidade <span class="fw-800" id="output-humidity">${atmosphere.humidity}%</span></span>
+        </div>
+
+      </div> 
+
+      <hr class="hr__custom--small-orange">
+
+      <div class="search__output__footer">
+        <ul class="clearfix" id="output-forecasts">
+          ${getForecastList(item.forecast)}
+        </ul>
+
       </div>
+    `
+    const form = qs('#form');
+    qs('#search').insertBefore(div, form);
 
-      <div class="output__wind-humidity">
-        <span>Vento <span class="fw-800">${wind.speed}${units.speed}</span></span>
-        <span style="padding-left: .9rem;">Humidade <span class="fw-800">${atmosphere.humidity}%</span></span>
-      </div>
+    // event listener to the 'close' button.
+    qs('#close-btn').addEventListener('click', () => {
+      qs('.search__output').remove();
+    });
 
-    </div> 
-
-    <hr class="hr__custom--small-orange">
-
-    <div class="search__output__footer">
-      <ul class="clearfix">
-        ${getForecastList(item.forecast)}
-      </ul>
-
-    </div>
-  `
-  const form = document.querySelector('#form');
-  document.querySelector('#search').insertBefore(div, form);
-
-  // event listener to the 'close' button.
-  document.querySelector('#close-btn').addEventListener('click', () => {
-    document.querySelector('.search__output').remove();
-  });
+  } else {
+    qs('#output-location').innerHTML = `${location.city}, ${location.region}, ${location.country}`;
+    qs('#output-temperature').innerHTML = `${item.condition.temp}°${units.temperature} ${item.condition.text}`;
+    qs('#output-min').innerHTML = `${item.forecast[0].low}°`;
+    qs('#output-max').innerHTML = `${item.forecast[0].high}°`;
+    qs('#output-wind').innerHTML = `${wind.speed}${units.speed}`;
+    qs('#output-humidity').innerHTML = `${atmosphere.humidity}%°`;
+    qs('#output-forecasts').innerHTML = `${getForecastList(item.forecast)}`;
+  }
 }
+
+
 
 function getForecastList(forecastArray) {
   const x = forecastArray.slice(1, 6).map(resp => {
     return `
       <li>
-        <span class="day">${convertDayTextToPortguese(resp.day)}</span> <span class="temperature">${resp.low}° ${resp.high}</span>
+        <span class="day">${convertDayTextToPortguese(resp.day)}</span> <span class="temperature">${resp.low}° ${resp.high}°</span>
       </li>
     `;
   });
 
   return x.join('');
 }
+
 
 
 // ------------------ CAPITALS SECTION ------------------ //
@@ -154,8 +188,10 @@ function getForecastList(forecastArray) {
 
 }());
 
+
+
 function display(capital) {
-  const isDivider = document.querySelectorAll('.table__content').length === 13;
+  const isDivider = qsAll('.table__content').length === 13;
   const min = capital.item.forecast[0].low;
   const max = capital.item.forecast[0].high;
   const city = capital.location.city;
@@ -169,7 +205,7 @@ function display(capital) {
       <th>Máx</th>
       <th></th>
     `;
-    document.querySelector('#capitals-table').appendChild(trMinMax);
+    qs('#capitals-table').appendChild(trMinMax);
   }
 
 
@@ -180,6 +216,5 @@ function display(capital) {
     <td>${city}</td>
   `;
 
-  document.querySelector('#capitals-table').appendChild(tr);
-  
+  qs('#capitals-table').appendChild(tr); 
 }
