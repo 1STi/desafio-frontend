@@ -23,7 +23,7 @@
 
     <section id="search">
 
-        <div class="search__output">
+      <!-- <div class="search__output">
 
         <div class="search__output__main">
           <h6 class="output__city">Niterói, RJ, Brasil</h6>
@@ -66,10 +66,12 @@
               <span class="day">Sábado</span> <span class="temperature">18° 26°</span>
             </li>
           </ul>
-        </div>
-      </div> 
 
-      <form class="search__form">
+        </div>
+
+      </div>  -->
+
+      <form id="form" class="search__form" onsubmit="submitHandler(event)">
         <input id="form-input" class="form__input" type="text" placeholder="Insira aqui o nome da cidade">
       </form>
     </section>
@@ -177,5 +179,6 @@
   </main>
 
 </body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="./js/main.js"></script>
 </html>

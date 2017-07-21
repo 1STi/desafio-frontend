@@ -24,7 +24,8 @@ gulp.task('uglifyjs', () => {
   .pipe(babel({presets: ['es2015']}))
   .pipe(uglify())
   .pipe(rename({ suffix: '.min' }))
-  .pipe(gulp.dest('js/min'));
+  .pipe(gulp.dest('js/min'))
+  .pipe(browserSync.stream());;
 });
 
 // Uglifies CSS
