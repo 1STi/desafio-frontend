@@ -46,7 +46,8 @@
   #capitals .table__header th {
     font-size: 0.6rem; }
   #capitals .table__content td {
-    font-size: .7rem; } }
+    font-size: .7rem;
+    min-width: 1.2rem; } }
 
 body {
   color: #272727;
@@ -148,7 +149,6 @@ header {
     margin-bottom: 1rem;
     font-size: 2rem; }
   #capitals table th, #capitals table td {
-    text-align: left;
     display: inline-block;
     padding: 0.3rem 0.4rem; }
     #capitals table th:nth-child(3), #capitals table td:nth-child(3) {
@@ -157,6 +157,7 @@ header {
     font-size: .9rem;
     font-weight: 300; }
   #capitals table td {
+    min-width: 1.5rem;
     font-size: 1rem;
     font-weight: 800; }
 

@@ -32,7 +32,10 @@
     }
 
     .table__content {
-      td { font-size: .7rem; }
+      td { 
+        font-size: .7rem; 
+        min-width: 1.2rem;
+      }
     }
   }
 
