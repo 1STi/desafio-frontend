@@ -1,8 +1,9 @@
 function submitHandler(e) {
   e.preventDefault();
-  const city = document.querySelector('#form-input').value;
+  let city = document.querySelector('#form-input').value;
   
   getDataFromAPI(city);
+  city = '';
 }
 
 
@@ -12,10 +13,55 @@ function getDataFromAPI(city) {
 
   axios(URL)
     .then(response => response.data.query.results.channel)
-    .then(cityData => {
-      console.log(cityData);
-      displayWeatherData(cityData);
-    })
+      .then(cityData => {
+        console.log(cityData);
+        displayWeatherData(cityData);
+      })
+    .catch(error => alert('Cidade não encontrada, tente novamente'))
+}
+
+function convertDayTextToPortguese(day) {
+  switch (day) {
+    case 'Sun': {
+      return 'Domingo';
+      break;
+    }
+    
+    case 'Mon': {
+      return 'Segunda';
+      break;
+    }
+
+    case 'Tue': {
+      return 'Terça';
+      break;
+    }
+
+    case 'Wed': {
+      return 'Quarta';
+      break;
+    }
+
+    case 'Thu': {
+      return 'Quinta';
+      break;
+    }
+
+    case 'Fri': {
+      return 'Sexta';
+      break;
+    }
+
+    case 'Sat': {
+      return 'Sabádo';
+      break;
+    }
+
+    default: {
+      return 'Dia não identificado';
+      break;
+    }
+  }
 }
 
 function displayWeatherData({location, item, units, wind, atmosphere}) {
@@ -28,8 +74,8 @@ function displayWeatherData({location, item, units, wind, atmosphere}) {
       <h1 class="output__temperature">${item.condition.temp}°${units.temperature} ${item.condition.text}</h1>
 
       <div class="output__temperature-sub">
-        <span><img src="./images/down-arrow.png" width="16" alt="Down Arrow">16°</span>
-        <span><img src="./images/up-arrow.png" width="16" alt="Down Arrow">25°</span>
+        <span><img src="./images/down-arrow.png" width="16" alt="Down Arrow">${item.forecast[0].low}°</span>
+        <span><img src="./images/up-arrow.png" width="16" alt="Down Arrow">${item.forecast[0].high}°</span>
         <span style="padding-left: .9rem;"><span class="fw-300">Sensação</span> 19°C</span>
       </div>
 
@@ -44,29 +90,25 @@ function displayWeatherData({location, item, units, wind, atmosphere}) {
 
     <div class="search__output__footer">
       <ul class="clearfix">
-        <li>
-          <span class="day">Terça</span> <span class="temperature">18° 26°</span>
-        </li>
-
-        <li>
-          <span class="day">Quarta</span> <span class="temperature">18° 26°</span>
-        </li>
-
-        <li>
-          <span class="day">Quinta</span> <span class="temperature">18° 26°</span>
-        </li>
-
-        <li>
-          <span class="day">Sexta</span> <span class="temperature">18° 26°</span>
-        </li>
-
-        <li>
-          <span class="day">Sábado</span> <span class="temperature">18° 26°</span>
-        </li>
+        ${getForecastList(item.forecast)}
       </ul>
 
     </div>
   `
   const form = document.querySelector('#form');
   document.querySelector('#search').insertBefore(div, form);
+}
+
+function getForecastList(forecastArray) {
+  const x = forecastArray.slice(1, 6).map(resp => {
+    return `
+      <li>
+        <span class="day">${convertDayTextToPortguese(resp.day)}</span> <span class="temperature">${resp.low}° ${resp.high}</span>
+      </li>
+    `;
+  });
+
+  console.log(x);
+
+  return x.join('');
 }

@@ -34,7 +34,7 @@
   .show-in-desktop {
     display: block; }
   #search {
-    margin: 0 5.2rem; }
+    margin: 0 5rem; }
     #search .search__form input.form__input {
       width: -webkit-calc(100% - 1rem);
       width: -moz-calc(100% - 1rem);
@@ -118,7 +118,7 @@ header {
     margin: 2rem 0;
     padding: 1rem 1rem; }
     #search .search__output .search__output__main, #search .search__output .search__output__footer {
-      padding: 0 1rem; }
+      padding: 0 .6rem; }
     #search .search__output .output__city {
       margin-bottom: .5rem; }
     #search .search__output .output__temperature {

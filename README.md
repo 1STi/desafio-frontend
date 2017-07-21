@@ -1,1 +1,2 @@
-http://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="Joao Pessoa") and u=%22c%22&format=json
+Consegui converter as distâncias para as medidas brasileiras (km, km/h e C), porém não consegui deixar o idioma da API em pt-BR.
+Acredito que tenha a API tenha mudado um pouco, e agora o parâmetro de sensação térmica não existe (eu particularmente não achei), então resolvi deixar um número fixo.
