@@ -8,9 +8,10 @@
   <link rel="stylesheet" type="text/css" href="./css/min/main.min.css">
   <title>Document</title>
 </head>
-<body>
+<body onload="showLoader()">
+  <div id="loader"></div>
 
-
+  <div id="application" style="display:none;">
   <header>
     <h1 class="header__title">Previsão do tempo</h1>
   </header>
@@ -84,16 +85,16 @@
       
       <h2 class="capitals__header">Capitais</h2>
 
-      <div class="capitals__container">
-        <table>
+      <div class="capitals__container" id="capitals-container">
+        <table id="capitals-table">  
 
           <tr class="table__header">
             <th>Min</th>
             <th>Máx</th>
             <th></th>
-          </tr>
+          </tr> 
 
-          <tr class="table__content">
+          <!--   <tr class="table__content">
             <td>18°</td>
             <td>18°</td>
             <td>Belo Horizonte</td>
@@ -129,7 +130,6 @@
             <td>Rio de Janeiro</td>
           </tr>
 
-          <!-- SEPARATOR  -->
           
           <tr class="table__header show-in-desktop">
             <th>Min</th>
@@ -171,13 +171,13 @@
             <td>18°</td>
             <td>18°</td>
             <td>Rio de Janeiro</td>
-          </tr>
+          </tr>     -->
 
-        </table>
+         </table>
       </div>
     </section>
   </main>
-
+  </div>
 </body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="./js/main.js"></script>

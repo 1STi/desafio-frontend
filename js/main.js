@@ -1,15 +1,30 @@
+// ------------------ SPINNER ------------------ //
+let myVar;
+
+function showLoader() {
+  myVar = setTimeout(showPage, 2000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("application").style.display = "block";
+}
+
+// ------------------ SEARCH SECTION ------------------ //
 function submitHandler(e) {
   e.preventDefault();
   let city = document.querySelector('#form-input').value;
   
-  getDataFromAPI(city);
+  displaySearchedData(city);
   city = '';
 }
 
+function getQueryURL(city) {
+  return `http://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="${city}") and u=%22c%22&format=json`;
+}
 
-function getDataFromAPI(city) {
-  const URL = 
-    `http://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="${city}") and u=%22c%22&format=json`;
+function displaySearchedData(city) {
+  const URL = getQueryURL(city);
 
   axios(URL)
     .then(response => response.data.query.results.channel)
@@ -99,6 +114,8 @@ function displayWeatherData({location, item, units, wind, atmosphere}) {
   `
   const form = document.querySelector('#form');
   document.querySelector('#search').insertBefore(div, form);
+
+  // event listener to the 'close' button.
   document.querySelector('#close-btn').addEventListener('click', () => {
     document.querySelector('.search__output').remove();
   });
@@ -114,4 +131,55 @@ function getForecastList(forecastArray) {
   });
 
   return x.join('');
+}
+
+
+// ------------------ CAPITALS SECTION ------------------ //
+(function displayCapitalsData() {
+  const capitals = [
+    'São Paulo', 'Rio de Janeiro', 'Salvador', 'Fortaleza', 
+    'Belo Horizonte', 'Curitiba', 'Manaus', 'Recife', 'Porto Alegre', 
+    'Belém', 'Goiânia', 'São Luís', 'Maceió', 'Teresina', 'Natal', 'Campo Grande', 
+    'João Pessoa', 'Aracaju', 'Florianópolis', 'Porto Velho', 'Macapá', 'Vitória', 
+    'Rio Branco', 'Boa Vista', 'Palmas TO'
+  ];
+
+  capitals.map((capital, index) => {
+    axios(getQueryURL(capital))
+      .then(response => response.data.query.results.channel)
+        .then(capitalObj => {
+          display(capitalObj);
+        })
+  });
+
+}());
+
+function display(capital) {
+  const isDivider = document.querySelectorAll('.table__content').length === 13;
+  const min = capital.item.forecast[0].low;
+  const max = capital.item.forecast[0].high;
+  const city = capital.location.city;
+  const tr = document.createElement('tr');
+
+  if (isDivider) {
+    const trMinMax = document.createElement('tr');
+    trMinMax.setAttribute('class', 'table__header show-in-desktop');
+    trMinMax.innerHTML = `
+      <th>Min</th>
+      <th>Máx</th>
+      <th></th>
+    `;
+    document.querySelector('#capitals-table').appendChild(trMinMax);
+  }
+
+
+  tr.setAttribute('class', 'table__content');  
+  tr.innerHTML = `
+    <td>${min}°</td>
+    <td>${max}°</td>
+    <td>${city}</td>
+  `;
+
+  document.querySelector('#capitals-table').appendChild(tr);
+  
 }
