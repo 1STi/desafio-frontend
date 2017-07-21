@@ -3,12 +3,15 @@
 
 body {
   color: $primary-color;
-  background: $background-color; 
   box-sizing: border-box;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
   font-family: 'Open Sans', sans-serif;
+}
+
+#application {
+  background: $background-color;
 }
 
 

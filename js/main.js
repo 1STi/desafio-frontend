@@ -2,16 +2,13 @@ const qs = (selector) => document.querySelector(selector);
 const qsAll = (selector) => document.querySelectorAll(selector);
 
 // ------------------ SPINNER ------------------ //
-let myVar;
 
-
-
-function showLoader() {
-  myVar = setTimeout(showPage, 2000);
+// function responsible to show the loader spinner for 2 seconds
+function toggleLoader() {
+  setTimeout(showPage, 500);
 }
 
-
-
+// function that will be called after 2s on the showLoader
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("application").style.display = "block";
@@ -20,24 +17,30 @@ function showPage() {
 
 
 // ------------------ SEARCH SECTION ------------------ //
+
+// responsible to get the Yahoo API URL based on the city parameter
 function getQueryURL(city) {
   return `http://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="${city}") and u=%22c%22&format=json`;
 }
 
 
-
-function submitHandler(e) {
+// function that will deal with the submition of the form
+function submitFormHandler(e) {
   e.preventDefault();
-  qs('header h1').classList.toggle('shrink');
   let cityInput = qs('#form-input');
   
-  displaySearchedData(cityInput.value);
-  cityInput.value = '';
+  // function will be called only if the input form exists
+  if (cityInput.value) {
+    getSearchedData(cityInput.value);
+    
+    cityInput.value = '';
+  }
 }
 
 
-
-function displaySearchedData(city) {
+/* function the will get the data from the API, and display it right after that
+  ps: i wrote a question about this function in the README, maybe you can answer for me */
+function getSearchedData(city) {
   const URL = getQueryURL(city);
 
   axios(URL)
@@ -46,11 +49,14 @@ function displaySearchedData(city) {
         console.log(cityData);
         displayWeatherData(cityData);
       })
-    .catch(error => alert(error))
+      /* i had to make this call because the shrink was been called before the data from the API was passed
+      and that was making some problems with the layout */
+      .then(() => qs('header').classList.toggle('shrink'))
+    .catch(error => alert(error));
 }
 
 
-
+// the data on the API is displayed in english, so i wrote this function to convert it to pt-BR
 function convertDayTextToPortguese(day) {
   switch (day) {
     case 'Sun': {
@@ -97,6 +103,7 @@ function convertDayTextToPortguese(day) {
 
 
 
+// function that will display the data obtained from the API
 function displayWeatherData({location, item, units, wind, atmosphere}) {
   const outputDoesNotExist = qsAll('.search__output').length === 0;
 
@@ -128,7 +135,7 @@ function displayWeatherData({location, item, units, wind, atmosphere}) {
 
       <div class="search__output__footer">
         <ul class="clearfix" id="output-forecasts">
-          ${getForecastList(item.forecast)}
+          ${displayForecastList(item.forecast)}
         </ul>
 
       </div>
@@ -139,23 +146,27 @@ function displayWeatherData({location, item, units, wind, atmosphere}) {
     // event listener to the 'close' button.
     qs('#close-btn').addEventListener('click', () => {
       qs('.search__output').remove();
+      qs('header').classList.toggle('shrink');
     });
 
   } else {
+    /* in case the output box already exist, it doesn't make sense to write it all again
+      so i replaced the data that already exists with the new ones from the new API request */
     qs('#output-location').innerHTML = `${location.city}, ${location.region}, ${location.country}`;
     qs('#output-temperature').innerHTML = `${item.condition.temp}°${units.temperature} ${item.condition.text}`;
     qs('#output-min').innerHTML = `${item.forecast[0].low}°`;
     qs('#output-max').innerHTML = `${item.forecast[0].high}°`;
     qs('#output-wind').innerHTML = `${wind.speed}${units.speed}`;
     qs('#output-humidity').innerHTML = `${atmosphere.humidity}%°`;
-    qs('#output-forecasts').innerHTML = `${getForecastList(item.forecast)}`;
+    qs('#output-forecasts').innerHTML = `${displayForecastList(item.forecast)}`;
   }
 }
 
 
-
-function getForecastList(forecastArray) {
-  const x = forecastArray.slice(1, 6).map(resp => {
+/* this function will display the data of the next 5 forecasts 
+ of the week and put it on the output box footer. */
+function displayForecastList(forecastArray) {
+  const forecastsLI = forecastArray.slice(1, 6).map(resp => {
     return `
       <li>
         <span class="day">${convertDayTextToPortguese(resp.day)}</span> <span class="temperature">${resp.low}° ${resp.high}°</span>
@@ -163,13 +174,13 @@ function getForecastList(forecastArray) {
     `;
   });
 
-  return x.join('');
+  return forecastsLI.join('');
 }
 
 
 
 // ------------------ CAPITALS SECTION ------------------ //
-(function displayCapitalsData() {
+(function getCapitalsData() {
   const capitals = [
     'São Paulo', 'Rio de Janeiro', 'Salvador', 'Fortaleza', 
     'Belo Horizonte', 'Curitiba', 'Manaus', 'Recife', 'Porto Alegre', 
@@ -182,16 +193,18 @@ function getForecastList(forecastArray) {
     axios(getQueryURL(capital))
       .then(response => response.data.query.results.channel)
         .then(capitalObj => {
-          display(capitalObj);
+          displayCapitalData(capitalObj, index);
         })
+    .catch(error => alert(error));
   });
 
 }());
 
 
-
-function display(capital) {
-  const isDivider = qsAll('.table__content').length === 13;
+// this function will display the capital data obtained from the API
+function displayCapitalData(capital, index) {
+  const isDivider = (qsAll('.table__content').length === 13);
+  const isLastRequest = (index === 23);
   const min = capital.item.forecast[0].low;
   const max = capital.item.forecast[0].high;
   const city = capital.location.city;
@@ -216,5 +229,10 @@ function display(capital) {
     <td>${city}</td>
   `;
 
-  qs('#capitals-table').appendChild(tr); 
+  qs('#capitals-table').appendChild(tr);
+
+  // this ensures that the application will be shown only 0.5s after the last capital request is made
+  if(isLastRequest) {
+    toggleLoader();
+  }
 }

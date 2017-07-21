@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
   <link rel="stylesheet" type="text/css" href="./css/min/main.min.css">
-  <title>Document</title>
+  <title>Yahoo Weather App</title>
 </head>
-<body onload="showLoader()">
+<body>
   <div id="loader"></div>
 
   <div id="application" style="display:none;">
@@ -72,7 +72,7 @@
 
       </div>  -->
 
-      <form id="form" class="search__form" onsubmit="submitHandler(event)">
+      <form id="form" class="search__form" onsubmit="submitFormHandler(event)">
         <input autocomplete="off" id="form-input" class="form__input" type="text" placeholder="Insira aqui o nome da cidade">
       </form>
     </section>

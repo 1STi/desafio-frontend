@@ -3,7 +3,7 @@
   margin: auto;
   width: 100%; }
   .container section {
-    padding: 0 3rem; }
+    padding: 0 1.5rem; }
 
 .fw-300 {
   font-weight: 300; }
@@ -27,12 +27,16 @@
   clear: both; }
 
 @media screen and (min-width: 480px) {
-  html {
-    height: 120%; }
   .container {
     max-width: 500px; }
+    .container section {
+      padding: 0 3rem; }
   .show-in-desktop {
     display: block; }
+  header .header__title {
+    text-align: center !important; }
+  header .shrink .header__title {
+    font-size: 2rem !important; }
   #search {
     margin: 0 5rem; }
     #search .search__form input.form__input {
@@ -51,11 +55,6 @@
 
 body {
   color: #272727;
-  background: -webkit-gradient(linear, left bottom, left top, from(#FCC900), to(#FF8000));
-  background: -webkit-linear-gradient(bottom, #FCC900, #FF8000);
-  background: -moz-linear-gradient(bottom, #FCC900, #FF8000);
-  background: -o-linear-gradient(bottom, #FCC900, #FF8000);
-  background: linear-gradient(0deg, #FCC900, #FF8000);
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -63,6 +62,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
   font-family: 'Open Sans', sans-serif; }
+
+#application {
+  background: -webkit-gradient(linear, left bottom, left top, from(#FCC900), to(#FF8000));
+  background: -webkit-linear-gradient(bottom, #FCC900, #FF8000);
+  background: -moz-linear-gradient(bottom, #FCC900, #FF8000);
+  background: -o-linear-gradient(bottom, #FCC900, #FF8000);
+  background: linear-gradient(0deg, #FCC900, #FF8000); }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
@@ -80,13 +86,20 @@ a[href^=tel] {
   text-decoration: none; }
 
 header {
-  margin-bottom: .6rem;
-  text-align: center; }
+  padding-bottom: 4rem;
+  padding-left: 1.3rem; }
   header .header__title {
+    text-align: left;
     padding-top: 3rem;
-    font-size: 3.3rem;
+    font-size: 3rem;
     color: white;
     font-weight: 800; }
+
+header.shrink {
+  padding-bottom: 1rem; }
+  header.shrink .header__title {
+    padding-top: 1rem;
+    font-size: 1.55rem; }
 
 #loader {
   position: absolute;
@@ -94,11 +107,11 @@ header {
   top: 50%;
   z-index: 1;
   margin: -75px 0 0 -75px;
-  border: 20px solid #FEF5E2;
+  border: 10px solid #FF8000;
   -webkit-border-radius: 50%;
      -moz-border-radius: 50%;
           border-radius: 50%;
-  border-top: 20px solid #FF8000;
+  border-top: 10px solid #FCC900;
   width: 60px;
   height: 60px;
   -webkit-animation: spin 2s linear infinite;
@@ -168,7 +181,7 @@ header {
     background-color: #FEF5E2;
     color: #555;
     text-align: left;
-    margin: 2rem 0;
+    margin: 0 0 1rem 0;
     padding: 1rem 1rem; }
     #search .search__output .search__output__main, #search .search__output .search__output__footer {
       padding: 0 .3rem; }

@@ -1,14 +1,28 @@
 @media screen and (min-width: 480px) {
 
   // general responsive code 
-  html { height: 120%; }
 
   .container {
     max-width: 500px;
+
+    section {
+      padding: 0 3rem;
+    }
   }
 
   .show-in-desktop {
     display: block;
+  }
+
+  // header responsive code
+  header {
+    .header__title {
+      text-align: center !important;
+    }
+
+    .shrink {
+      .header__title { font-size: 2rem !important; }
+    }
   }
 
   // search section responsive code
