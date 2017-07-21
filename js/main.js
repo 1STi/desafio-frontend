@@ -70,7 +70,9 @@ function displayWeatherData({location, item, units, wind, atmosphere}) {
 
   div.innerHTML = `
     <div class="search__output__main">
-      <h6 class="output__city">${location.city}, ${location.region}, ${location.country}</h6>
+      <h6 class="output__location">${location.city}, ${location.region}, ${location.country}</h6>
+      <img class="output__close" src="./images/close.png" alt="Close button" width="20" id="close-btn"/>
+      
       <h1 class="output__temperature">${item.condition.temp}°${units.temperature} ${item.condition.text}</h1>
 
       <div class="output__temperature-sub">
@@ -97,6 +99,9 @@ function displayWeatherData({location, item, units, wind, atmosphere}) {
   `
   const form = document.querySelector('#form');
   document.querySelector('#search').insertBefore(div, form);
+  document.querySelector('#close-btn').addEventListener('click', () => {
+    document.querySelector('.search__output').remove();
+  });
 }
 
 function getForecastList(forecastArray) {
@@ -107,8 +112,6 @@ function getForecastList(forecastArray) {
       </li>
     `;
   });
-
-  console.log(x);
 
   return x.join('');
 }

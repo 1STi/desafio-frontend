@@ -3,24 +3,26 @@
 
 body {
   color: $primary-color;
+  background: $background-color; 
   box-sizing: border-box;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
   font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(0deg, $yellow, $orange); 
 }
 
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 
 ul, li {
   margin: 0;
   padding: 0;
 }
+
 
 a, button, input {
   outline: none;

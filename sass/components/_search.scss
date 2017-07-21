@@ -4,7 +4,7 @@
 
 
   .search__output {    
-    background-color: $output-bgc;
+    background-color: $secondary-color;
     color: #555;
     text-align: left;
     margin: 2rem 0;
@@ -14,7 +14,14 @@
       padding: 0 .6rem;
     }
 
-    .output__city {
+    .output__close {
+      float: right;
+      margin-top: -1.5rem;
+      margin-right: -.7rem;
+      cursor: pointer;
+    }
+
+    .output__location {
       margin-bottom: .5rem;
     }
 
@@ -32,6 +39,32 @@
       margin: .8rem 0;
       font-size: .6rem;
     }
+
+    .search__output__footer {
+
+      ul {
+        margin: auto;
+        list-style: none;
+
+        li {
+          float: left;
+          display: inline;
+          padding-right: 1rem;
+          @include fw-800;
+          font-size: .7rem;
+
+          span.temperature {
+            margin-top: 0.3rem;
+            text-align: center;
+            display: block;
+            color: $orange;
+          }
+        }
+
+      }
+
+    }
+
   }
 
   .search__form .form__input {
@@ -49,32 +82,5 @@
     
     padding-left: 1rem;
     padding-bottom: .1rem;
-  }
-
-  .search__output__footer {
-    ul {
-      margin: auto;
-      list-style: none;
-
-      li {
-        float: left;
-        display: inline;
-        padding-right: 1rem;
-        @include fw-800;
-        font-size: .7rem;
-
-        span.day {
-          margin-bottom: 0.3rem;
-          display: block;
-        }
-
-        span.temperature {
-          color: $orange;
-          font-size: 0.6rem;
-          text-align: center;
-        }
-
-      }
-    }
   }
 }
