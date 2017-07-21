@@ -51,8 +51,14 @@ function getSearchedData(city) {
       })
       /* i had to make this call because the shrink was been called before the data from the API was passed
       and that was making some problems with the layout */
-      .then(() => qs('header').classList.toggle('shrink'))
-    .catch(error => alert(error));
+      .then(() => qs('header').setAttribute('class', 'shrink'))
+    .catch(error => {
+      if (String(error) === `TypeError: Cannot read property 'channel' of null`) {
+        return alert('Cidade inválida, digite novamente!');
+      } else {
+        alert(error);
+      }
+    });
 }
 
 
@@ -108,6 +114,7 @@ function displayWeatherData({location, item, units, wind, atmosphere}) {
   const outputDoesNotExist = qsAll('.search__output').length === 0;
 
   if (outputDoesNotExist) {
+    // that's basicly going to display the output box
     const div = document.createElement('div');
     div.setAttribute('class', 'search__output');
 
