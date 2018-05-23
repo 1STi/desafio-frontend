@@ -6,7 +6,14 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+import AppShell from '../src/AppShell';
+import '../src/style.scss';
+
+storiesOf('Teste', module)
+  .add('teste', () => <AppShell />);
+
+storiesOf('Welcome', module)
+  .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)

@@ -23,17 +23,21 @@
   },
   "homepage": "https://github.com/jamesdasilva/desafio-frontend#readme",
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.5",
+    "@storybook/addon-links": "^3.4.5",
+    "@storybook/addons": "^3.4.5",
+    "@storybook/react": "^3.4.5",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "css-loader": "^0.28.11",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1",
-    "@storybook/react": "^3.4.5",
-    "@storybook/addon-actions": "^3.4.5",
-    "@storybook/addon-links": "^3.4.5",
-    "@storybook/addons": "^3.4.5",
-    "babel-runtime": "^6.26.0"
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
     "react": "^16.2.0",

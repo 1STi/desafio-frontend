@@ -11,14 +11,21 @@ module.exports = {
     publicPath: '/static/'
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /.js?$/,
-        loader: 'babel-loader',
+        test: /\.js$/,
         exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015', 'react'],
+            cacheDirectory: true
+          }
         }
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   }
