@@ -1,6 +1,6 @@
 'use strict'
 
-const path = require("path")
+const path = require("path");
 
 module.exports = {
   devtool: 'source-map',
@@ -17,7 +17,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015']
+          presets: ['es2015', 'react']
         }
       }
     ]
