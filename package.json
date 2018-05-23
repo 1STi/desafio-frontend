@@ -4,7 +4,9 @@
   "description": "![alt tag](https://s3-us-west-1.amazonaws.com/1sti/1sti-transformacao.png)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/.bin/webpack",
+    "build:watch": "./node_modules/.bin/webpack -w",
+    "build:prod": "./node_modules/.bin/webpack -p"
   },
   "repository": {
     "type": "git",
