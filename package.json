@@ -1,0 +1,20 @@
+{
+  "name": "desafio-frontend",
+  "version": "1.0.0",
+  "description": "![alt tag](https://s3-us-west-1.amazonaws.com/1sti/1sti-transformacao.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesdasilva/desafio-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesdasilva/desafio-frontend/issues"
+  },
+  "homepage": "https://github.com/jamesdasilva/desafio-frontend#readme"
+}
