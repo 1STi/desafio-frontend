@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jamesdasilva/desafio-frontend/issues"
   },
-  "homepage": "https://github.com/jamesdasilva/desafio-frontend#readme"
+  "homepage": "https://github.com/jamesdasilva/desafio-frontend#readme",
+  "devDependencies": {
+    "webpack": "^4.8.3"
+  }
 }
