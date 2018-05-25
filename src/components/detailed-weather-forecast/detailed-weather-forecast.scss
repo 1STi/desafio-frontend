@@ -1,9 +1,15 @@
+.wf-detail_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $backgroundWeatherForecast;
+    margin-bottom: 20px
+}
 .wf-detail{
     width: 326px;
-    height: 196px;
+    min-height: 196px;
     padding: 15px;
     color: $lightDarkTextColor;
-    background-color: $backgroundWeatherForecast;
 }
 .wf-detail__location{
     font-weight: bold;

@@ -146,6 +146,9 @@ let DetailedWFValue = {
 storiesOf('DetailedWeatherForecast', module)
   .add('Com os dados setados', () => <DetailedWeatherForecast dataWF={DetailedWFValue} />);
 
+storiesOf('AppShell', module)
+  .add('Base da interface', () => <AppShell />);
+
 storiesOf('Welcome', module)
   .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 

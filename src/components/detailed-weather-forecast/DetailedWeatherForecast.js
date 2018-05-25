@@ -10,6 +10,7 @@ class DetailedWeatherForecast extends Component {
     let today = dataWF.forecast[0];
     let days = dataWF.forecast.slice(1, 6);
     return (
+      <div class="wf-detail_container">
       <div class="wf-detail">
         <div class="wf-detail__location">{dataWF.location.city}, {dataWF.location.region} - {dataWF.location.country}</div>
         <div class="wf-detail__condition">{dataWF.condition.temp}ºC {dataWF.condition.text}</div>
@@ -41,6 +42,7 @@ class DetailedWeatherForecast extends Component {
               );
             })}
         </div>
+      </div>
       </div>
     );
   }

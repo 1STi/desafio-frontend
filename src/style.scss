@@ -4,6 +4,17 @@
     font-family: $fontFamily;
 }
 
+.wf-container{
+    font-family: $fontFamily;
+    background: linear-gradient($backgroundScreenColorTop, $backgroundScreenColorBottom);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.wf-container__box{
+    width: 326px;
+}
+
 @import 'components/header/header';
 @import 'components/search/search';
 @import 'components/states-capital/states-capital';
