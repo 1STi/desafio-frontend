@@ -1,0 +1,30 @@
+.wf-capitals{
+  background-color: $backgroundScreenColorBottom;
+  color: $darkTextColor;
+}
+.wf-capitals__title{
+  margin: 0;
+  margin-bottom: 20px;
+  color: $lightTextColor
+}
+.wf-capitals__box{
+  display: flex
+}
+.wf-capitals__list{
+  font-size: 12px
+}
+.wf-capitals__list:last-of-type{
+  margin-left: 20px
+}
+.wf-capitals__header-list{
+  display: flex  
+}
+.wf-capitals__list div{
+  min-width: 30px;
+  text-align: center
+}
+.wf-capitals__list-item{
+  display: flex;
+  padding: 8px 0;
+  font-weight: bold;
+}

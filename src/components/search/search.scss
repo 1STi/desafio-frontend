@@ -1,0 +1,25 @@
+.wf-search{
+  display: flex;
+}
+.wf-search__input{
+  border: 1px $borderColor solid;
+  border-right: 0;
+  height: 37px;
+  width: 326px;
+  padding: 14px;
+  font-size: 14px;
+  color: #24292e;
+}
+.wf-search__group-btn{
+  margin: 0;
+  padding: 0
+}
+.wf-search__btn{
+  height: 37px;
+  color: $lightDarkTextColor;
+  background-color: $backgroundInput;
+  padding: 10px;
+  border: 1px $borderColor solid;
+  border-left: 0;
+  &:hover{ }
+}

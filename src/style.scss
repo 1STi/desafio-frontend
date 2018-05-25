@@ -1,3 +1,10 @@
-h2 {
-   color: #ce4dd6;
+@import '_var';
+
+* {
+    font-family: $fontFamily;
 }
+
+@import 'components/header/header';
+@import 'components/search/search';
+@import 'components/states-capital/states-capital';
+@import 'components/detailed-weather-forecast/detailed-weather-forecast';

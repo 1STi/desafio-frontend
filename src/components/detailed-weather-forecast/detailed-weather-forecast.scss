@@ -1,0 +1,57 @@
+.wf-detail{
+    width: 326px;
+    height: 196px;
+    padding: 15px;
+    color: $lightDarkTextColor;
+    background-color: $backgroundWeatherForecast;
+}
+.wf-detail__location{
+    font-weight: bold;
+    padding: 0 20px
+}
+.wf-detail__condition{
+    font-weight: bold;
+    font-size: 40px;
+    margin: 20px 0;
+    padding: 0 20px
+}
+.wf-detail__today{
+    display: flex;
+    padding: 0 20px;
+    margin-bottom: 10px; 
+    font-size: 12px
+}
+.wf-detail__icon{
+    color: $principalColor
+}
+.wf-detail__high-low-today{
+    font-weight: bold;
+    width: 100px
+}
+.wf-detail__wind-and-atmosphere{
+    padding: 0 20px;
+    font-size: 12px;
+    display: flex
+}
+.wf-detail__wind{
+    width: 100px;
+}
+.wf-detail__forecast{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    border-top: 1px solid $principalColor;
+    padding: 0 20px;
+    padding-top: 10px;
+    margin-top: 10px
+}
+.wf-detail__day{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px
+}
+.wf-detail__high-low{
+    color: $principalColor;
+    font-weight: bold;
+    text-align: center;
+}
