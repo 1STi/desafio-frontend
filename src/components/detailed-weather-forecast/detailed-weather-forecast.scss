@@ -22,7 +22,9 @@
     font-size: 12px
 }
 .wf-detail__icon{
-    color: $principalColor
+    color: $principalColor;
+    font-size: 1.1em;
+    line-height: 1em;
 }
 .wf-detail__high-low-today{
     font-weight: bold;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { IoAndroidSearch } from 'react-icons/lib/io';
 
 class Search extends Component {
   render(){
@@ -11,7 +12,7 @@ class Search extends Component {
           placeholder="Insira aqui o nome da cidade" />
           <div class="wf-search__group-btn">
             <button class="wf-search__btn" type="button">
-              buscar
+              <IoAndroidSearch />
             </button>
           </div>
       </form>

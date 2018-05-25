@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { IoAndroidArrowUp, IoAndroidArrowDown } from 'react-icons/lib/io';
 
 class DetailedWeatherForecast extends Component {
   constructor(props){
@@ -14,9 +15,9 @@ class DetailedWeatherForecast extends Component {
         <div class="wf-detail__condition">{dataWF.condition.temp}ºC {dataWF.condition.text}</div>
         <div class="wf-detail__today">
           <div class="wf-detail__high-low-today">
-            <span class="wf-detail__icon">&uarr;</span>{today.high}º 
+            <span class="wf-detail__icon"><IoAndroidArrowUp /></span>{today.high}º 
             &nbsp;
-            <span class="wf-detail__icon">&darr;</span>{today.low}º
+            <span class="wf-detail__icon"><IoAndroidArrowDown /></span>{today.low}º
           </div>
           <div class="wf-detail__will">
             Sensação <strong>{dataWF.wind.chill}º</strong>

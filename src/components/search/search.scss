@@ -18,8 +18,10 @@
   height: 37px;
   color: $lightDarkTextColor;
   background-color: $backgroundInput;
-  padding: 10px;
+  padding: 0 10px;
   border: 1px $borderColor solid;
   border-left: 0;
+  font-size: 1.4em;
+  line-height: 1em
   &:hover{ }
 }
