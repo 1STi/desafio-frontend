@@ -8,37 +8,37 @@ class StatesCapital extends Component {
   }
   render(){
     return (
-      <div class="wf-capitals">
-        <h2 class="wf-capitals__title">Capitais</h2>
-        <div class="wf-capitals__box">
+      <div className="wf-capitals">
+        <h2 className="wf-capitals__title">Capitais</h2>
+        <div className="wf-capitals__box">
 
-          <div class="wf-capitals__list">
-            <div class="wf-capitals__header-list">
+          <div className="wf-capitals__list">
+            <div className="wf-capitals__header-list">
               <div>Min</div> 
               <div>Max</div>
             </div>
             {this.coluna1.map((item) => {
               return (
-                <div class="wf-capitals__list-item">
+                <div className="wf-capitals__list-item" key={item.cityName}>
                   <div>{item.min}º</div> 
                   <div>{item.max}º</div>
-                  <div class="wf-capitals__capital-name">{item.cityName}</div>
+                  <div className="wf-capitals__capital-name">{item.cityName}</div>
                 </div>
               );
             })}
           </div>
 
-          <div class="wf-capitals__list">
-            <div class="wf-capitals__header-list">
+          <div className="wf-capitals__list">
+            <div className="wf-capitals__header-list">
               <div>Min</div> 
               <div>Max</div>
             </div>
             {this.coluna2.map((item) => {
               return (
-                <div class="wf-capitals__list-item">
+                <div className="wf-capitals__list-item" key={item.cityName} >
                   <div>{item.min}º</div> 
                   <div>{item.max}º</div>
-                  <div class="wf-capitals__capital-name">{item.cityName}</div>
+                  <div className="wf-capitals__capital-name">{item.cityName}</div>
                 </div>
               );
             })}

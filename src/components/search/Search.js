@@ -4,14 +4,14 @@ import { IoAndroidSearch } from 'react-icons/lib/io';
 class Search extends Component {
   render(){
     return (
-      <form class="wf-search">
+      <form className="wf-search">
         <input 
           className="wf-search__input"
           type="search" 
           name="search" 
           placeholder="Insira aqui o nome da cidade" />
-          <div class="wf-search__group-btn">
-            <button class="wf-search__btn" type="button">
+          <div className="wf-search__group-btn">
+            <button className="wf-search__btn" type="button">
               <IoAndroidSearch />
             </button>
           </div>

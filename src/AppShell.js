@@ -6,136 +6,86 @@ import StatesCapital from './components/states-capital/StatesCapital';
 import DetailedWeatherForecast 
 from './components/detailed-weather-forecast/DetailedWeatherForecast';
 
+import getWeatherForecast from './services/api';
+import fahrenheitToCelsius from './services/fahrenheit-to-celsius';
+import mphToKph from './services/mph-to-kph';
+import translateConditionsToPt from './services/translate-conditions-to-pt';
+import translateWeekToPt from './services/translate-week-to-pt';
+
 class AppShell extends Component {
   constructor(props){
     super(props);
-    this.wfCapitalListValue = [
-      {min: 25, max: 33, cityName: "Rio de Janeiro"},
-      {min: 25, max: 33, cityName: "São Paulo"},
-      {min: 25, max: 33, cityName: "Belo Horizonte"},
-      {min: 25, max: 33, cityName: "Brasília"},
-      {min: 25, max: 33, cityName: "Belém"},
-      {min: 25, max: 33, cityName: "Salvador"},
-      {min: 25, max: 33, cityName: "Curitiba"},
-      {min: 25, max: 33, cityName: "Fortaleza"},
-      {min: 25, max: 33, cityName: "Manaus"},
-      {min: 25, max: 33, cityName: "João Pessoa"}
-    ];
-    this.detailedWFValue = {
-      location: {
-        city: "Niterói",
-        country: "Brasil",
-        region: " RJ"
-      },
-      condition: {
-        code: "23",
-        date: "Thu, 24 May 2018 11:00 AM BRT",
-        temp: "82",
-        text: "Breezy"
-      },
-      atmosphere: {
-        humidity: "45",
-        pressure: "973.0",
-        rising: "0",
-        visibility: "16.1"
-      },
-      wind: {
-        chill: "82",
-        direction: "135",
-        speed: "25"
-      },
-      forecast: [
-        {
-          code: "30",
-          date: "24 May 2018",
-          day: "Thu",
-          high: "85",
-          low: "68",
-          text: "Partly Cloudy"
-        },
-        {
-          "code": "30",
-          "date": "25 May 2018",
-          "day": "Fri",
-          "high": "87",
-          "low": "69",
-          "text": "Partly Cloudy"
-        },
-        {
-          "code": "30",
-          "date": "26 May 2018",
-          "day": "Sat",
-          "high": "88",
-          "low": "69",
-          "text": "Partly Cloudy"
-        },
-        {
-          "code": "30",
-          "date": "27 May 2018",
-          "day": "Sun",
-          "high": "83",
-          "low": "68",
-          "text": "Partly Cloudy"
-        },
-        {
-          "code": "23",
-          "date": "28 May 2018",
-          "day": "Mon",
-          "high": "85",
-          "low": "69",
-          "text": "Breezy"
-        },
-        {
-          "code": "23",
-          "date": "29 May 2018",
-          "day": "Tue",
-          "high": "82",
-          "low": "69",
-          "text": "Breezy"
-        },
-        {
-          "code": "23",
-          "date": "30 May 2018",
-          "day": "Wed",
-          "high": "82",
-          "low": "70",
-          "text": "Breezy"
-        },
-        {
-          "code": "30",
-          "date": "31 May 2018",
-          "day": "Thu",
-          "high": "83",
-          "low": "69",
-          "text": "Partly Cloudy"
-        },
-        {
-          "code": "30",
-          "date": "01 Jun 2018",
-          "day": "Fri",
-          "high": "87",
-          "low": "70",
-          "text": "Partly Cloudy"
-        },
-        {
-          "code": "30",
-          "date": "02 Jun 2018",
-          "day": "Sat",
-          "high": "85",
-          "low": "71",
-          "text": "Partly Cloudy"
-        }
-      ]
+
+    this.state = { 
+      wfCapitalListValue: [],
+      detailedWFValue: undefined
     };
+
   }
+
+  componentWillMount(){
+
+    getWeatherForecast("Brasília").then(
+      (res) => {
+        let dataWF = {
+          location: res.data.query.results.channel.location,
+          condition: res.data.query.results.channel.item.condition,
+          atmosphere: res.data.query.results.channel.atmosphere,
+          wind: res.data.query.results.channel.wind,
+          forecast: res.data.query.results.channel.item.forecast 
+        };
+
+        dataWF.condition.temp = fahrenheitToCelsius(dataWF.condition.temp);
+        dataWF.condition.text = translateConditionsToPt(dataWF.condition.text);
+        dataWF.wind.chill = fahrenheitToCelsius(dataWF.wind.chill);
+        dataWF.wind.speed = mphToKph(dataWF.wind.speed);
+
+        dataWF.forecast.map( item => {
+          item.day = translateWeekToPt(item.day);
+          item.high = fahrenheitToCelsius(item.high);
+          item.low = fahrenheitToCelsius(item.low);
+          return item;
+        });
+        
+        this.setState( { detailedWFValue: dataWF } );
+      }
+    );
+
+    Promise.all([
+      getWeatherForecast("Rio de Janeiro"),
+      getWeatherForecast("São Paulo"),
+      getWeatherForecast("Belo Horizonte"),
+      getWeatherForecast("Brasília"),
+      getWeatherForecast("Belém"),
+      getWeatherForecast("Salvador"),
+      getWeatherForecast("Curitiba"),
+      getWeatherForecast("Fortaleza"),
+      getWeatherForecast("Manaus"),
+      getWeatherForecast("João Pessoa")
+    ]).then(res => {
+      res = res.map( item => {
+        let dataWfCapitals = {
+          cityName: item.data.query.results.channel.location.city,
+          min: fahrenheitToCelsius(item.data.query.results.channel.item.forecast[0].low),
+          max: fahrenheitToCelsius(item.data.query.results.channel.item.forecast[0].high)
+        }
+        return dataWfCapitals;
+      });
+      this.setState( { wfCapitalListValue: res } );
+    });
+
+  }
+
   render(){
     return (
-      <div class="wf-container">
-        <div class="wf-container__box">
+      <div className="wf-container">
+        <div className="wf-container__box">
           <Header />
-          <DetailedWeatherForecast dataWF={this.detailedWFValue} />
+          { this.state.detailedWFValue && (<DetailedWeatherForecast dataWF={this.state.detailedWFValue} />)}
           <Search />
-          <StatesCapital wfCapitalList={this.wfCapitalListValue} />
+          {(this.state.wfCapitalListValue && this.state.wfCapitalListValue.length != 0) ?
+            <StatesCapital wfCapitalList={this.state.wfCapitalListValue} />
+          : (<p>erro</p>)}
         </div>
       </div>
     );

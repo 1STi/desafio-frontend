@@ -3,7 +3,9 @@
 * {
     font-family: $fontFamily;
 }
-
+body{
+    margin: 0;
+}
 .wf-container{
     font-family: $fontFamily;
     background: linear-gradient($backgroundScreenColorTop, $backgroundScreenColorBottom);
