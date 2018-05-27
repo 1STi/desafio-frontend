@@ -10,6 +10,7 @@ class StatesCapital extends Component {
     return (
       <div className="wf-capitals">
         <h2 className="wf-capitals__title">Capitais</h2>
+        {this.props.show && <div className="wf-capitals__loading">Carregando...</div>}
         <div className="wf-capitals__box">
 
           <div className="wf-capitals__list">

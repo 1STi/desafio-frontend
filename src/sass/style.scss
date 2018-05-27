@@ -17,8 +17,13 @@ body{
     width: 100%;
     max-width: 375px;
 }
+.wf-container__loading{
+    margin-top: 30px; 
+    text-align: center;
+    font-weight: bold
+}
 
-@import 'components/header/header';
-@import 'components/search/search';
-@import 'components/states-capital/states-capital';
-@import 'components/detailed-weather-forecast/detailed-weather-forecast';
+@import '../components/header/header';
+@import '../components/search/search';
+@import '../components/states-capital/states-capital';
+@import '../components/detailed-weather-forecast/detailed-weather-forecast';

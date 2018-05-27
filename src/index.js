@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 
-import './style.scss';
-import AppShell from './AppShell';
+import './sass/style.scss';
+import AppShell from './containers/AppShell';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <AppShell />
-  </BrowserRouter>, 
+    <AppShell />, 
 document.getElementById('root'));
