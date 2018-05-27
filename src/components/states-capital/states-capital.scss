@@ -1,10 +1,10 @@
 .wf-capitals{
   //background-color: $backgroundScreenColorBottom;
   color: $darkTextColor;
-  margin: 20px -20px 0;
+  margin: 20px 0 0;
   padding: 20px;
   padding-top: 10px; 
-  border-top: 1px solid $lightborderColor;
+  border-top: 2px solid $lightborderColor;
 
 }
 .wf-capitals__title{
@@ -33,4 +33,19 @@
   display: flex;
   padding: 8px 0;
   font-weight: bold;
+}
+
+@media (max-width: 768px) { 
+  .wf-capitals{
+    padding: 20px 4% 0
+  }
+  .wf-capitals__box{
+    flex-direction: column
+  }
+  .wf-capitals__list:last-of-type {
+    margin-left: 0;
+  }
+  .wf-capitals__list:last-of-type .wf-capitals__header-list {
+    display: none
+  }
 }

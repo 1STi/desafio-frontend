@@ -6,13 +6,12 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
 
-import AppShell from '../src/AppShell';
 import Header from '../src/components/header/Header';
 import Search from '../src/components/search/Search';
 import StatesCapital from '../src/components/states-capital/StatesCapital';
 import DetailedWeatherForecast 
 from '../src/components/detailed-weather-forecast/DetailedWeatherForecast';
-import '../src/style.scss';
+import '../src/sass/style.scss';
 
 
 storiesOf('Header', module)
@@ -146,18 +145,3 @@ let DetailedWFValue = {
 storiesOf('DetailedWeatherForecast', module)
   .add('Com os dados setados', () => <DetailedWeatherForecast dataWF={DetailedWFValue} />);
 
-storiesOf('AppShell', module)
-  .add('Base da interface', () => <AppShell />);
-
-storiesOf('Welcome', module)
-  .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
-
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));

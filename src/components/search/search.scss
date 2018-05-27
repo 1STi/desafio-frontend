@@ -31,3 +31,10 @@
   cursor: pointer;
   &:hover{ }
 }
+@media (max-width: 768px) { 
+  .wf-search{
+    width: 92%;
+    padding: 0 4%;
+    margin-top: 20px;
+  }
+}
