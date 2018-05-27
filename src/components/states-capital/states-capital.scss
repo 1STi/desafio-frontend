@@ -13,10 +13,11 @@
   color: $lightTextColor
 }
 .wf-capitals__box{
-  display: flex
+  display: flex;
+  justify-content:space-between
 }
 .wf-capitals__list{
-  font-size: 12px
+  font-size: 14px
 }
 .wf-capitals__list:last-of-type{
   margin-left: 20px

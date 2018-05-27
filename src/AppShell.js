@@ -21,11 +21,13 @@ class AppShell extends Component {
       detailedWFValue: undefined
     };
 
+    this.getDetailWeatherForecast = this.getDetailWeatherForecast.bind(this);
+    this.closeDetailWeatherForecast = this.closeDetailWeatherForecast.bind(this);
+
   }
 
-  componentWillMount(){
-
-    getWeatherForecast("Brasília").then(
+  getDetailWeatherForecast(city){
+    getWeatherForecast(city).then(
       (res) => {
         let dataWF = {
           location: res.data.query.results.channel.location,
@@ -50,6 +52,13 @@ class AppShell extends Component {
         this.setState( { detailedWFValue: dataWF } );
       }
     );
+  }
+
+  closeDetailWeatherForecast(){
+    this.setState( { detailedWFValue: undefined } );
+  }
+
+  componentWillMount(){
 
     Promise.all([
       getWeatherForecast("Rio de Janeiro"),
@@ -80,12 +89,20 @@ class AppShell extends Component {
     return (
       <div className="wf-container">
         <div className="wf-container__box">
+
           <Header />
-          { this.state.detailedWFValue && (<DetailedWeatherForecast dataWF={this.state.detailedWFValue} />)}
-          <Search />
+        
+          { this.state.detailedWFValue 
+            && (<DetailedWeatherForecast 
+            dataWF={this.state.detailedWFValue}
+            onClickIconClose={this.closeDetailWeatherForecast} />)}
+        
+          <Search onClickButtonSearch={this.getDetailWeatherForecast} />
+        
           {(this.state.wfCapitalListValue && this.state.wfCapitalListValue.length != 0) ?
             <StatesCapital wfCapitalList={this.state.wfCapitalListValue} />
           : (<p>erro</p>)}
+
         </div>
       </div>
     );

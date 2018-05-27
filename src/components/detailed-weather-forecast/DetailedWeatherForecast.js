@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import { IoAndroidArrowUp, IoAndroidArrowDown } from 'react-icons/lib/io';
+import { IoAndroidArrowUp, IoAndroidArrowDown, IoAndroidClose } from 'react-icons/lib/io';
 
 class DetailedWeatherForecast extends Component {
   constructor(props){
     super(props);
+    this.onClickClose = this.onClickClose.bind(this);
+  }
+
+  onClickClose(event){
+    event.preventDefault();
+    this.props.onClickIconClose();
   }
 
   render(){
@@ -13,6 +19,9 @@ class DetailedWeatherForecast extends Component {
 
     return (
       <div className="wf-detail_container">
+      <div 
+      onClick={this.onClickClose}
+      className="wf-detail__close"><IoAndroidClose /></div>
       <div className="wf-detail">
         <div className="wf-detail__location">{dataWF.location.city}, {dataWF.location.region} - {dataWF.location.country}</div>
         <div className="wf-detail__condition">{dataWF.condition.temp}ºC {dataWF.condition.text}</div>

@@ -3,7 +3,8 @@ const translateConditionsToPt = term => {
     term = term.toLowerCase();
     switch(term){
         case "tornado": return "Tornado";
-        case "tropical storm": return "Chuva Tropical";
+        case "storm": return "Tempestade";
+        case "tropical storm": return "Tempestade Tropical";
         case "hurricane": return "Furacão";
         case "severe thunderstorms": return "Tempestades Severas";
         case "thunderstorms": return "Trovoadas";
@@ -12,13 +13,14 @@ const translateConditionsToPt = term => {
         case "mixed snow and sleet": return "Neve e Granizo Misturados";
         case "freezing drizzle": return "Chuvisco Congelante";
         case "drizzle": return "Chuvisco";
+        case "rain": return "Chuva";
         case "freezing rain": return "Chuva Congelante";
         case "showers": return "Chuveirada";
         case "snow flurries": return "Flocos de Neve";
         case "light snow showers": return "Nevascas Leves";
         case "blowing snow": return "Soprando Neve";
         case "snow": return "Neve";
-        case "hail": return "Chuva de Pedras";
+        case "hail": return "Granizo";
         case "sleet": return "Chuva com Neve";
         case "dust": return "Poeira";
         case "foggy": return "Nebuloso";
@@ -28,12 +30,17 @@ const translateConditionsToPt = term => {
         case "windy": return "Ventoso";
         case "cold": return "Frio";
         case "cloudy": return "Nublado";
+        case "mostly cloudy": return "Principalmente Nublado";
         case "mostly cloudy (night)": return "Principalmente Nublado (noite)";
         case "mostly cloudy (day)": return "Principalmente Nublado (dia)";
+        case "partly cloudy": return "Parcialmente Nublado";
         case "partly cloudy (night)": return "Parcialmente Nublado (noite)";
         case "partly cloudy (day)": return "Parcialmente Nublado (dia)";
+        case "mostly clear": return "Principalmente Claro";
+        case "clear": return "Claro";
         case "clear (night)": return "Claro (noite)";
         case "sunny": return "Ensolarado";
+        case "fair": return "Razoável";
         case "fair (night)": return "Razoável (noite)";
         case "fair (day)": return "Razoável (dia)";
         case "mixed rain and hail": return "Chuva e Granizo Misturados";
@@ -47,8 +54,9 @@ const translateConditionsToPt = term => {
         case "thundershowers": return "Trovões";
         case "snow showers": return "Chuveiros de Neve";
         case "isolated thundershowers": return "Trovoadas Isoladas";
-
+        case "mostly sunny": return "Principalmente Ensolarado";
         case "breezy": return "Ventoso";
+        default: return term;
     }
     
 }; 

@@ -14,7 +14,8 @@ body{
     justify-content: center;
 }
 .wf-container__box{
-    width: 326px;
+    width: 100%;
+    max-width: 375px;
 }
 
 @import 'components/header/header';
