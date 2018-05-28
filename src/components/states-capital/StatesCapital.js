@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class StatesCapital extends Component {
   constructor(props){
@@ -10,7 +11,6 @@ class StatesCapital extends Component {
     return (
       <div className="wf-capitals">
         <h2 className="wf-capitals__title">Capitais</h2>
-        {this.props.show && <div className="wf-capitals__loading">Carregando...</div>}
         <div className="wf-capitals__box">
 
           <div className="wf-capitals__list">
@@ -49,6 +49,10 @@ class StatesCapital extends Component {
       </div>
     );
   }
+}
+
+StatesCapital.propTypes = {
+  wfCapitalList: PropTypes.array.isRequired
 }
 
 export default StatesCapital;

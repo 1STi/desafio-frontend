@@ -1,7 +1,7 @@
 {
   "name": "desafio-frontend",
   "version": "1.0.0",
-  "description": "![alt tag](https://s3-us-west-1.amazonaws.com/1sti/1sti-transformacao.png)",
+  "description": "App Previsão do Tempo desenvolvido com React",
   "main": "index.js",
   "scripts": {
     "server": "./node_modules/.bin/webpack-dev-server",
@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7"

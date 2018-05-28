@@ -15,30 +15,26 @@ import translateWeekToPt from '../services/translate-week-to-pt';
 class AppShell extends Component {
   constructor(props){
     super(props);
-
     this.state = { 
       wfCapitalListValue: [],
       detailedWFValue: undefined,
       loadingCapitals: true
     };
-
     this.getDetailWeatherForecast = this.getDetailWeatherForecast.bind(this);
     this.closeDetailWeatherForecast = this.closeDetailWeatherForecast.bind(this);
-
   }
 
   getDetailWeatherForecast(city){
     getWeatherForecast(city).then(
       (res) => {
-        
         if(res.data.query.results){
-          
+          const { channel } = res.data.query.results;
           let dataWF = {
-            location: res.data.query.results.channel.location,
-            condition: res.data.query.results.channel.item.condition,
-            atmosphere: res.data.query.results.channel.atmosphere,
-            wind: res.data.query.results.channel.wind,
-            forecast: res.data.query.results.channel.item.forecast 
+            location: channel.location,
+            condition: channel.item.condition,
+            atmosphere: channel.atmosphere,
+            wind: channel.wind,
+            forecast: channel.item.forecast 
           };
 
           dataWF.condition.temp = fahrenheitToCelsius(dataWF.condition.temp);
@@ -83,10 +79,11 @@ class AppShell extends Component {
       res = res.map( item => {
         let dataWfCapitals = {};
         if(item.data.query.results){
+          const { channel } = item.data.query.results;
           dataWfCapitals = {
-            cityName: item.data.query.results.channel.location.city,
-            min: fahrenheitToCelsius(item.data.query.results.channel.item.forecast[0].low),
-            max: fahrenheitToCelsius(item.data.query.results.channel.item.forecast[0].high)
+            cityName: channel.location.city,
+            min: fahrenheitToCelsius(channel.item.forecast[0].low),
+            max: fahrenheitToCelsius(channel.item.forecast[0].high)
           }
         };
         return dataWfCapitals;

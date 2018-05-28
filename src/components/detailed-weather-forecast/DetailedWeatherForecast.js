@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { IoAndroidArrowUp, IoAndroidArrowDown, IoAndroidClose } from 'react-icons/lib/io';
 
 class DetailedWeatherForecast extends Component {
@@ -44,19 +45,24 @@ class DetailedWeatherForecast extends Component {
           </div>
         </div>
         <div className="wf-detail__forecast">
-            {days.map((item) => {
-              return (
-                <div className="wf-detail__forecastOfTheDay" key={item.day}>
-                    <div className="wf-detail__day">{item.day}</div>
-                    <div className="wf-detail__high-low">{item.high}º {item.low}º</div>
-                </div>
-              );
-            })}
+          {days.map((item) => {
+            return (
+              <div className="wf-detail__forecastOfTheDay" key={item.day}>
+                <div className="wf-detail__day">{item.day}</div>
+                <div className="wf-detail__high-low">{item.high}º {item.low}º</div>
+              </div>
+            );
+          })}
         </div>
       </div>
       </div>
     );
   }
+}
+
+DetailedWeatherForecast.propTypes = {
+  onClickIconClose: PropTypes.func.isRequired,
+  dataWF: PropTypes.object.isRequired
 }
 
 export default DetailedWeatherForecast;

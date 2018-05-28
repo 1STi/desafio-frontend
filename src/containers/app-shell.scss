@@ -1,28 +1,29 @@
 * {
-    font-family: $fontFamily;
+  font-family: $fontFamily;
 }
 body{
-    margin: 0;
+  margin: 0;
 }
 .wf-container{
-    font-family: $fontFamily;
-    background: linear-gradient($backgroundScreenColorTop, $backgroundScreenColorBottom);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
+  font-family: $fontFamily;
+  background: linear-gradient($backgroundScreenColorTop, $backgroundScreenColorBottom);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 .wf-container__box{
-    width: 100%;
-    max-width: 375px;
+  width: 100%;
+  max-width: 375px;
 }
 @media (max-width: 768px) { 
-    .wf-container__box{
-        padding-top: 66px;
-        max-width: 100%
-    }
+  .wf-container__box{
+    padding-top: 66px;
+    max-width: 100%
+  }
 }
 .wf-container__loading{
-    margin-top: 30px; 
-    text-align: center;
-    font-weight: bold
+  margin-top: 30px; 
+  text-align: center;
+  font-weight: bold;
+  color: $darkTextColor
 }
