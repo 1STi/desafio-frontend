@@ -1,0 +1,93 @@
+.wf-detail_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: $backgroundWeatherForecast;
+  margin-bottom: 20px;
+  position: relative;
+}
+.wf-detail__close{
+  color: $principalColor;
+  font-size: 1.6em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  cursor: pointer
+}
+.wf-detail{
+  width: 326px;
+  min-height: 196px;
+  padding: 15px;
+  color: $lightDarkTextColor;
+}
+.wf-detail__location{
+  font-weight: bold;
+  padding: 0 20px
+}
+.wf-detail__condition{
+  font-weight: bold;
+  font-size: 40px;
+  margin: 20px 0;
+  padding: 0 20px
+}
+.wf-detail__today{
+  display: flex;
+  padding: 0 20px;
+  margin-bottom: 10px; 
+  font-size: 12px
+}
+.wf-detail__icon{
+  color: $principalColor;
+  font-size: 1.1em;
+  line-height: 1em;
+}
+.wf-detail__high-low-today{
+  font-weight: bold;
+  width: 100px
+}
+.wf-detail__wind-and-atmosphere{
+  padding: 0 20px;
+  font-size: 12px;
+  display: flex
+}
+.wf-detail__wind{
+  width: 100px;
+}
+.wf-detail__forecast{
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  border-top: 1px solid $principalColor;
+  padding-top: 10px;
+  margin-top: 10px
+}
+.wf-detail__forecastOfTheDay{
+  min-width: 60px;
+}
+.wf-detail__day{
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px
+}
+.wf-detail__high-low{
+  color: $principalColor;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 768px) { 
+  .wf-detail_container{
+    justify-content: flex-start;
+  }
+  .wf-detail__forecast{
+    justify-content: space-around;
+  }
+  .wf-detail__forecastOfTheDay:last-of-type{
+    display: none
+  }
+  .wf-detail{
+    width: 100%;
+    padding: 15px 0;
+  }
+}

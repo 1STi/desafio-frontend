@@ -1,3 +1,57 @@
+# Previsão do Tempo
+
+Solução proposta para o desafio front-end da 1STi. 
+Live demo build: https://jamesdasilva.github.io/demo-build/weather-forecast/ 
+
+## Getting Started
+
+Para utilizar este projeto, é necessário clonar o repositório:
+```
+git clone https://github.com/jamesdasilva/desafio-frontend.git
+```
+Entrar no diretório do projeto:
+```
+cd desafio-frontend
+```
+Instalar as dependências: 
+```
+npm install
+```
+Iniciar o servidor:
+```
+npm run server
+```
+e acessar http://localhost:8080/public/.
+
+### Inventário de componentes
+Executar o comando:
+```
+npm run storybook
+```
+e acessar http://localhost:6006.
+
+### Fazendo Build
+
+Para fazer o build do produto, deve utilizar o comando:
+```
+npm run build
+```
+Modo escuta: 
+```
+npm run build:watch
+```
+Versão para produção (arquivo minificado):
+```
+npm run build:prod
+```
+
+## Authors
+
+* **James Oliveira da Silva** - *Initial work* - [jamesodas](https://github.com/jamesodas)
+
+
+
+
 # Desafio-Frontend
 
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/1sti-transformacao.png)
