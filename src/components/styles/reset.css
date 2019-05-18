@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 100%;
+}
+body{
+  background: linear-gradient(#F98001, #FABB05) no-repeat;
+  height: 100vh;
+  max-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif
+}

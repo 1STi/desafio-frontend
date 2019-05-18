@@ -1,0 +1,27 @@
+.search-bar {
+  padding: 13px;
+  width: 100%;
+  border: none;
+}
+
+.button-search {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  position: absolute;
+  background: transparent;
+}
+
+.search-wrapper {
+  position: relative;
+  border: 1px solid gray;
+}
+
+.icon {
+  color: var(--black);
+  background: transparent;
+}
