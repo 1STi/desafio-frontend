@@ -1,0 +1,13 @@
+.table-wrapper {
+  padding: 1.5rem;
+  border-top: 1px solid var(--white);
+  margin-top: 3rem;
+}
+
+.col-header {
+  font-size: 12px;
+  font-weight: 100;
+  padding: 8px 0;
+  padding-right: 10px;
+  text-align: left;
+}

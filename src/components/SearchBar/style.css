@@ -1,5 +1,5 @@
 .search-bar {
-  padding: 13px;
+  padding: 10px 13px;
   width: 100%;
   border: none;
 }
@@ -19,6 +19,9 @@
 .search-wrapper {
   position: relative;
   border: 1px solid gray;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
 }
 
 .icon {
