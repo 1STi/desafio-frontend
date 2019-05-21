@@ -25,6 +25,7 @@
         "allowTaggedTemplates": true
       }
     ],
-    "semi": "off"
+    "semi": "off",
+    "linebreak-style": "off"
   }
 }
