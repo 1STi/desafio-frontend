@@ -29,7 +29,7 @@ const PrevisaoAtual = ({ previsao, handlerClick }) => (
         <span className="bold" id="max">
           <i className="fas fa-arrow-up" />
           &nbsp;
-          {Math.round(previsao.main.temp_min)}
+          {Math.round(previsao.main.temp_max)}
           °C
         </span>
         <span className="info">
