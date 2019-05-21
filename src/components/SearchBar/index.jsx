@@ -5,17 +5,20 @@ import API from '../../helpers/api'
 
 const SearchBar = ({ placeholder, action }) => {
   const handlerClick = async (e) => {
-    const city = e.target.previousSibling.value
-    e.target.previousSibling.value = ''
-    const previsao = await API.getCurrent(city)
-    action(previsao)
-    console.log(previsao)
+    try {
+      const city = e.target.previousSibling.value
+      e.target.previousSibling.value = ''
+      const previsao = await API.getCurrent(city)
+      action(previsao.name ? previsao : false)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
     <div className="search-wrapper">
       <input type="text" className="search-bar" placeholder={placeholder} />
-      <button type="submit" className="button-search fas fa-search icon" onClick={handlerClick} />
+      <button type="button" className="button-search fas fa-search icon" onClick={handlerClick} />
     </div>
   )
 }

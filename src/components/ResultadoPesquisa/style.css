@@ -5,6 +5,7 @@
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.07);
   max-width: 90%;
   margin: 0 auto;
+  animation: show 1s linear;
 }
 
 .prev_atual,
@@ -28,9 +29,14 @@
   border: none;
   background: transparent;
   font-size: 1.4rem;
-  color: var(--orange);
+  color: var(--black);
   display: flex;
   align-items: center;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: var(--orange);
 }
 
 .subtitle_3 {
@@ -93,4 +99,13 @@
 
 .dia h3 {
   margin-bottom: 0.5rem;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

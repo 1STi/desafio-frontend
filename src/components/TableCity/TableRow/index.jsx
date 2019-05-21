@@ -5,11 +5,11 @@ import './style.css'
 const TableRow = ({ previsao }) => (
   <tr>
     <td className="dado min">
-      {parseInt(previsao.main.temp_min, 0)}
+      {Math.round(previsao.main.temp_min)}
 °
     </td>
     <td className="dado max">
-      {parseInt(previsao.main.temp_max, 0)}
+      {Math.round(previsao.main.temp_max)}
 °
     </td>
     <td className="dado_city">{previsao.name}</td>

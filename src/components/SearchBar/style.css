@@ -27,4 +27,10 @@
 .icon {
   color: var(--black);
   background: transparent;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: var(--orange);
+  background: transparent;
 }
