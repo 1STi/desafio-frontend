@@ -14,6 +14,7 @@ const App = () => {
     e.preventDefault()
     setPrevisao(false)
   }
+
   return (
     <div className="container">
       <header className="header">

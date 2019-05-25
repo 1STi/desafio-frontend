@@ -4,16 +4,30 @@ import API from '../../helpers/api'
 import TableRow from './TableRow'
 import Loading from '../Loading'
 
+const capitais = [
+  'são paulo',
+  'salvador',
+  'rio de janeiro',
+  'Salvador',
+  'Fortaleza',
+  'Brasília',
+  'Vitória',
+]
+
 const TableCity = () => {
   const [list, setList] = useState(null)
+
+  const aloneArray = []
 
   useEffect(() => {
     const callAPI = async (city) => {
       const previsao = await API.getCurrent(city)
-      setList(previsao)
+      aloneArray.push(previsao)
+
+      if (aloneArray.length >= 7) setList(aloneArray)
     }
 
-    callAPI('rio de janeiro')
+    capitais.forEach(cap => callAPI(cap))
   }, [])
 
   return (
@@ -28,7 +42,7 @@ const TableCity = () => {
         </thead>
         <tbody>
           {list ? (
-            <TableRow previsao={list} />
+            list.map(capital => <TableRow previsao={capital} key={capital.name} />)
           ) : (
             <tr>
               <td>

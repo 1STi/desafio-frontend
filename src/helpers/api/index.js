@@ -14,6 +14,24 @@ class API {
         return null
       }
     }
+
+    this.getNextDays = async (city) => {
+      try {
+        const URL = `api.openweathermap.org/data/2.5/forecast?q=${city},br${PAR_CONFIG}`
+        const json = await fetch(URL)
+        const response = await json.json()
+        if (response.cod === 404) throw new Error('Cidade não encotrada :(')
+        return response
+      } catch (e) {
+        console.log(e)
+        return null
+      }
+    }
+
+    this.getAll = async (city) => {
+      const allResponse = await Promise.all([this.getNextDays(city), this.getCurrent(city)])
+      return allResponse
+    }
   }
 }
 
