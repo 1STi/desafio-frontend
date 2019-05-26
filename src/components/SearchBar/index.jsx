@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import './style.css'
 import API from '../../helpers/api'
 
 const SearchBar = ({ placeholder, action }) => {
+  const [city, setCity] = useState('')
+
+  const handleChange = (e) => {
+    e.preventDefault()
+    setCity(e.target.value)
+  }
+
   const handlerClick = async (e) => {
     try {
-      const city = e.target.previousSibling.value
       e.target.previousSibling.value = ''
-      const previsao = await API.getCurrent(city)
-      action(previsao.name ? previsao : false)
+      const [current, next] = await API.getAll(city)
+      action(current.name ? { current, next } : false)
     } catch (err) {
       console.log(err)
     }
@@ -17,7 +23,7 @@ const SearchBar = ({ placeholder, action }) => {
 
   return (
     <div className="search-wrapper">
-      <input type="text" className="search-bar" placeholder={placeholder} />
+      <input type="text" className="search-bar" placeholder={placeholder} onChange={handleChange} />
       <button type="button" className="button-search fas fa-search icon" onClick={handlerClick} />
     </div>
   )

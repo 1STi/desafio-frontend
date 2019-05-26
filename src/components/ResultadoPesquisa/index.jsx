@@ -4,18 +4,19 @@ import PropTypes from 'prop-types'
 import PrevisaoSemana from './PrevisaoSemana'
 import PrevisaoAtual from './PrevisaoAtual'
 
-const ResultadoPesquisa = ({ previsao, handlerClick }) => (
+const ResultadoPesquisa = ({ current, handlerClick, next }) => (
   <div className="card_wrapper">
-    <PrevisaoAtual previsao={previsao} handlerClick={handlerClick} />
-    <PrevisaoSemana />
+    <PrevisaoAtual previsao={current} handlerClick={handlerClick} />
+    <PrevisaoSemana next={next} />
   </div>
 )
 
 ResultadoPesquisa.propTypes = {
-  previsao: PropTypes.shape({
+  current: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }).isRequired,
   handlerClick: PropTypes.func.isRequired,
+  next: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default ResultadoPesquisa

@@ -26,6 +26,8 @@
       }
     ],
     "semi": "off",
-    "linebreak-style": "off"
+    "linebreak-style": "off",
+    "camelcase": "off",
+    "no-console": "off"
   }
 }

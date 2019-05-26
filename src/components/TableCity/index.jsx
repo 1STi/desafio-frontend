@@ -5,13 +5,31 @@ import TableRow from './TableRow'
 import Loading from '../Loading'
 
 const capitais = [
-  'são paulo',
-  'salvador',
-  'rio de janeiro',
+  'Rio Branco',
+  'Maceió',
+  'Macapá',
+  'Manaus',
   'Salvador',
   'Fortaleza',
   'Brasília',
   'Vitória',
+  'Goiânia',
+  'São Luiz',
+  'Cuiabá',
+  'Campo Grande',
+  'Belo Horizonte',
+  'Belém',
+  'João Pessoa',
+  'Curitiba',
+  'Recife',
+  'Rio de Janeiro',
+  'Natal',
+  'Porto Alegre',
+  'Porto Velho',
+  'Boa Vista',
+  'Florianópolis',
+  'São Paulo',
+  'Palmas',
 ]
 
 const TableCity = () => {
@@ -24,7 +42,7 @@ const TableCity = () => {
       const previsao = await API.getCurrent(city)
       aloneArray.push(previsao)
 
-      if (aloneArray.length >= 7) setList(aloneArray)
+      if (aloneArray.length >= capitais.length) setList(aloneArray)
     }
 
     capitais.forEach(cap => callAPI(cap))

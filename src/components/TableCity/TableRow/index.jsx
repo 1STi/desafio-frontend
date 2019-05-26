@@ -2,22 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './style.css'
 
-const TableRow = ({ previsao }) => {
-  console.log('I has :', previsao)
-  return (
-    <tr>
-      <td className="dado min">
-        {Math.round(previsao.main.temp_min)}
+const TableRow = ({ previsao }) => (
+  <tr>
+    <td className="dado min">
+      {Math.round(previsao.main.temp_min)}
 °
-      </td>
-      <td className="dado max">
-        {Math.round(previsao.main.temp_max)}
+    </td>
+    <td className="dado max">
+      {Math.round(previsao.main.temp_max)}
 °
-      </td>
-      <td className="dado_city">{previsao.name}</td>
-    </tr>
-  )
-}
+    </td>
+    <td className="dado_city">{previsao.name}</td>
+  </tr>
+)
 
 TableRow.propTypes = {
   previsao: PropTypes.shape({

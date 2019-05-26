@@ -20,7 +20,13 @@ const App = () => {
       <header className="header">
         <h1 className={previsao ? 'title-min' : 'title'}>Previsão do tempo</h1>
       </header>
-      {!!previsao && <ResultadoPesquisa previsao={previsao} handlerClick={handlerClick} />}
+      {!!previsao && (
+        <ResultadoPesquisa
+          current={previsao.current}
+          next={previsao.next}
+          handlerClick={handlerClick}
+        />
+      )}
       <SearchBar placeholder="Insira aqui o nome da cidade" action={update} />
       <div>
         <TableCity />

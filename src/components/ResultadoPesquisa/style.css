@@ -81,11 +81,12 @@
 
 .dia {
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .dia:last-child {
-  margin-bottom: 0;
+  margin-right: 0;
 }
 
 .prev_semana .dia:last-child {
