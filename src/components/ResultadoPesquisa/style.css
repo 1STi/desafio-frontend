@@ -1,0 +1,112 @@
+.card_wrapper {
+  position: relative;
+  color: var(--black);
+  background-color: var(--bg-card);
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.07);
+  max-width: 90%;
+  margin: 0 auto;
+  animation: show 1s linear;
+}
+
+.prev_atual,
+.prev_semana {
+  padding: 0 1rem;
+}
+
+.prev_atual {
+  border-bottom: 1px solid var(--orange);
+  margin-bottom: 1.5rem;
+}
+
+.card_header {
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: var(--orange);
+}
+
+.subtitle_3 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.temp_atual {
+  padding: 0 !important;
+  color: var(--back) !important;
+  margin-bottom: 1rem;
+}
+
+.temp_row_info {
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  margin-bottom: 1.3rem;
+  font-weight: 300;
+}
+
+.temp_row_info .bold {
+  font-weight: bold;
+}
+.fa-arrow-down,
+.fa-arrow-up {
+  color: var(--orange);
+}
+
+/* temp da semana */
+
+.prev_semana {
+  padding-bottom: 1.5rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dia {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dia:last-child {
+  margin-right: 0;
+}
+
+.prev_semana .dia:last-child {
+  margin-right: 0;
+}
+
+.dia .temp {
+  font-weight: bold;
+  color: var(--orange);
+}
+
+.dia h3 {
+  margin-bottom: 0.5rem;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

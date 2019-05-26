@@ -1,0 +1,36 @@
+.search-bar {
+  padding: 10px 13px;
+  width: 100%;
+  border: none;
+}
+
+.button-search {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  position: absolute;
+  background: transparent;
+}
+
+.search-wrapper {
+  position: relative;
+  border: 1px solid gray;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+
+.icon {
+  color: var(--black);
+  background: transparent;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: var(--orange);
+  background: transparent;
+}

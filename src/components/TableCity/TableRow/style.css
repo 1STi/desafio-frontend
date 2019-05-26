@@ -1,0 +1,14 @@
+.dado,
+.dado_city {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.dado {
+  padding: 8px 0;
+  padding-right: 8px;
+}
+
+.dado_city {
+  padding: 8px;
+}

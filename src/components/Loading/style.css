@@ -1,0 +1,15 @@
+.loading {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border-top: 2px solid var(--black);
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

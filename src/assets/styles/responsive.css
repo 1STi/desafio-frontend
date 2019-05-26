@@ -1,0 +1,13 @@
+@media screen and (max-width: 414px) {
+  .container {
+    width: 100%;
+  }
+  .card_wrapper {
+    position: relative;
+    color: var(--black);
+    background-color: var(--bg-card);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.07);
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
