@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="bdk_ui_mobile" />
     <orderEntry type="module" module-name="bdk-service" />
+    <orderEntry type="module" module-name="vivo-noticias-react-native" />
   </component>
 </module>

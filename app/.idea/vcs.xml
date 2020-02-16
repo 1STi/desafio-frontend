@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../../../bennu/bdk-service" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../bennu/vivo-noticias-react-native" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
   </component>
 </project>

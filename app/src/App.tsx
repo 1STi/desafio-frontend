@@ -3,30 +3,24 @@ import logo from './logo.svg';
 import './App.css';
 import styled from 'styled-components';
 import {space, SpaceProps} from 'styled-system';
+import HomeNewsGrid from './components/HomeNewsGrid/HomeNewsGrid';
+import {ThemeProvider} from './ui/theme/ThemeProvider';
+import {buildTheme} from './ui/theme/theme';
+import MasonryGrid2Rows from './ui/components/MasonryGrid2Rows';
 
 const StyledDiv = styled.div<SpaceProps>`
   border: 1px solid #ccc;
   ${space}
 `;
+const theme = {...buildTheme(), cardImage: {title: {border: '1px solid #f0f'}}};
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <StyledDiv m="10px">Hello</StyledDiv>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <HomeNewsGrid height="50vh" width="100vw" />
+      </div>
+    </ThemeProvider>
   );
 };
 

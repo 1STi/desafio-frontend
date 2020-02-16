@@ -35,7 +35,7 @@ module.exports = {
             "rules": {
                 "@typescript-eslint/no-use-before-define":["warn", { "functions": false}],
                 "@typescript-eslint/explicit-function-return-type": ["error", {
-                    allowExpressions: false,
+                    allowExpressions: true,
                     allowTypedFunctionExpressions: true,
                     allowHigherOrderFunctions: true,
                 }]
