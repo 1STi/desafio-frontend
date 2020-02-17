@@ -1,0 +1,26 @@
+const TYPES = {
+    REQUEST: "{{upperCase name}}_REQUEST",
+    SUCCESS: "{{upperCase name}}_SUCCESSS",
+    ERROR: "{{upperCase name}}_ERROR"
+};
+
+const initial_state = {
+    data: {},
+    error: "",
+    loading: false
+};
+
+const {{pascalCase name}}Reducer = (state = initial_state, action) => {
+    switch (action.type) {
+        case TYPES.REQUEST:
+            return { ...state, loading: true };
+        case TYPES.SUCCESS:
+            return { ...state, data: action.payload.{{pascalCase name}}, loading: false };
+        case TYPES.ERROR:
+            return { ...state, error: action.payload.error, loading: false };
+        default:
+            return state;
+    }
+};
+
+export default {{pascalCase name}}Reducer;
