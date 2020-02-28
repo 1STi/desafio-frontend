@@ -2,10 +2,8 @@
 import axios from 'axios';
 import B64Encoder from 'crypto-js/enc-base64';
 import hmacSHA1 from 'crypto-js/hmac-sha1';
-import {ForecastCondition, LocationForecast} from './state/common';
+import {ForecastCondition} from './state/common';
 import OAuth from 'oauth-1.0a';
-// @ts-ignore
-import Feels from 'feels';
 
 export type LocationApiResponse = {
   location: {
@@ -59,40 +57,8 @@ function buildRequestHeaders(
   return oauth.toHeader(oauth.authorize(request_data));
 }
 
-function getFeelsLike(temp: number, humidity: number, speed: number): number {
-  const config = {
-    temp,
-    humidity,
-    speed,
-    units: {
-      temp: 'c',
-      speed: 'kph',
-    },
-  };
-  return new Feels(config).toC().like() as number;
-}
-
-function normalizeData(raw: LocationApiResponse): LocationForecast {
-  const {location, forecasts, current_observation: currObs} = raw;
-  const wind = currObs.wind.speed;
-  const humidity = currObs.atmosphere.humidity;
-  const temperature = currObs.condition.temperature;
-  const feelsLike = getFeelsLike(temperature, humidity, wind);
-  return {
-    city: location.city,
-    region: location.region,
-    country: location.country,
-    woeid: location.woeid,
-    forecasts,
-    wind,
-    humidity,
-    temperature,
-    feelsLike,
-  };
-}
-
 type getOpts = {location: string} | {woeid: number};
-export async function get(opts: getOpts): Promise<LocationForecast> {
+export async function get(opts: getOpts): Promise<LocationApiResponse> {
   const params = {...opts, u: 'c', format: 'json'};
   console.log({params});
   const config = {
@@ -105,7 +71,7 @@ export async function get(opts: getOpts): Promise<LocationForecast> {
   //! handle errors!!!
   const {data} = await axios.get<LocationApiResponse>(url, config);
   if (data?.location?.woeid) {
-    return normalizeData(data);
+    return data;
   } else {
     throw new Error('Localidade não encontrada');
   }

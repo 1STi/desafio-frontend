@@ -1,12 +1,12 @@
 const themeBase = {
-  breakpoints: ['40em', '52em', '64em'],
+  breakpoints: ['500px'],
   colors: {
     primary: '#B620E0',
     onPrimary: '#ffffff',
     inputBorder: '#cccccc',
     onImage: '#ffffff',
   },
-  fontSizes: [12, 14, 16, 18, 20, 24, 28, 32, 48, 64],
+  fontSizes: [10, 12, 14, 16, 18, 20, 24, 28, 32, 48, 64],
   space: ['0', '4px', '8px', '16px', '24px', '32px', '48px', '64px', '80px'],
   radii: [0, 4, 8, 12, 16, 24, 32, 48, 64],
   fontFamily: {primary: 'Roboto', alt: 'Roboto'},
