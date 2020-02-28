@@ -2,8 +2,10 @@
 import axios from 'axios';
 import B64Encoder from 'crypto-js/enc-base64';
 import hmacSHA1 from 'crypto-js/hmac-sha1';
-import Base64 from 'crypto-js/enc-base64';
-import {ForecastCondition} from './state/common';
+import {ForecastCondition, LocationForecast} from './state/common';
+import OAuth from 'oauth-1.0a';
+// @ts-ignore
+import Feels from 'feels';
 
 export type LocationApiResponse = {
   location: {
@@ -35,64 +37,75 @@ const consumer_key =
   'dj0yJmk9UklxcWFrZTNETWFoJmQ9WVdrOWRFWmllazAyTkdFbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTJh';
 const consumer_secret = '71a020bdd5074cc42bd894442346a29e7f6c1f4e';
 
-function buildAuthorizaton(query: getOpts): string {
-  const concat = '&';
-  // const query = {location: 'sunnyvale,ca', format: 'json'};
-  const oauth = {
-    oauth_consumer_key: consumer_key,
-    oauth_nonce: Math.random()
-      .toString(36)
-      .substring(2),
-    oauth_signature_method: 'HMAC-SHA1',
-    oauth_timestamp: new Date().getTime() / 1000,
-    oauth_version: '1.0',
-    oauth_signature: '',
+function hash_function_sha1(base_string: string, key: string): string {
+  return hmacSHA1(base_string, key).toString(B64Encoder);
+}
+
+function buildRequestHeaders(
+  url: string,
+  method: string,
+  data: any,
+): OAuth.Header {
+  const oauth = new OAuth({
+    consumer: {key: consumer_key, secret: consumer_secret},
+    signature_method: 'HMAC-SHA1',
+    hash_function: hash_function_sha1,
+  });
+  const request_data = {
+    url,
+    method,
+    data,
   };
+  return oauth.toHeader(oauth.authorize(request_data));
+}
 
-  const merged = {...query, ...oauth};
-  // Note the sorting here is required
-  const merged_arr = Object.keys(merged)
-    .sort()
-    .map(function(k) {
-      // @ts-ignore
-      return [k + '=' + encodeURIComponent(merged[k])];
-    });
-  const signature_base_str =
-    'GET' +
-    concat +
-    encodeURIComponent(url) +
-    concat +
-    encodeURIComponent(merged_arr.join(concat));
+function getFeelsLike(temp: number, humidity: number, speed: number): number {
+  const config = {
+    temp,
+    humidity,
+    speed,
+    units: {
+      temp: 'c',
+      speed: 'kph',
+    },
+  };
+  return new Feels(config).toC().like() as number;
+}
 
-  const composite_key = encodeURIComponent(consumer_secret) + concat;
-  const hash = hmacSHA1(signature_base_str, composite_key);
-  const signature = hash.toString(B64Encoder);
-
-  oauth['oauth_signature'] = signature;
-  const auth_header: string =
-    'OAuth ' +
-    Object.keys(oauth)
-      .map(function(k) {
-        // @ts-ignore
-        return [k + '="' + oauth[k] + '"'];
-      })
-      .join(',');
-  return auth_header;
+function normalizeData(raw: LocationApiResponse): LocationForecast {
+  const {location, forecasts, current_observation: currObs} = raw;
+  const wind = currObs.wind.speed;
+  const humidity = currObs.atmosphere.humidity;
+  const temperature = currObs.condition.temperature;
+  const feelsLike = getFeelsLike(temperature, humidity, wind);
+  return {
+    city: location.city,
+    region: location.region,
+    country: location.country,
+    woeid: location.woeid,
+    forecasts,
+    wind,
+    humidity,
+    temperature,
+    feelsLike,
+  };
 }
 
 type getOpts = {location: string} | {woeid: number};
-export async function get(opts: getOpts): Promise<LocationApiResponse> {
+export async function get(opts: getOpts): Promise<LocationForecast> {
+  const params = {...opts, u: 'c', format: 'json'};
+  console.log({params});
   const config = {
     headers: {
-      Authorization: buildAuthorizaton(opts),
+      ...buildRequestHeaders(url, 'GET', params),
       'X-Yahoo-App-Id': appId,
     },
-    data: {...opts, u: 'c', format: 'json'},
+    params,
   };
   //! handle errors!!!
   const {data} = await axios.get<LocationApiResponse>(url, config);
   if (data?.location?.woeid) {
-    return data;
+    return normalizeData(data);
   } else {
     throw new Error('Localidade não encontrada');
   }

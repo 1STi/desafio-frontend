@@ -59,8 +59,8 @@ const useCapitalActions = (): CapitalActions => {
     async get(woeid: number) {
       dispatch({type: TYPES.FETCH_LOCATION, payload: {woeid}});
       try {
-        const location = await get({woeid});
-        dispatch({type: TYPES.FETCH_LOCATION_SUCCESS, payload: location});
+        const resp = await get({woeid});
+        dispatch({type: TYPES.FETCH_LOCATION_SUCCESS, payload: resp});
       } catch (e) {
         dispatch({type: TYPES.FETCH_LOCATION_ERROR, payload: e});
       }

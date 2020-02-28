@@ -18,6 +18,7 @@ export type LocationForecast = {
   country: string;
   wind: number;
   humidity: number;
+  temperature: number;
   feelsLike: number; // => https://github.com/strikeentco/feels
   forecasts: ForecastCondition[];
 };

@@ -4551,6 +4551,11 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
+feels@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/feels/-/feels-3.0.0.tgz#9e23e52e6b39cd78c8567991c21f627562b8a525"
+  integrity sha512-rDEOj5oUOq0RpKasXkQhiG7IrCrY3Gfu5dvCtRZqZW3avrWYCZdiDcRbE4ZDE6BQDBVY/4XFKgGwdCuOBCUdfQ==
+
 figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
@@ -7332,6 +7337,11 @@ nwsapi@^2.0.7, nwsapi@^2.1.3:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.0.tgz#204879a9e3d068ff2a55139c2c772780681a38b7"
   integrity sha512-h2AatdwYH+JHiZpv7pt/gSX1XoRGb7L/qSIeuqA6GwYoF9w1vP1cw42TO0aI2pNyshRK5893hNSl+1//vHK7hQ==
+
+oauth-1.0a@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/oauth-1.0a/-/oauth-1.0a-2.2.6.tgz#eadbccdb3bceea412d24586e6f39b2b412f0e491"
+  integrity sha512-6bkxv3N4Gu5lty4viIcIAnq5GbxECviMBeKR3WX/q87SPQ8E8aursPZUtsXDnxCs787af09WPRBLqYrf/lwoYQ==
 
 oauth-sign@~0.9.0:
   version "0.9.0"
