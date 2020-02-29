@@ -1,9 +1,9 @@
 import Box, {BoxProps} from '../Box/Box';
 import styled from 'styled-components';
-import {flex} from 'styled-system';
+import {flexbox, FlexboxProps} from 'styled-system';
 
-const Flex = styled(Box)<BoxProps>`
+const Flex = styled(Box)<BoxProps & FlexboxProps>`
   display: flex;
-  ${flex}
+  ${flexbox}
 `;
 export default Flex;

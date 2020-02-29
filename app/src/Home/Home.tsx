@@ -38,6 +38,10 @@ const Home: React.FC = () => {
   }, []);
   const selectedLocation = locations[455827]?.data;
 
+  function handleClose() {
+    console.log('closed!!!!!!!!');
+  }
+
   return (
     <Container width="100vw" maxWidth={'500px'}>
       {!selectedLocation && (
@@ -51,7 +55,7 @@ const Home: React.FC = () => {
           <TitleBar display={['block', 'none']} m={0} paddingX={2} paddingY={3}>
             Previsão do Tempo
           </TitleBar>
-          <LocationCard forecastData={selectedLocation} />
+          <LocationCard forecastData={selectedLocation} onClose={handleClose} />
         </Content>
       )}
       <hr />

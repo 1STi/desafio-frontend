@@ -1,6 +1,9 @@
 const themeBase = {
   breakpoints: ['500px'],
   colors: {
+    onWhite: '#505050',
+    onWhitePrimary: '#FF7400',
+    onWhitePrimaryLight: '#ffc88c',
     primary: '#B620E0',
     onPrimary: '#ffffff',
     inputBorder: '#cccccc',
