@@ -28,7 +28,7 @@ const capitalsReducer = (
         ...state,
         locations: {
           ...state.locations,
-          [payload.location.woeid]: {
+          [payload.woeid]: {
             isLoading: false,
             error: undefined,
             data: payload,
