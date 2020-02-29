@@ -9,7 +9,8 @@ import {
   translateWeekday,
 } from '../common';
 import {Dispatch} from 'redux';
-import {get, LocationApiResponse} from '../../api';
+import {get, getOpts, LocationApiResponse} from '../../api';
+import {useMemo} from 'react';
 
 export type CityForecast = {
   data?: LocationForecast;
@@ -22,6 +23,7 @@ export const TYPES = {
   FETCH_LOCATION: 'FETCH_LOCATION',
   FETCH_LOCATION_SUCCESS: 'FETCH_LOCATION/SUCCESS',
   FETCH_LOCATION_ERROR: 'FETCH_LOCATION/ERROR',
+  REMOVE_LOCATION: 'REMOVE_LOCATION',
 };
 
 // SEARCH_LOCATION: 'SEARCH_LOCATION',
@@ -69,26 +71,46 @@ function convertResponse(raw: LocationApiResponse): CityForecast['data'] {
 }
 
 type CapitalActions = {
-  get(woeid: number): void;
+  get(woeid: number, isCapital?: boolean): void;
+  search(term: string): void;
 };
 
 const useCapitalActions = (): CapitalActions => {
   const dispatch = useDispatch<Dispatch<ActionData>>();
-  return {
-    async get(woeid: number) {
+  const actions = {
+    async get(woeid: number, isCapital = false) {
       dispatch({type: TYPES.FETCH_LOCATION, payload: {woeid}});
       try {
         const resp = await get({woeid});
         const locationForecast = convertResponse(resp);
         dispatch({
           type: TYPES.FETCH_LOCATION_SUCCESS,
-          payload: locationForecast,
+          payload: {...locationForecast, isCapital},
         });
       } catch (e) {
+        e.woeid = woeid;
+        dispatch({type: TYPES.FETCH_LOCATION_ERROR, payload: e});
+      }
+    },
+    async search(term: string) {
+      if (!term.trim()) {
+        return dispatch({type: TYPES.REMOVE_LOCATION, payload: {woeid: -1}});
+      }
+      dispatch({type: TYPES.FETCH_LOCATION, payload: {woeid: -1}});
+      try {
+        const resp = await get({location: term});
+        const locationForecast = convertResponse(resp);
+        dispatch({
+          type: TYPES.FETCH_LOCATION_SUCCESS,
+          payload: {...locationForecast, woeid: -1},
+        });
+      } catch (e) {
+        e.woeid = -1;
         dispatch({type: TYPES.FETCH_LOCATION_ERROR, payload: e});
       }
     },
   };
+  return useMemo(() => actions, [dispatch]);
 };
 
 export default useCapitalActions;

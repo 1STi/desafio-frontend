@@ -3,10 +3,17 @@ import {CityForecast, TYPES} from './useCapitalsActions';
 
 export interface CapitalState {
   locations: {[woeid: string]: CityForecast};
+  search: CityForecast;
 }
 
 export const INITIAL_STATE: CapitalState = {
   locations: {},
+  search: {
+    isCapital: false,
+    isLoading: false,
+    data: undefined,
+    error: undefined,
+  },
 };
 
 const capitalsReducer = (
@@ -14,7 +21,14 @@ const capitalsReducer = (
   {type, payload}: ActionData,
 ): CapitalState => {
   switch (type) {
-    //GET FAVORITES
+    case TYPES.REMOVE_LOCATION:
+      return {
+        ...state,
+        locations: {
+          ...state.locations,
+          [payload.woeid]: undefined,
+        },
+      };
     case TYPES.FETCH_LOCATION:
       return {
         ...state,

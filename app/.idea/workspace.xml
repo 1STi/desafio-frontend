@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a6ddeb-2755-4755-8606-46ed70d2d229" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/ConditionAttribute.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/MaxMin.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/WeekDay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SearchInput/SearchInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SearchInput/styled.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/CardHorizontal/example.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/CardHorizontal/example.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/CardHorizontal/styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/CardHorizontal/styled.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/Text/styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/Text/styled.ts" afterDir="false" />
@@ -12,13 +11,10 @@
       <change beforePath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/theme/themeVariables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/theme/themeVariables.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/example/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/example/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LocationCard/LocationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationCard/LocationCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LocationCard/styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationCard/styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/components/Flex/Flex.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/components/Flex/Flex.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/theme/themeBase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/theme/themeBase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/capitals/capitalsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/capitals/capitalsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/capitals/useCapitalsActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/capitals/useCapitalsActions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -67,7 +63,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/../../../bennu/vivo-noticias-react-native/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -106,7 +102,8 @@
       <workItem from="1581680452504" duration="18206000" />
       <workItem from="1581870795811" duration="18735000" />
       <workItem from="1582039112419" duration="1538000" />
-      <workItem from="1582911448543" duration="22607000" />
+      <workItem from="1582911448543" duration="25335000" />
+      <workItem from="1582947249359" duration="5085000" />
     </task>
     <servers />
   </component>
@@ -146,10 +143,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="624" y="254" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1581873743049" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1582929545138">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1582948902583">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1582929545138" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1582948902583" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -157,7 +154,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/LocationCard/styled.ts</url>
           <line>36</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

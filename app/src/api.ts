@@ -57,7 +57,7 @@ function buildRequestHeaders(
   return oauth.toHeader(oauth.authorize(request_data));
 }
 
-type getOpts = {location: string} | {woeid: number};
+export type getOpts = {location: string} | {woeid: number};
 export async function get(opts: getOpts): Promise<LocationApiResponse> {
   const params = {...opts, u: 'c', format: 'json'};
   console.log({params});
