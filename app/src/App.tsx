@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import {ThemeProvider} from './ui/theme/ThemeProvider';
 import {buildTheme} from './ui/theme/theme';
 import {store} from './state/store';
-import Home from './Home/Home';
+import Home from './components/Home/Home';
 
 const theme = {
   ...buildTheme(),

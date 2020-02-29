@@ -1,7 +1,7 @@
 import {color, ColorProps, FlexProps, space, SpaceProps} from 'styled-system';
 import React from 'react';
-import Box, {BoxProps} from '../../ui/components/Box/Box';
-import Flex from '../../ui/components/Flex/Flex';
+import Box, {BoxProps} from '../../../ui/components/Box/Box';
+import Flex from '../../../ui/components/Flex/Flex';
 import styled from 'styled-components';
 
 const Cell = styled(Box)<BoxProps & SpaceProps & ColorProps>`

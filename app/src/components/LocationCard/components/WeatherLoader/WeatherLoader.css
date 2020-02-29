@@ -1,0 +1,147 @@
+.weather-loader {
+  position: relative;
+}
+
+.weather-loader svg {
+  width: 110px;
+  height: 110px;
+}
+
+.weather-loader path {
+  stroke: #fff;
+  stroke-width: 0.25;
+  fill: transparent;
+}
+
+.weather-loader .cloud {
+  position: relative;
+  z-index: 2;
+}
+
+.weather-loader .cloud path {
+  fill: rgba(255,255,255,0.8);
+}
+
+.weather-loader .sun {
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 50%;
+  top: 11px;
+  margin-right: -45px;
+  z-index: 1;
+  animation-name: rotate;
+  animation-duration: 16000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.weather-loader .sun path {
+  stroke-width: 0.18;
+  fill: #fff;
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* Rain */
+.weather-loader .rain {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 50%;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: 5px;
+}
+
+.weather-loader .rain .drop {
+  opacity: 1;
+  background: #fff;
+  display: block;
+  float: left;
+  width: 3px;
+  height: 10px;
+  margin-left: 4px;
+  border-radius: 0px 0px 6px 6px;
+
+  animation-name: drop;
+  animation-duration: 350ms;
+  animation-iteration-count: infinite;
+}
+
+.weather-loader .rain .drop:nth-child(1) {
+  animation-delay: -130ms;
+}
+
+.weather-loader .rain .drop:nth-child(2) {
+  animation-delay: -240ms;
+}
+
+.weather-loader .rain .drop:nth-child(3) {
+  animation-delay: -390ms;
+}
+
+.weather-loader .rain .drop:nth-child(4) {
+  animation-delay: -525ms;
+}
+
+.weather-loader .rain .drop:nth-child(5) {
+  animation-delay: -640ms;
+}
+
+.weather-loader .rain .drop:nth-child(6) {
+  animation-delay: -790ms;
+}
+
+.weather-loader .rain .drop:nth-child(7) {
+  animation-delay: -900ms;
+}
+
+.weather-loader .rain .drop:nth-child(8) {
+  animation-delay: -1050ms;
+}
+
+.weather-loader .rain .drop:nth-child(9) {
+  animation-delay: -1130ms;
+}
+
+.weather-loader .rain .drop:nth-child(10) {
+  animation-delay: -1300ms;
+}
+
+
+@keyframes drop {
+  50% {
+    height: 45px;
+    opacity: 0;
+  }
+
+  51% {
+    opacity: 0;
+  }
+
+  100% {
+    height: 1px;
+    opacity: 0;
+  }
+}
+
+.weather-loader .text {
+  text-align: center;
+  margin: auto;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 11px;
+  color: #fff;
+  width: 200px;
+}

@@ -9,27 +9,34 @@ import {
   Conditions,
   ConditionsElement,
   ConditionDetails,
-  Divider,
   WeekDayContainer,
   CloseContainer,
   CloseIcon,
 } from './styled';
-import MaxMin from './MaxMin';
-import ConditionAttribute from './ConditionAttribute';
-import WeekDay from './WeekDay';
+import MaxMin from './components/MaxMin';
+import ConditionAttribute from './components/ConditionAttribute';
+import WeekDay from './components/WeekDay';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
+import {CityForecast} from '../../state/capitals/useCapitalsActions';
+import WeatherLoader from './components/WeatherLoader/WeatherLoader';
+import {Divider} from '../Divider';
 
 type LocationCardProps = FlexboxItemProps & {
-  forecastData?: LocationForecast;
+  forecast?: CityForecast;
   onClose?: () => void;
 };
 
 const LocationCard: React.FC<LocationCardProps> = ({
-  forecastData,
+  forecast,
   onClose,
   ...props
 }) => {
-  if (!forecastData) return <div>No data</div>;
+  const forecastData = forecast?.data;
+  if (!forecast || !forecast?.data) {
+    if (forecast?.isLoading) return <WeatherLoader />;
+    return <></>;
+  }
+
   const {
     city,
     region,
@@ -39,7 +46,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
     humidity,
     wind,
     forecasts,
-  } = forecastData;
+  } = forecastData as LocationForecast;
   const [currForecast, ...otherForecasts] = forecasts;
   const title = `${city}, ${region} - ${country}`;
   const {code} = currForecast;
@@ -50,7 +57,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
   const windTx = `${wind}km/h`;
 
   return (
-    <CardWrapper paddingY={[2, 4]} paddingX={[2, 5]}>
+    <CardWrapper paddingY={[2, 4]} paddingX={[0, 5]}>
       <Box paddingX={3}>
         <Title fontSize={1} paddingBottom={[2]}>
           {title}
@@ -78,7 +85,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
           </div>
         </ConditionDetails>
       </Box>
-      <Divider marginY={3} />
+      <Divider marginY={3} borderColor="onWhitePrimary" />
       <WeekDayContainer paddingX={3}>
         {otherForecasts.slice(0, 5).map(fc => (
           <WeekDay

@@ -1,6 +1,6 @@
 import React from 'react';
-import Box, {BoxProps} from '../../ui/components/Box/Box';
-import Flex from '../../ui/components/Flex/Flex';
+import Box, {BoxProps} from '../../../ui/components/Box/Box';
+import Flex from '../../../ui/components/Flex/Flex';
 import styled from 'styled-components';
 import {
   FlexboxProps,

@@ -81,17 +81,6 @@ ConditionDetails.defaultProps = {
   fontWeight: 'bold',
 };
 
-export const Divider = styled.div<BordersProps & SpaceProps>`
-  border-top: 2px solid #fff;
-  display: block;
-  height: 1px;
-  ${border}
-  ${space}
-`;
-Divider.defaultProps = {
-  borderColor: 'onWhitePrimaryLight',
-};
-
 export const WeekDayContainer = styled(Flex)<FlexboxProps & FontSizeProps>`
   font-weight: bold;
   ${fontSize}
