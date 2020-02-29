@@ -1,0 +1,29 @@
+html, body {
+  margin: 0;
+  background-color: #FF7400;
+}
+
+.cloud-loader {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.cloud-loader svg.cloud-svg {
+  width: 50px;
+  height: auto;
+}
+
+.cloud-loader .cloud {
+  stroke-dasharray: 1520.633;
+  stroke-dashoffset: 1520.633;
+  animation: loading 2s linear infinite;
+  stroke:#fff;
+  fill: rgba(255,255,255,0.3);
+}
+
+@keyframes loading {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
