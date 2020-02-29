@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a6ddeb-2755-4755-8606-46ed70d2d229" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Divider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/components/CapitalsListItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/components/WeatherLoader/WeatherLoader.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/components/WeatherLoader/WeatherLoader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/components/WeatherLoader/cloud.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/components/WeatherLoader/sun.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/components/CloudLoader/CloudLoader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/components/CloudLoader/CloudLoader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LocationCard/components/CloudLoader/cloud.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/CardHorizontal/example.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/CardHorizontal/example.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/CardHorizontal/styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/CardHorizontal/styled.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/Text/styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/Text/styled.ts" afterDir="false" />
@@ -15,12 +12,9 @@
       <change beforePath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/theme/themeVariables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/components/theme/themeVariables.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/example/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bennu/bdk_ui_mobile/example/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LocationCard/ConditionAttribute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationCard/components/ConditionAttribute.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LocationCard/LocationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationCard/LocationCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LocationCard/MaxMin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationCard/components/MaxMin.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LocationCard/WeekDay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationCard/components/WeekDay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LocationCard/components/CapitalsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationCard/components/CapitalsListItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LocationCard/styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationCard/styled.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +108,7 @@
       <workItem from="1581870795811" duration="18735000" />
       <workItem from="1582039112419" duration="1538000" />
       <workItem from="1582911448543" duration="25335000" />
-      <workItem from="1582947249359" duration="15981000" />
+      <workItem from="1582947249359" duration="19481000" />
     </task>
     <servers />
   </component>
@@ -122,10 +116,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="215" width="800" height="675" key="#ESLint" timestamp="1582995872952">
+    <state x="555" y="215" width="800" height="675" key="#ESLint" timestamp="1583001537529">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="215" width="800" height="675" key="#ESLint/0.27.1920.1053@0.27.1920.1053" timestamp="1582995872952" />
+    <state x="555" y="215" width="800" height="675" key="#ESLint/0.27.1920.1053@0.27.1920.1053" timestamp="1583001537529" />
     <state x="555" y="215" width="928" height="675" key="#Plugins" timestamp="1581870778241">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

@@ -139,7 +139,11 @@ const Home: React.FC = () => {
             ))}
           </Box>
           <Box flex={1}>
-            <CapitalsListItem.Header mb={4} paddingX={1} />
+            <CapitalsListItem.Header
+              mb={4}
+              paddingX={1}
+              display={['none', 'flex']}
+            />
             {capitalsWoeid.slice(5).map(woeid => (
               <CapitalsListItem
                 onClick={handleClickListItem}

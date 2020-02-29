@@ -5,17 +5,23 @@ import {
   FontSizeProps,
   fontWeight,
   FontWeightProps,
+  layout,
+  LayoutProps,
   SpaceProps,
 } from 'styled-system';
 import React from 'react';
 import {CityForecast} from '../../../state/capitals/useCapitalsActions';
 import Flex from '../../../ui/components/Flex/Flex';
 import styled from 'styled-components';
+import CloudLoader from './CloudLoader/CloudLoader';
 
-const Container = styled(Flex)<FlexboxProps & FontSizeProps & FontWeightProps>`
+const Container = styled(Flex)<
+  FlexboxProps & FontSizeProps & FontWeightProps & LayoutProps
+>`
   text-align: left;
   ${fontSize}
   ${fontWeight}
+  ${layout}
 `;
 Container.defaultProps = {
   fontSize: 1,
@@ -54,14 +60,14 @@ const CapitalsListItem: CapitalsListItemType = ({
 }) => {
   if (!forecast) return <></>;
   const {isLoading, data} = forecast;
+  if (isLoading) return <CloudLoader />;
   if (!data) return <></>;
   const [currForecast] = data.forecasts;
-  if (isLoading) return <div>Loafing...</div>;
   return (
     <HoverableContainer
       {...rest}
       className={isActive ? 'is-active' : ''}
-      onClick={() => onClick(forecast)}>
+      onClick={() => onClick(forecast as CityForecast)}>
       <Box mr={2} width={'40px'}>
         {currForecast.low}ºC
       </Box>

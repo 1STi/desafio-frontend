@@ -12,6 +12,8 @@ import {
   WeekDayContainer,
   CloseContainer,
   CloseIcon,
+  NotFound,
+  Blurred,
 } from './styled';
 import MaxMin from './components/MaxMin';
 import ConditionAttribute from './components/ConditionAttribute';
@@ -34,6 +36,18 @@ const LocationCard: React.FC<LocationCardProps> = ({
   const forecastData = forecast?.data;
   if (!forecast || !forecast?.data) {
     if (forecast?.isLoading) return <WeatherLoader />;
+    if (forecast && !forecast.data) {
+      return (
+        <NotFound>
+          <p>Minha previsão está um pouco</p>
+          <p>
+            {' '}
+            <Blurred>nublada</Blurred> para este local.
+          </p>{' '}
+          <h2>:(</h2>
+        </NotFound>
+      );
+    }
     return <></>;
   }
 

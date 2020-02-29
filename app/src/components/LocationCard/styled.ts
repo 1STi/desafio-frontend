@@ -104,3 +104,22 @@ export const CloseIcon = styled(FontAwesomeIcon)<
 CloseIcon.defaultProps = {
   color: 'onWhitePrimary',
 };
+
+export const NotFound = styled.div<FontSizeProps & SpaceProps & ColorProps>`
+  padding: 10px;
+  border: 2px solid #fff;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.6);
+  ${space}
+  ${color}
+  ${fontSize}
+`;
+NotFound.defaultProps = {
+  color: 'onWhitePrimary',
+  fontSize: 4,
+};
+
+export const Blurred = styled.span`
+  color: transparent;
+  text-shadow: 0 0 2px rgba(255, 116, 0, 1);
+`;
