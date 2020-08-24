@@ -1,0 +1,26 @@
+{
+  "name": "desafio-frontend",
+  "version": "1.0.0",
+  "description": "Weather app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOB-atheist/desafio-frontend.git"
+  },
+  "keywords": [
+    "weather",
+    "react",
+    "Axios",
+    "yahoo",
+    "api"
+  ],
+  "author": "pablo justino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MOB-atheist/desafio-frontend/issues"
+  },
+  "homepage": "https://github.com/MOB-atheist/desafio-frontend#readme"
+}
