@@ -4,7 +4,10 @@
   "description": "Weather app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo \"Error: no server\" && exit 1",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -22,5 +25,20 @@
   "bugs": {
     "url": "https://github.com/MOB-atheist/desafio-frontend/issues"
   },
-  "homepage": "https://github.com/MOB-atheist/desafio-frontend#readme"
+  "homepage": "https://github.com/MOB-atheist/desafio-frontend#readme",
+  "dependencies": {
+    "@babel/core": "7.0.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.2",
+    "html-loader": "^1.2.1",
+    "html-webpack-plugin": "^4.3.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "yarn": "^1.22.4"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  }
 }
