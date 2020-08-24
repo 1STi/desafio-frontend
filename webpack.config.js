@@ -16,8 +16,18 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js?$/,
-                loader: 'babel-loader',
+                test: /\.(js|mjs|jsx|ts|tsx)$/,
+                use: [
+                    {
+                        options: {
+                            cache: true,
+                            formatter: require.resolve('react-dev-utils/eslintFormatter'),
+                            eslintPath: require.resolve('eslint'),
+                            resolvePluginsRelativeTo: __dirname,
+                        },
+                        loader: 'eslint-loader'
+                    }
+                ],
                 exclude: /node_modules/
             },
             {
