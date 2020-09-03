@@ -23,10 +23,10 @@ const oauth = OAuth({
 
 export function GET_ALL(searchUrl) {
   return {
-    url: apiUrl + "?location=" + searchUrl + '&format=json',
+    url: apiUrl + "?location=" + searchUrl + '&format=json&u=c',
     headers: {
       ...oauth.toHeader(oauth.authorize({
-        url: apiUrl + "?location=" + searchUrl + '&format=json',
+        url: apiUrl + "?location=" + searchUrl + '&format=json&u=c',
         method: 'GET'
       })),
       'X-Yahoo-App-Id': appId,

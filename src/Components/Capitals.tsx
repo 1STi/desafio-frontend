@@ -92,8 +92,8 @@ const Capitals = () => {
           <Labels></Labels>
           {data.map((item: any) => (
             <React.Fragment key={item.city}>
-              <Info>{item.low}</Info>
-              <Info>{item.high}</Info>
+              <Info>{item.low}º</Info>
+              <Info>{item.high}º</Info>
               <Info>{item.city}</Info>
             </React.Fragment>
           ))}

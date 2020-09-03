@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Header from "./Components/Header";
 import Input from "./Components/Input";
 import Capitals from "./Components/Capitals";
+import { SearchStorage } from "./SearchContext";
+import Single from "./Components/Single";
 
 const Container = styled.div`
   padding: 0;
@@ -18,9 +20,12 @@ const Container = styled.div`
 function App() {
   return (
     <Container className="App">
-      <Header/>
-      <Input/>
-      <Capitals/>
+      <SearchStorage>
+        <Header />
+        <Single />
+        <Input />
+        <Capitals />
+      </SearchStorage>
     </Container>
   );
 }

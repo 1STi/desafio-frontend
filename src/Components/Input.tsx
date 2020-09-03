@@ -1,14 +1,15 @@
 import React from "react";
 import SearchIcon from "../Assets/SearchIcon";
 import styled from "styled-components";
-import { GET_ALL } from "../api";
+import { SearchContext } from "../SearchContext";
 
 const Form = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  margin-top: 3rem;
+  width: 80vw;
+  max-width: 600px;
+  margin-top: 1.2rem;
 `;
 
 const Search = styled.input`
@@ -16,7 +17,6 @@ const Search = styled.input`
   font-size: 1.4rem;
   font-weight: 300;
   width: 100%;
-  max-width: 600px;
   flex: 1;
   border-top: 1px solid #d86c00;
   border-right: none;
@@ -38,32 +38,25 @@ const Button = styled.button`
 `;
 
 const Input = () => {
-  const [search, setSearch] = React.useState("");
+  const { getSearch } = React.useContext(SearchContext);
 
-  async function fetchSearch(param: string) {
-    const { url, headers } = GET_ALL(param);
-    const response = await fetch(url, { headers });
-    const json = await response.json();
-    console.log(json)
-    return json;
-  }
+  const [query, setQuery] = React.useState("");
 
-  
-  function handleClick(event: React.FormEvent) {
+  function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    fetchSearch(search);
+    getSearch(query);
   }
 
   return (
-    <Form action="">
+    <Form onSubmit={handleSubmit}>
       <Search
         type="text"
         name="search"
         id="search"
         placeholder="Insira aqui o nome da cidade"
-        onChange={({ target }) => setSearch(target.value)}
+        onChange={({ target }) => setQuery(target.value)}
       />
-      <Button onClick={handleClick}>
+      <Button>
         <SearchIcon />
       </Button>
     </Form>
