@@ -10,6 +10,11 @@ const Form = styled.form`
   width: 80vw;
   max-width: 600px;
   margin-top: 1.2rem;
+
+  @media (max-width: 740px) {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
 `;
 
 const Search = styled.input`
@@ -22,6 +27,10 @@ const Search = styled.input`
   border-right: none;
   border-bottom: 1px solid #d86c00;
   border-left: 1px solid #d86c00;
+
+  @media (max-width: 740px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const Button = styled.button`

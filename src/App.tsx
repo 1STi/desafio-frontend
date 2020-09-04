@@ -15,6 +15,11 @@ const Container = styled.div`
   flex-direction: column;
   margin: auto;
   padding-top: 3rem;
+
+  @media (max-width: 740px) {
+    padding-top: 1.5rem;
+    align-items: flex-start;
+  }
 `;
 
 function App() {

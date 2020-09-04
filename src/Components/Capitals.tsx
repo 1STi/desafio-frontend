@@ -4,6 +4,7 @@ import { GET_ALL } from "../api";
 
 const Wrapper = styled.div`
   width: 46rem;
+  margin-bottom: 40px;
 
   &::before {
     content: "";
@@ -13,6 +14,10 @@ const Wrapper = styled.div`
     background-color: #fff;
     margin: 3rem 0 1.5rem 0;
   }
+
+  @media (max-width: 740px) {
+    width: 100%;
+  }
 `;
 
 const Title = styled.h3`
@@ -20,6 +25,10 @@ const Title = styled.h3`
   font-weight: bold;
   color: #fff;
   padding: 0 5rem;
+
+  @media (max-width: 740px) {
+    padding: 0 2rem;
+  }
 `;
 
 const Grid = styled.div`
@@ -28,11 +37,22 @@ const Grid = styled.div`
   gap: 15px;
   padding: 0 5rem;
   margin-top: 20px;
+
+  @media (max-width: 740px) {
+    grid-template-columns: 40px 40px 1fr;
+    padding: 0 2rem;
+  }
 `;
 
 const Labels = styled.span`
   font-size: 1rem;
   font-weight: 300;
+
+  @media (max-width: 740px) {
+    &:nth-of-type(n + 4) {
+      display: none;
+    }
+  }
 `;
 
 const Info = styled.span`
