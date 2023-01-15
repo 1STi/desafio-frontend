@@ -1,9 +1,9 @@
 import React from "react";
-import CapitaCard from "./CapitalCard";
-
+import CapitalCard from "./CapitalCard";
+import "../styles/TableCapital.css";
 // import { Container } from './styles';
 
-function TableCapital() {
+function TableCapital({ cities }) {
   return (
     <>
       <div className="container-table">
@@ -12,7 +12,14 @@ function TableCapital() {
           <p>Max</p>
         </div>
         <div className="city">
-          <CapitaCard city="Brasilia" min="10" max="20" />
+          {cities.map((city, id) => (
+            <CapitalCard
+              key={id}
+              city={city.name}
+              min={city.min}
+              max={city.max}
+            />
+          ))}
         </div>
       </div>
     </>

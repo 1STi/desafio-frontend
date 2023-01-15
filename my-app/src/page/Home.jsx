@@ -11,6 +11,39 @@ import { getAllInfo } from "../api/Api";
 function Home() {
   const [city, setCity] = useState("");
   const [show, setShow] = useState(false);
+  const [cities, setCities] = useState([]);
+
+  const [tamScreen, setTamScreen] = useState(window.screen.width);
+
+  useEffect(() => {
+    setCities([
+      {
+        name: "São Paulo",
+        min: 20,
+        max: 30,
+      },
+      {
+        name: "Rio de Janeiro",
+        min: 20,
+        max: 30,
+      },
+      {
+        name: "Belo Horizonte",
+        min: 20,
+        max: 30,
+      },
+      {
+        name: "Brasília",
+        min: 20,
+        max: 30,
+      },
+      {
+        name: "Salvador",
+        min: 20,
+        max: 30,
+      },
+    ]);
+  }, []);
 
   const fetchWeather = async () => {
     const response = await getAllInfo();
@@ -42,7 +75,8 @@ function Home() {
           <div className="organize-capitals">
             <h2>Capitais</h2>
             <div className="capitals">
-              <TableCapital />
+              <TableCapital cities={cities} />
+              <TableCapital cities={cities} />
             </div>
           </div>
         </div>
