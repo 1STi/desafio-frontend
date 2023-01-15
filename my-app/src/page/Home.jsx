@@ -10,7 +10,7 @@ import { getAllInfo } from "../api/Api";
 
 function Home() {
   const [city, setCity] = useState("");
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [cities, setCities] = useState([]);
 
   const [tamScreen, setTamScreen] = useState(window.screen.width);
