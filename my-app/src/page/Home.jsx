@@ -1,101 +1,38 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { BsSearch } from "react-icons/bs";
+
+import TableCapital from "../components/TableCapital";
 import ContentWeather from "../components/ContentWeather";
 import "../styles/Home.css";
-import { BsSearch } from "react-icons/bs";
-import TableCapital from "../components/TableCapital";
+
 import { getAllInfo } from "../api/Api";
 
 function Home() {
   const [city, setCity] = useState("");
   const [show, setShow] = useState(true);
   const [cities, setCities] = useState([]);
-  const [capitaisCity, setCapitaisCity] = useState([]);
-  const [cityRender, setCityRender] = useState({});
 
   useEffect(() => {
-    setCapitaisCity([
-      {
-        name: "São Paulo",
-        max: 30,
-        min: 20,
-      },
-      {
-        name: "Rio de Janeiro",
-        max: 30,
-        min: 20,
-      },
-      {
-        name: "Belo Horizonte",
-        max: 30,
-        min: 20,
-      },
-      {
-        name: "Brasília",
-        max: 30,
-        min: 20,
-      },
-      {
-        name: "Salvador",
-        max: 30,
-        min: 20,
-      },
-    ]);
-    // const fetchCities = async () => {
-    //   const response = await getAllInfo();
-    //   const data = response.data;
-    //   data.map((city) => {
-    //     const { cidade, temperaturaMaxima, temperaturaMinima } = city;
-    //     setCities((cities) => [
-    //       ...cities,
-    //       cidade,
-    //       temperaturaMaxima,
-    //       temperaturaMinima,
-    //     ]);
-    //   });
-    // };
-    // const fetchCapitals = async () => {
-    //   const response = await getAllInfo();
-    //   const data = response.data;
-    //   for (let i = 0; i < 10; i++) {
-    //     const { cidade, temperaturaMaxima, temperaturaMinima } = data[i];
-    //     setCapitaisCity((capitaisCity) => [
-    //       ...capitaisCity,
-    //       cidade,
-    //       temperaturaMaxima,
-    //       temperaturaMinima,
-    //     ]);
-    //   }
-    // };
-    // // Ta pegando as informações da API e colocando no array de cidades
-    // fetchCities();
-    // fetchCapitals();
+    const fetchCities = async () => {
+      const { status, data } = await getAllInfo();
+
+      if (status === 200) {
+        const cities = data.slice(0, 10);
+        setCities(cities);
+      }
+    };
+
+    fetchCities();
   }, []);
 
   const showCitySearch = () => {
-    if (city == "") {
+    if (city === "") {
       alert("Insira o nome da cidade");
-    } else {
-      const {
-        cidade,
-        temperaturaMaxima,
-        temperaturaMinima,
-        estado,
-        sensasaoTermica,
-        vento,
-        humidade,
-      } = cities.filter((city) => city.cidade == city);
-      setCityRender({
-        cidade,
-        temperaturaMaxima,
-        temperaturaMinima,
-        estado,
-        sensasaoTermica,
-        vento,
-        humidade,
-      });
-      setShow(!show);
+      return;
     }
+
+    setShow(!show);
   };
 
   const cidade = {
@@ -146,8 +83,7 @@ function Home() {
           <div className="organize-capitals">
             <h2>Capitais</h2>
             <div className="capitals">
-              <TableCapital cities={capitaisCity} />
-              <TableCapital cities={capitaisCity} />
+              <TableCapital cities={cities} />
             </div>
           </div>
         </div>

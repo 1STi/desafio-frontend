@@ -3,6 +3,10 @@ import CapitalCard from "./CapitalCard";
 import "../styles/TableCapital.css";
 
 function TableCapital({ cities }) {
+  if (!cities.length) {
+    return <p>Carregando...</p>; // TODO: Make this a spinner.
+  }
+
   return (
     <>
       <div className="container-table">
@@ -11,12 +15,13 @@ function TableCapital({ cities }) {
           <p>Max</p>
         </div>
         <div className="city">
+          .
           {cities.map((city, id) => (
             <CapitalCard
               key={id}
-              city={city.name}
-              min={city.min}
-              max={city.max}
+              city={city.cidade}
+              min={city.temperaturaMax}
+              max={city.temperaturaMin}
             />
           ))}
         </div>
