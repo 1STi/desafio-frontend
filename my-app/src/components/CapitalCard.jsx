@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/CapitalCard.css";
 // import { Container } from './styles';
 
-function CapitaCard({ min, max, city }) {
+function CapitaCard({ city, max, min }) {
   return (
     <>
       <div className="capitalCard-container">

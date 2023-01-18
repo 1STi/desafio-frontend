@@ -8,7 +8,7 @@ export const apiWeather = axios.create({
 
 export const getAllInfo = () =>
   apiWeather.get("weathers").then((response) => {
-    console.log(response.data);
+    return response;
   });
 
 export const getWeatherByCity = (id) =>

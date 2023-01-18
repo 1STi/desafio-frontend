@@ -1,7 +1,6 @@
 import React from "react";
 import CapitalCard from "./CapitalCard";
 import "../styles/TableCapital.css";
-// import { Container } from './styles';
 
 function TableCapital({ cities }) {
   return (
