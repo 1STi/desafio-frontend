@@ -9,21 +9,8 @@
   flex-direction: row;
   font-size: 1rem;
   font-weight: 700;
-  height: 100%;
   color: black;
   gap: 1rem;
   margin-top: 15px;
   margin-right: 10px;
-}
-
-@media screen and (max-width: 768px) {
-  .capitalCard-container {
-    display: flex;
-    font-size: 1rem;
-    font-weight: 700;
-    height: 100%;
-    gap: 1rem;
-    margin-top: 15px;
-    margin-right: 10px;
-  }
 }

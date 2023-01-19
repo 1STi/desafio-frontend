@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/CapitalCard.css";
-// import { Container } from './styles';
 
 function CapitaCard({ city, max, min }) {
   return (

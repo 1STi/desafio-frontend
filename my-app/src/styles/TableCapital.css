@@ -1,8 +1,6 @@
 .temperature {
   display: flex;
-  flex-direction: row;
   gap: 1rem;
-  align-items: center;
 }
 
 .temperature p {
@@ -16,39 +14,27 @@
   gap: 0.2rem;
 }
 
-@media screen and (max-width: 800) {
-  .container {
-    height: 100%;
-    width: 100%;
-  }
+.text-main-container {
+  padding-bottom: 30px;
+}
 
-  .text-main-container {
-    padding-bottom: 30px;
-  }
+.text-main-container h1 {
+  font-size: 2rem;
+}
 
-  .text-main-container h1 {
-    font-size: 2rem;
-  }
+.container-input {
+  padding-bottom: 20px;
+}
 
-  .container-input {
-    padding-bottom: 20px;
-  }
+.container {
+  height: 100%;
+  width: 100%;
+}
 
-  .temperature {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .temperature p {
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
+@media screen and (min-width: 600px) {
   .city {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.2rem;
   }
 }
