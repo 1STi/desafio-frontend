@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
 
 import TableCapital from "../components/TableCapital";
-import ContentWeather from "../components/ContentWeather";
+import ContentWeather from "../components/Weather/ContentWeather";
 import "../styles/Home.css";
 
 import { getAllInfo } from "../api/Api";
