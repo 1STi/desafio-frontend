@@ -1,0 +1,40 @@
+.temperature {
+  display: flex;
+  gap: 1rem;
+}
+
+.temperature p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.city {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.text-main-container {
+  padding-bottom: 30px;
+}
+
+.text-main-container h1 {
+  font-size: 2rem;
+}
+
+.container-input {
+  padding-bottom: 20px;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .city {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+  }
+}

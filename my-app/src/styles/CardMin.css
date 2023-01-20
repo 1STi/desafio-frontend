@@ -1,0 +1,43 @@
+.container__week__day__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}
+
+.container__week__day {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}
+
+.container__week__day__info p {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Popins", sans-serif;
+  color: rgb(245, 155, 0);
+}
+
+.week_day_title {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Popins", sans-serif;
+  color: rgb(74, 73, 73);
+}
+
+@media screen and (min-width: 600px) {
+  .container__week__day__info {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .container__week__day {
+    display: flex;
+    align-items: center;
+  }
+}

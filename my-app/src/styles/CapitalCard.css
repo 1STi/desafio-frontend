@@ -1,0 +1,16 @@
+.info-temperature {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.capitalCard-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+  gap: 1rem;
+  margin-top: 15px;
+  margin-right: 10px;
+}
